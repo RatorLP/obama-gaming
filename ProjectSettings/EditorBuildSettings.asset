@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 07834d7c841548b40941cea9d60078f6
+  - enabled: 1
+    path: Assets/Scenes/rico-layouting.unity
+    guid: 01fb98a5dca20564a932a1469f84f87c
   m_configObjects: {}
