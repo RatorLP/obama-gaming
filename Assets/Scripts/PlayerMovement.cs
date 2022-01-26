@@ -33,6 +33,6 @@ public class PlayerMovement : MonoBehaviour
             vertical *= moveLimiter;
         }
 
-        body.velocity = new Vector3(horizontal * runSpeed, 0, vertical * runSpeed);
+        body.velocity = new Vector3(horizontal * runSpeed, vertical * runSpeed, 0);
     }
 }
