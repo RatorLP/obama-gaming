@@ -147,3 +147,4 @@ Received Import Request.
 Start importing Assets/Fabian Test.unity using Guid(a70215c0842741949a19d48936b74111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a01322078a0fb962bea5aedb21a734') in 0.014242 seconds 
   Import took 0.019674 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
