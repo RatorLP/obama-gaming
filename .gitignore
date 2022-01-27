@@ -15,6 +15,11 @@ sysinfo.txt
 *.pidb.meta
 
 ###
+# logs
+###
+*.log
+
+###
 # VS/MD solution and project files
 ###
 [Ee]xportedObj/
