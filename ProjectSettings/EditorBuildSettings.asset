@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rico-layouting.unity
     guid: 01fb98a5dca20564a932a1469f84f87c
+  - enabled: 1
+    path: Assets/Scenes/Fabian 2D.unity
+    guid: 31d83632109756842b956784a2e56b46
+  - enabled: 1
+    path: Assets/Scenes/Fabian Test.unity
+    guid: a70215c0842741949a19d48936b74111
   m_configObjects: {}

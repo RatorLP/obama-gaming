@@ -18,7 +18,7 @@ public class Exp : MonoBehaviour
 
     private void Awake()
     {
-        slider = gameObject.GetComponent<Slider>();
+        slider = gameObject.GetComponent<Slider>(); //addet den slider, also die Exp bar
     }
 
 
@@ -37,30 +37,30 @@ public class Exp : MonoBehaviour
     void Update()
     {
 
-        if (GainedExp != 0)
+        if (GainedExp != 0) //gerade bekommene Exp wird zur gesamten geaddet
         {
             CurrExp += GainedExp;
             GainedExp = 0;
         }
 
-        ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;
+        ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;   //updatet ToNextLvl
 
         targetProgress = ((ToNextLvl - ((Mathf.Pow((CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart) - (ToNextLvl - CurrExp)) / (ToNextLvl - ((Mathf.Pow((CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart))); //erzeugt die prozentzahl z.b 0,58 von wie viel die exp bar gefüllt sein soll
        
-        if (slider.value < targetProgress)
+        if (slider.value < targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
             slider.value += fillspeed * Time.deltaTime;
         }
 
 
-        if (CurrExp >= ToNextLvl)
+        if (CurrExp >= ToNextLvl)       // aktiviert sich alles wenn ein neues level erreicht wird
         {
-            if (slider.value == 1)
+            if (slider.value == 1)  //aktiviert isch erst nachdem die Exp bar auch wirklich voll ist für smoothe visuals
             {
-                CurrLvl++;
-                slider.value = 0;
+                CurrLvl++;      // erhöht das level
+                slider.value = 0;   //resettet die bar um das neue level anzuzeigen
             } 
-            else
+            else    //füllt die Exp bar bei lvlup erst komplett bevor sie resettet wird um das neue leve anzuzeigen
             {
                 slider.value += fillspeed * Time.deltaTime;
             }

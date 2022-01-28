@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody body;
+    //varaiable declaration
+    Rigidbody2D rb;
 
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
 
+    bool wallL = false; //used for collision
+    bool wallR = false;
+    public bool wallU = false;
+    public bool wallD = false;
+
     public float runSpeed = 20.0f;
 
-    void Start()
+    void Start() //rb variable initialisation
     {
-        body = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void Update() //Maps keypresses to variables with values between -1 and 1 (executed every frame)
     {
-        // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        
     }
 
-    void FixedUpdate()
+    void FixedUpdate() //Convertes values to a vector (runs every physics-update)
     {
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
@@ -32,7 +38,51 @@ public class PlayerMovement : MonoBehaviour
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
+        if (wallR && horizontal > 0){
+            horizontal = 0;
+        }
+        if (wallL && horizontal < 0){
+            horizontal = 0;
+        }
+        if (wallU && vertical > 0){
+            vertical = 0;
+        }
+        if (wallD && vertical < 0){
+            vertical = 0;
+        }
+        rb.velocity = new Vector3(horizontal * runSpeed, vertical * runSpeed, 0);
+    }
 
-        body.velocity = new Vector3(horizontal * runSpeed, 0, vertical * runSpeed);
+    void OnCollisionEnter2D(Collision2D other) //other is the second object involved in the collision
+    {
+        //collision.GetComponent<Rigidbody2D>();
+        if (other.gameObject.tag == "Wall") 
+        {
+            //collision.GetContacts();
+            foreach(ContactPoint2D hitPos in other.contacts)
+            {
+                //Debug.Log(hitPos.normal); //wall touched is... above=(0.0, -1.0) ; below=(0.0, 1.0) ; left=(1.0, 0.0); right=(-1.0, 0.0)
+                if (hitPos.normal[0] < -0.5){
+                    wallR = true;
+                }
+                if (hitPos.normal[0] > 0.5){
+                    wallL = true;
+                }
+                if (hitPos.normal[1] < -0.5){
+                    wallU = true;
+                }
+                if (hitPos.normal[1] > 0.5){
+                    wallD = true;
+                }
+            } 
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        wallL = false;
+        wallR = false;
+        wallU = false;
+        wallD = false;
     }
 }

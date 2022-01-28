@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         Vector3 goalPos = target.position;
-        goalPos.y = transform.position.y;
+        goalPos.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
     }
 }
