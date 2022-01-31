@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 75749839}
   - component: {fileID: 75749840}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Eminemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 1119714693}
   - component: {fileID: 1119714695}
   m_Layer: 7
-  m_Name: Capsule
+  m_Name: CapsuleGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 1576183285}
   - component: {fileID: 1576183286}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Eminemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026453615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.45, y: -2.71, z: 0}
+  m_LocalPosition: {x: -9.46, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
