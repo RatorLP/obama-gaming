@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //varaiable declaration
     Rigidbody2D rb;
+    CircleCollider2D cc;
 
     float horizontal;
     float vertical;
@@ -21,13 +22,15 @@ public class PlayerMovement : MonoBehaviour
     void Start() //rb variable initialisation
     {
         rb = GetComponent<Rigidbody2D>();
+        cc = GetComponent<CircleCollider2D>();
+
     }
 
     void Update() //Maps keypresses to variables with values between -1 and 1 (executed every frame)
     {
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
-        
+        cc.radius = 0.5f;
     }
 
     void FixedUpdate() //Convertes values to a vector (runs every physics-update)
