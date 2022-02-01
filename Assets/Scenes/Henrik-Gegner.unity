@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 75749837}
   - component: {fileID: 75749836}
   - component: {fileID: 75749835}
-  - component: {fileID: 75749839}
   - component: {fileID: 75749840}
+  - component: {fileID: 75749839}
   m_Layer: 7
   m_Name: Eminemy
   m_TagString: Untagged
@@ -243,8 +243,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &75749839
-BoxCollider2D:
+--- !u!70 &75749839
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -257,18 +257,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!50 &75749840
 Rigidbody2D:
   serializedVersion: 4
@@ -1035,7 +1025,7 @@ GameObject:
   - component: {fileID: 2026453619}
   - component: {fileID: 2026453618}
   - component: {fileID: 2026453620}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,8 +1133,8 @@ MonoBehaviour:
   wallU: 0
   wallD: 0
   runSpeed: 20
---- !u!61 &2026453620
-BoxCollider2D:
+--- !u!58 &2026453620
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1157,15 +1147,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
