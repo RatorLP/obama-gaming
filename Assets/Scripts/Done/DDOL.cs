@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DDOL : MonoBehaviour
 {
+    public int health = 100;
+
     // Awake is called before Start
     void Awake()
     {
