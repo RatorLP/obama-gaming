@@ -3,18 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Wall
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Foreground
   - Water
   - UI
-  - Foreground
-  - NPC
   - Player
+  - NPC
+  - Background
   - 
   - 
   - 
@@ -41,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2243424775
+    locked: 0
+  - name: Foreground
+    uniqueID: 3336993041
     locked: 0

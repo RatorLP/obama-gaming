@@ -13,7 +13,7 @@ public class Exp : MonoBehaviour
     public float GainedExp; //experience you gained just recently in a room and gets added to CurrExp as soon as possible. Enemys add a value to this when they are killed.
     public float ToNextLvlStart; //the starting variable to change ToNextLvl in Beziehung zu Currlvl
     public float ToNextLvlGrow; //the growing variable to change ToNextLvl in Beziehung zu Currlvl
-    public float fillspeed;
+    public float fillspeed; // how fast the bar fills
     public float targetProgress;
 
     private void Awake()
