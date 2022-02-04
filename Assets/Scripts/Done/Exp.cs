@@ -18,7 +18,7 @@ public class Exp : MonoBehaviour
 
     private void Awake()
     {
-        slider = gameObject.GetComponent<Slider>(); //addet den slider, also die Exp bar
+        slider = gameObject.GetComponent<Slider>(); //der slider, also die Exp bar
     }
 
 
