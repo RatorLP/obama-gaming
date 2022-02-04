@@ -15,6 +15,7 @@ public class CollisionControler : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) //other is the second object involved in the collision
     {
+
         foreach(ContactPoint2D hitPos in other.contacts)
         {
             tag = other.gameObject.tag;
