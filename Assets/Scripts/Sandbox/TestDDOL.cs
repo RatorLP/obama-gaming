@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class TestDDOL : MonoBehaviour
 {
-    GameObject cam;
+    GameObject dataManager;
     DDOL gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject dataManager = GameObject.Find("DataManager");
-        DDOL gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+        if (GameObject.Find("DataManager") == null) {//returns if the data manager doesn't exist
+            Debug.Log("dataManager not found");
+            return;
+        }
+        dataManager = GameObject.Find("DataManager");
+        gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
         //access global variables using: gameControler.[variableName]
     }
 

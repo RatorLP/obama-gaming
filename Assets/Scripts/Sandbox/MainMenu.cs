@@ -14,9 +14,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    GameObject dataManager;
+    DDOL gameController;
+
+    void Start()
+    {
+        if (GameObject.Find("DataManager") == null)
+        {//returns if the data manager doesn't exist
+            Debug.Log("dataManager not found");
+            return;
+        }
+        dataManager = GameObject.Find("DataManager");
+        gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+    }
+
     public void PlayGame() //jumps to the next scene (buildIndex + 1). for main menu play button, might be changed in the future
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gameController.NextScene();
+        //SceneManager.LoadScene(gameController.sceneOrder[0]);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadMenu() //goes back to the main menu without saving progress. for debug & testing use only.

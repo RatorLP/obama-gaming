@@ -31,12 +31,20 @@ public class Exp : MonoBehaviour
         ToNextLvlGrow = 1.2F;
         ToNextLvlStart = 10;
         ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;
+
+        if (slider == null)
+        {
+            Debug.Log("No slider found!");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (slider == null) {
+            Awake();
+            return;
+        }
         if (GainedExp != 0) //gerade bekommene Exp wird zur gesamten geaddet
         {
             CurrExp += GainedExp;
