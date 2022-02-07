@@ -7,7 +7,7 @@ public class DDOL : MonoBehaviour
 {
     public int health = 100;
     public int levelsUntilBossfight = 6;
-    public int[] sceneOrder; //= new int[] { 1, 2, 3, 4, 5 };
+    public int[] sceneOrder; 
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
     private int currentArrayIndex = 0;
     public int nextScene;
