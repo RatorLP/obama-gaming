@@ -37,11 +37,9 @@ public class BulletScript : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 gameController.health -= 20;
-                Destroy(this.gameObject); // destroys the Bullet if it collides with something
-            } 
-            
+            }
         }
-       
+        Destroy(this.gameObject); // destroys the Bullet if it collides with something
     }
 }
 

@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DDOL : MonoBehaviour
 {
-    public float playerDamage = 50;
-    public float health = 100;
+    public int health = 100;
     public int levelsUntilBossfight = 100;
     public int[] sceneOrder; 
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight

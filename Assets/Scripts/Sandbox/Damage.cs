@@ -7,12 +7,11 @@ public class Damage : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
-    float MaxHp = 100; //displays the maxium amount of HP you can have
-    float CurrHp; //displays your current amount HP in natural numbers
+    // Start is called before the first frame update
     public int damage;
-    void Start()// Start is called before the first frame update
+    public int Hp;
+    void Start()
     {
-        CurrHp = MaxHp;
         if (GameObject.Find("DataManager") == null)
         { //returns if the data manager doesn't exist
             Debug.Log("dataManager not found");
@@ -25,7 +24,7 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnCollisionEnter2D(Collision2D other) // Method to check wether something is hit or not
     {
@@ -40,13 +39,6 @@ public class Damage : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 gameController.health -= damage;
-                CurrHp -= gameController.playerDamage;
-
-
-            }
-            if(CurrHp <= 0)// destroys the Enemy if it's helth reaches zero
-            {
-                Destroy(this.gameObject); 
             }
         }
         
