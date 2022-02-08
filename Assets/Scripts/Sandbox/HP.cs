@@ -69,7 +69,7 @@ public class HP : MonoBehaviour
             CurrHp = MaxHp;
         }
 
-        if (CurrHp <= 0) //If Hp fals to zero, the player dies
+        if (CurrHp <= 0) //If Hp falls to zero, the player dies
         {
             Debug.Log("You Lost lul Cope");
             gameController.health = 100;
