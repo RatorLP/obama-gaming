@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/Henrik/Henrik-Gegner.unity
     guid: 38c53421900d5544d9f2f6a9c401f4de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sandbox/yoshi/yoshi Hp bar und UI.unity
     guid: f03e8f7d2bfc351479d9ae2f174be546
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sandbox/rico/rico-layouting.unity
     guid: 01fb98a5dca20564a932a1469f84f87c
   m_configObjects: {}
