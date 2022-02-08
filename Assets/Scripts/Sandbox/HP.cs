@@ -11,7 +11,7 @@ public class HP : MonoBehaviour
     public float CurrHp = 100; //displays the maxium amount of HP you can have
     public float GainedDmg;
     private float targetProgress;
-    private float fillspeed; // how fast the bar moves
+    private float fillspeed = 0.5F; // how fast the bar moves
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class HP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (slider == null)
         {
             Debug.Log("No slider found!");
@@ -40,11 +41,17 @@ public class HP : MonoBehaviour
         if (GainedDmg != 0) //gerade bekommener damage wird von Hp abgezogen
         {
             CurrHp -= GainedDmg;
+            GainedDmg = 0;
         }
 
         targetProgress = (MaxHp / CurrHp);
 
         if (slider.value < targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
+        {
+            slider.value += fillspeed * Time.deltaTime;
+        }
+
+        if (slider.value > targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
             slider.value += fillspeed * Time.deltaTime;
         }
