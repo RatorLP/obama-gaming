@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BIIIGBulletScript : MonoBehaviour
+public class Damage : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
-
     // Start is called before the first frame update
+    public int damage;
+    public int Hp;
     void Start()
     {
         if (GameObject.Find("DataManager") == null)
@@ -37,9 +38,9 @@ public class BIIIGBulletScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                gameController.health -= 40;
+                gameController.health -= damage;
             }
         }
-        Destroy(this.gameObject); // destroys the Bullet if it collides with something
+        
     }
 }

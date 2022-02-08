@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 75749835}
   - component: {fileID: 75749840}
   - component: {fileID: 75749839}
+  - component: {fileID: 75749841}
   m_Layer: 7
   m_Name: Eminemy 2
   m_TagString: Untagged
@@ -280,6 +281,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &75749841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  Hp: 0
 --- !u!1 &311289333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -948,6 +963,7 @@ GameObject:
   - component: {fileID: 1576183284}
   - component: {fileID: 1576183285}
   - component: {fileID: 1576183286}
+  - component: {fileID: 1576183287}
   m_Layer: 7
   m_Name: Eminemy
   m_TagString: Untagged
@@ -1101,6 +1117,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1576183287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576183280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  Hp: 0
 --- !u!1 &1665065675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -1519,7 +1549,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.217591
+  orthographic size: 8.242219
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1562,6 +1592,7 @@ GameObject:
   - component: {fileID: 2026453619}
   - component: {fileID: 2026453618}
   - component: {fileID: 2026453620}
+  - component: {fileID: 2026453621}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1684,3 +1715,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2026453621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026453615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  Hp: 0

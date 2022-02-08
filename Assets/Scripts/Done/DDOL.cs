@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DDOL : MonoBehaviour
 {
     public int health = 100;
-    public int levelsUntilBossfight = 6;
+    public int levelsUntilBossfight = 100;
     public int[] sceneOrder; 
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
     private int currentArrayIndex = 0;
@@ -32,8 +32,14 @@ public class DDOL : MonoBehaviour
 
         
     }
-
-    // Update is called once per frame
+    public void Update()// Update is called once per frame
+    {
+        if (Input.GetKey("n"))
+        {
+            NextScene();
+        }
+    }
+    
     public void NextScene()
     {
         nextScene = sceneOrder[currentArrayIndex + 1];
