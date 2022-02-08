@@ -18,6 +18,7 @@ sysinfo.txt
 # logs
 ###
 *.log
+*.exe.log
 
 ###
 # VS/MD solution and project files
