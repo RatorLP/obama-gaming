@@ -9,9 +9,10 @@ public class HP : MonoBehaviour
 
     public float MaxHp = 100; //displays your current level in natural numbers
     public float CurrHp = 100; //displays the maxium amount of HP you can have
-    public float GainedDmg;
-    private float targetProgress;
-    private float fillspeed = 0.5F; // how fast the bar moves
+    public float LostHP; // damage you took, get subtracted from Hp as soon as possible
+    public float GainedHp; // healing you got, gets added to Hp after damage
+    private float targetProgress; 
+    private float fillspeed = 1.5F; // how fast the bar moves
 
     private void Awake()
     {
@@ -38,29 +39,50 @@ public class HP : MonoBehaviour
             return;
         }
 
-        if (GainedDmg != 0) //gerade bekommener damage wird von Hp abgezogen
+        if (LostHP != 0) //gerade bekommener damage wird von Hp abgezogen
         {
-            CurrHp -= GainedDmg;
-            GainedDmg = 0;
+            CurrHp -= LostHP;
+            LostHP = 0;
         }
 
-        targetProgress = (MaxHp / CurrHp);
+        if (GainedHp != 0) //gerade bekommenes healing wird zu Hp addiert
+        {
+            CurrHp += GainedHp;
+            GainedHp = 0;
+        }
 
-        if (slider.value < targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
+        targetProgress = (CurrHp / MaxHp ); //target progress der leisete, fürs visuelle anpassen zum Wert von CurrHP
+
+        if (slider.value < targetProgress)  //ändert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
             slider.value += fillspeed * Time.deltaTime;
         }
 
-        if (slider.value > targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
+        if (slider.value > targetProgress)  //ändert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
-            slider.value += fillspeed * Time.deltaTime;
+            slider.value -= fillspeed * Time.deltaTime;
+        }
+
+        if (CurrHp < 0) //If currHp goes into minus, it gets set to 0
+        {
+            CurrHp = 0;
+        }
+
+        if (CurrHp > MaxHp) //If currHp goes higher than MaxHp,it gets set to the value of MaxHp
+        {
+            CurrHp = MaxHp;
         }
 
     }
 
     //increase Exp
-    public void takeDmg(float addDmg)
+    public void takeDmg(float subHP)
     {
-        GainedDmg += addDmg;
+        LostHP += subHP;
+    }
+
+    public void getHealing(float addHP)
+    {
+        GainedHp += addHP;
     }
 }
