@@ -13,6 +13,7 @@ public class DDOL : MonoBehaviour
     private int currentArrayIndex = 0;
     public int nextScene;
     public int currentScene;
+    public GameObject loadingScreen;
 
     // Awake is called before Start
     void Awake()
@@ -41,11 +42,35 @@ public class DDOL : MonoBehaviour
         }
     }
     
+    /*
+     * old version without implemented loading screen
+     * 
     public void NextScene()
     {
         nextScene = sceneOrder[currentArrayIndex + 1];
         SceneManager.LoadScene(nextScene);
         currentArrayIndex++;
         currentScene = SceneManager.GetActiveScene().buildIndex;
+    }
+    */
+
+    public void NextScene()
+    {
+        loadingScreen.SetActive(true);
+
+        nextScene = sceneOrder[currentArrayIndex + 1];
+        currentArrayIndex++;
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        StartCoroutine(LoadLevelAsync());
+    }
+
+    private IEnumerator LoadLevelAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene);
+
+        while(!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
