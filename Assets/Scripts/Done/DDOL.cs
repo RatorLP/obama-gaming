@@ -8,7 +8,7 @@ public class DDOL : MonoBehaviour
     public float playerDamage = 40;
     public int health = 100;
     public int levelsUntilBossfight = 100;
-    public int[] sceneOrder; 
+    public int[] sceneOrder;
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
     private int currentArrayIndex = 0;
     public int nextScene;
@@ -58,7 +58,10 @@ public class DDOL : MonoBehaviour
 
     public void NextScene()
     {
-        loadingScreen.SetActive(true);
+        if (loadingScreen != null)
+        {
+            loadingScreen.SetActive(true);
+        }
 
         nextScene = sceneOrder[currentArrayIndex + 1]; //pulls next scene from randomized array index
         //currentArrayIndex++;
@@ -79,6 +82,10 @@ public class DDOL : MonoBehaviour
         {
             currentArrayIndex++;
             currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
+            if (loadingScreen != null)
+            {
+                loadingScreen.SetActive(false);
+            }
         }
         
     }
