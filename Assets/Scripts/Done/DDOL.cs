@@ -7,12 +7,16 @@ public class DDOL : MonoBehaviour
 {
     public float playerDamage = 40;
     public int health = 100;
+    public int maxHealth = 100;
     public int levelsUntilBossfight = 100;
-    public int[] sceneOrder; 
+    public int[] sceneOrder;
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
     private int currentArrayIndex = 0;
     public int nextScene;
     public int currentScene;
+    public bool pause;
+
+    public GameObject loadingScreen; 
 
     // Awake is called before Start
     void Awake()
@@ -40,12 +44,65 @@ public class DDOL : MonoBehaviour
             NextScene();
         }
     }
+
+    public void PauseGame(bool pauseRequested)
+    {
+        if(pauseRequested)
+        {
+            Time.timeScale = 0;
+            pause = true;
+        } else
+        {
+            Time.timeScale = 1;
+            pause = false;
+        }
+    }
     
+    /*
+     * old version without implemented loading screen
+     * 
     public void NextScene()
     {
         nextScene = sceneOrder[currentArrayIndex + 1];
         SceneManager.LoadScene(nextScene);
         currentArrayIndex++;
         currentScene = SceneManager.GetActiveScene().buildIndex;
+    }
+    */
+
+    // - - - - - - - - - - - - - - CODE BELOW THIS LINE IS STILL WORK IN PROGRESS - - - - - - - - - - - - - - -
+
+    public void NextScene()
+    {
+        if (loadingScreen != null)
+        {
+            loadingScreen.SetActive(true);
+        }
+
+        nextScene = sceneOrder[currentArrayIndex + 1]; //pulls next scene from randomized array index
+        //currentArrayIndex++;
+        //currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
+        StartCoroutine(LoadLevelAsync()); //start async loading
+    }
+
+    private IEnumerator LoadLevelAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene);
+
+        while(!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        if (asyncLoad.isDone)
+        {
+            currentArrayIndex++;
+            currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
+            if (loadingScreen != null)
+            {
+                loadingScreen.SetActive(false);
+            }
+        }
+        
     }
 }
