@@ -12,23 +12,34 @@ public class DebugController : MonoBehaviour
 
     string input; //input for cheats
 
-    public static DebugCommand KILL_ALL;
-
     public List<object> commandList;
+
+    //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  CHEATS & COMMANDS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    public static DebugCommand KILL_ALL;
+    public static DebugCommand HEALTH_PLUS;
 
     private void Awake()
     {
         KILL_ALL = new DebugCommand("kill_all", "Removes all enemys from the scene.", "kill_all", () =>
         {
-            //Controller.instance.KillAllEnemys();
-            gameController.NextScene();
+            Debug.Log("Killing all enemys");
+            //gameController.KillAllEnemys();         - KillAllEnemys function not yet implemented
+        });
+
+        HEALTH_PLUS = new DebugCommand("health+", "Adds 1000 HP", "health+", () =>
+        {
+            Debug.Log("Adding 1000 HP");
+            gameController.maxHealth += 1000;
+            gameController.health += 1000;
         });
 
         commandList = new List<object>
         {
-            KILL_ALL
+            KILL_ALL,
+            HEALTH_PLUS
         };
     }
+    //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     void Start()
     {
@@ -47,6 +58,13 @@ public class DebugController : MonoBehaviour
         if (Input.GetButtonDown("Enable Debug Button 1"))
         {
             showConsole = !showConsole;
+            if (showConsole) //pauses the game, while the console is displayed
+            {
+                gameController.PauseGame(true);
+            } else
+            {
+                gameController.PauseGame(false);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {

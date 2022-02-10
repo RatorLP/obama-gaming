@@ -34,13 +34,19 @@ public class HP : MonoBehaviour
         }
         dataManager = GameObject.Find("DataManager");
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
-        
+    }
+
+    public void updateValues() //updates all variables automatically to ensure the script is behaving correctly
+    {
+        CurrHp = gameController.health;
+        MaxHp = gameController.maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CurrHp = gameController.health;
+        updateValues();
+        
         if (slider == null)
         {
             Awake();
@@ -79,6 +85,7 @@ public class HP : MonoBehaviour
 
     }
 
+    
 
 
 }
