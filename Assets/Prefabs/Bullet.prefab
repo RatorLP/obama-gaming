@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5284332283674773377}
   - component: {fileID: 5284332283674773376}
   - component: {fileID: -4367727221269681469}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e76972bb6892d643822746f80656a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collider1: {fileID: 4846032790003016591, guid: 13394f8c5d4579d4da6f43daccb670d2, type: 3}
+  Collider2: {fileID: 8926661591320902532, guid: f2a42396f9a6118468d54fd18dcb8d5a, type: 3}

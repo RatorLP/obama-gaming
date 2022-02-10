@@ -7,9 +7,15 @@ public class BulletScript : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
+    //public static void IgnoreLayerCollision(int layer1 = 9, int layer2 = 7, bool ignore = true);
+
     // Start is called before the first frame update
     void Start()
     {
+
+        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+
+
         if (GameObject.Find("DataManager") == null)
         { //returns if the data manager doesn't exist
             Debug.Log("dataManager not found");
@@ -37,9 +43,15 @@ public class BulletScript : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 gameController.health -= 20;
+                
             }
         }
-        Destroy(this.gameObject); // destroys the Bullet if it collides with something
+
+        if ( (other.gameObject.tag == "Wall" )||(other.gameObject.tag == "Player") )
+        {
+            Destroy(this.gameObject); // destroys the Bullet if it collides with player or wall
+        }
+        
     }
 }
 

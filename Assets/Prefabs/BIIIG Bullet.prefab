@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 840587209408065274}
   - component: {fileID: 5772290027318026204}
   - component: {fileID: 3696859009697054659}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BIIIG Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,4 +134,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3427ca5e23f32bf4491bf841d7af39a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0

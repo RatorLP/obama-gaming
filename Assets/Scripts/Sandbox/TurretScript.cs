@@ -13,6 +13,7 @@ public class TurretScript : MonoBehaviour
     float CurrHp;
     public Transform Target; // the enemy's target
     bool Detected = false; // looks wether Player is detected or not
+
     public GameObject Gun; // Creates the Gun; the Gun does not have Code itself
     public GameObject Bullet; // Creates the Object for the Bullet
     public Transform shootingPoint; // the Point from which the enemy shoots the Bullets
@@ -42,24 +43,22 @@ public class TurretScript : MonoBehaviour
 
         Direction = targetPos - (Vector2)transform.position; // calculates the diraction in which the enemy shoots
 
-        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range); // casts a line in a direction and looks if something is hit by this line
+        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range, 7); // casts a line in a direction and looks if something is hit by this line
 
         if (rayInfo) // Information of the line
         {
             if (rayInfo.collider.gameObject.tag == "Wall") // looks if the line hits the Player, if yes, "Detected" is set to true, if the player is not detected anymore "Detected" is set to false
             {
-                if (Detected == true)
-                {
-                    Detected = false;
-                }
+                
+                Detected = false;
 
             }
-            else if (Detected == false)
+            else
             {
                 Detected = true;
             }
         }
-        if (Detected) // if the player is detected the enemy shoots
+        if (Detected = true) // if the player is detected the enemy shoots
         {
             Gun.transform.right = Direction; // insures the gun is rotated the right way
             if (Time.time > nextTimeToShoot)
