@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Damage : MonoBehaviour
+public class MeeleDamage : MonoBehaviour
 {
     private bool hitting;
     GameObject dataManager; //Variable declaration
@@ -37,7 +37,7 @@ public class Damage : MonoBehaviour
             return;
         }
 
-        if(hitting = true)
+        if(hitting == true)
         {
             foreach (ContactPoint2D hitPos in other.contacts)
             {
