@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/rico/rico-layouting.unity
     guid: 01fb98a5dca20564a932a1469f84f87c
+  - enabled: 1
+    path: Assets/Sandbox/Henrik/Item Testing.unity
+    guid: 668c3f72bd770c84380202a642f6d7ca
   m_configObjects: {}
