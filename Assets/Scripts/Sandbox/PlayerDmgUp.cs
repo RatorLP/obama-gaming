@@ -42,6 +42,7 @@ public class PlayerDmgUp : MonoBehaviour
             {
                 gameController.playerDamage += 10;
                 Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
+                Debug.Log("gameController.dirtyRazor == true;");
                 Destroy(this.gameObject);
             }
         }

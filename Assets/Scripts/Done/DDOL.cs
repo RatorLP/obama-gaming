@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DDOL : MonoBehaviour
 {
-    public float playerDamage = 40;
+    public bool dirtyRazor = false;
+    public float playerDamage = 30;
     public int health = 100;
     public int maxHealth = 100;
     public int levelsUntilBossfight = 100;
