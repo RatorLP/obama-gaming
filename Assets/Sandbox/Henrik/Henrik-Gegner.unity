@@ -290,10 +290,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 75749834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 192d662af42bb6a4c9f8eb3f6f2a050f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 40
 --- !u!1 &311289333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -1365,7 +1365,6 @@ GameObject:
   - component: {fileID: 1576183284}
   - component: {fileID: 1576183285}
   - component: {fileID: 1576183286}
-  - component: {fileID: 1576183287}
   m_Layer: 7
   m_Name: Eminemy
   m_TagString: Untagged
@@ -1519,19 +1518,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1576183287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576183280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
 --- !u!1 &1665065675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -1938,7 +1924,6 @@ GameObject:
   - component: {fileID: 2026453619}
   - component: {fileID: 2026453618}
   - component: {fileID: 2026453620}
-  - component: {fileID: 2026453621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2061,73 +2046,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2026453621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026453615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f3edfa56c6cfc4b85e40207150bb8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
---- !u!1001 &6920562836079732443
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3814322611646406835, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_Name
-      value: CoinPickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.0898619
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.29958677
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 203.12833
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652883037819402339, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: acd0713f5ad60c143bf7ce9827328f35, type: 3}
