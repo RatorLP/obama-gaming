@@ -10,7 +10,7 @@ public class Damage : MonoBehaviour
     DDOL gameController;
     float MaxHp = 100; //displays the maxium amount of HP you can have
     float CurrHp; //displays your current amount HP in natural numbers
-    public int damage = 30;
+    public int damage;
 
     public float attackRange;
     public float attackTimer;
@@ -19,12 +19,12 @@ public class Damage : MonoBehaviour
     private bool inRange = false;
     private bool attackCooling = false;
     private float IntTimer;
-    //private Animator anim;
+    private Animator anim;
 
     void Awake()
     {
         IntTimer = attackTimer;
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Start()// Start is called before the first frame update
@@ -50,8 +50,7 @@ public class Damage : MonoBehaviour
         if (inRange == false)
         {
             StopAttack();
-
-            //anim.SetBool("Walk", true);
+            anim.SetBool("canWalk", true);
         }
     }
 
@@ -60,8 +59,8 @@ public class Damage : MonoBehaviour
         attackTimer = IntTimer; //reset timer when player enters attack range
         attackMode = true; //to check if enemy can still attack
 
-        //anim.SetBool("canWalk", false);
-        //anim.SetBool("Attack", true);
+        anim.SetBool("canWalk", false);
+        anim.SetBool("Attack", true);
     }
 
     void Cooldown()
@@ -81,7 +80,7 @@ public class Damage : MonoBehaviour
         attackCooling = false;
         attackMode = false;
 
-        //anim.SetBool("Attack", false);
+        anim.SetBool("Attack", false);
     }
 
     void OnTriggerEnter2d(Collider2D trig)
@@ -90,6 +89,11 @@ public class Damage : MonoBehaviour
         {
             inRange = true;
         }
+    }
+
+    void OnTriggerExit(Collider2D trig)
+    {
+        inRange = false;
     }
 
     public void TriggerCooling()
