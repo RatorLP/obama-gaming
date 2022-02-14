@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class MaxHealthUp : MonoBehaviour
+public class PlayerDmgUp : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
@@ -25,7 +25,7 @@ public class MaxHealthUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -40,9 +40,8 @@ public class MaxHealthUp : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                gameController.maxHealth += 30;
-                gameController.health += 40;
-                Debug.Log("Deine HP:" + gameController.health + "Deine MaxHP:" +  gameController.maxHealth);
+                gameController.playerDamage += 10;
+                Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
                 Destroy(this.gameObject);
             }
         }
