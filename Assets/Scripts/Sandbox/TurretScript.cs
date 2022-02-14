@@ -58,7 +58,7 @@ public class TurretScript : MonoBehaviour
                 Detected = true;
             }
         }
-        if (Detected = true) // if the player is detected the enemy shoots
+        if (Detected == true) // if the player is detected the enemy shoots
         {
             Gun.transform.right = Direction; // insures the gun is rotated the right way
             if (Time.time > nextTimeToShoot)
