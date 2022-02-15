@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
-    
+
     GameObject dataManager; //Variable declaration
     DDOL gameController;
     float MaxHp = 100; //displays the maxium amount of HP you can have
@@ -73,7 +73,7 @@ public class Damage : MonoBehaviour
             attackTimer = IntTimer;
         }
     }
-    
+
 
     void StopAttack()
     {
@@ -85,7 +85,7 @@ public class Damage : MonoBehaviour
 
     void OnTriggerEnter2d(Collider2D trig)
     {
-        if(trig.gameObject.tag == "Player")
+        if (trig.gameObject.tag == "Player")
         {
             inRange = true;
         }
@@ -101,17 +101,37 @@ public class Damage : MonoBehaviour
         attackCooling = true;
     }
 
-    void OnCollisionEnter2D(Collision2D other) // Method to check wether something is hit or not
+    public void DamageOverTime(int damageAmount, int damageTime)
     {
-        if (GameObject.Find("DataManager") == null)
-        { // returns if the data manager doesn't exist
-            Debug.Log("dataManager not found");
-            SceneManager.LoadScene(0);
-            return;
-        }
-        
-        foreach (ContactPoint2D hitPos in other.contacts)
+        if (gameController.dirtyRazor = true)
         {
+            StartCoroutine(DamageOverTimeCoroutine(damageAmount, damageTime));
+        }
+
+        IEnumerator DamageOverTimeCoroutine(float damageAmount, float duration)
+        {
+            float amountDamaged = 0;
+            float damagePerLoop = damageAmount / duration;
+            while (amountDamaged < damageAmount)
+            {
+                CurrHp -= damagePerLoop;
+                Debug.Log(CurrHp);
+                amountDamaged += damagePerLoop;
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
+        void OnCollisionEnter2D(Collision2D other) // Method to check wether something is hit or not
+        {
+            if (GameObject.Find("DataManager") == null)
+            { // returns if the data manager doesn't exist
+                Debug.Log("dataManager not found");
+                SceneManager.LoadScene(0);
+                return;
+            }
+
+            foreach (ContactPoint2D hitPos in other.contacts)
+            {
                 if (other.gameObject.tag == "Player")
                 {
                     gameController.health -= damage;
@@ -122,6 +142,7 @@ public class Damage : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                 }
+            }
         }
     }
 }

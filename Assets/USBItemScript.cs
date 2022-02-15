@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerDmgUp : MonoBehaviour
+public class USBItemScript : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
@@ -38,11 +38,9 @@ public class PlayerDmgUp : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") //The amount of damage the player deals after picking up the Item
+            if (other.gameObject.tag == "Player") 
             {
-                gameController.playerDamage += 10;
-                Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
-                Debug.Log("gameController.dirtyRazor == true;");
+                //this line is supposed to be for the increased player movement speed - still WIP
                 Destroy(this.gameObject);
             }
         }

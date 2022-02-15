@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 75749840}
   - component: {fileID: 75749839}
   - component: {fileID: 75749841}
+  - component: {fileID: 75749842}
   m_Layer: 7
   m_Name: Eminemy 2
   m_TagString: Untagged
@@ -296,6 +297,25 @@ MonoBehaviour:
   damage: 30
   attackRange: 0
   attackTimer: 0
+--- !u!95 &75749842
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &143379616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1205,7 @@ Transform:
   m_Children:
   - {fileID: 612806035}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119714692
 GameObject:
@@ -1286,7 +1306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701503751655986712, guid: a6e0c964686bb2a4b9b000fa3ba8bc19, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4701503751655986712, guid: a6e0c964686bb2a4b9b000fa3ba8bc19, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2072,6 +2092,7 @@ GameObject:
   - component: {fileID: 2026453619}
   - component: {fileID: 2026453618}
   - component: {fileID: 2026453620}
+  - component: {fileID: 2026453621}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2194,3 +2215,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2026453621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026453615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528e1ba838a72424eb9ff06fdd333afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
