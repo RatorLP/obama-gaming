@@ -61,6 +61,8 @@ public class Damage : MonoBehaviour
 
         anim.SetBool("canWalk", false);
         anim.SetBool("Attack", true);
+
+
     }
 
     void Cooldown()
@@ -83,7 +85,7 @@ public class Damage : MonoBehaviour
         anim.SetBool("Attack", false);
     }
 
-    void OnTriggerEnter2d(Collider2D trig)
+    void OnTriggerEnter2D(Collider2D trig)
     {
         if (trig.gameObject.tag == "Player")
         {
@@ -91,7 +93,7 @@ public class Damage : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2d(Collider2D trig)
+    void OnTriggerExit2D(Collider2D trig)
     {
         inRange = false;
     }
