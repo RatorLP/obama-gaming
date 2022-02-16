@@ -129,6 +129,7 @@ public class Damage : MonoBehaviour
             { // returns if the data manager doesn't exist
                 Debug.Log("dataManager not found");
                 SceneManager.LoadScene(0);
+                Debug.Log("Load Scene 0");
                 return;
             }
 
