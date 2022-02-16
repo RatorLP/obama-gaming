@@ -16,7 +16,7 @@ public class Damage : MonoBehaviour
     public float attackTimer;
 
     private bool attackMode;
-    private bool inRange = false;
+    public bool inRange = false;
     private bool attackCooling = false;
     private float IntTimer;
     private Animator anim;
@@ -91,7 +91,7 @@ public class Damage : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider2D trig)
+    void OnTriggerExit2d(Collider2D trig)
     {
         inRange = false;
     }
