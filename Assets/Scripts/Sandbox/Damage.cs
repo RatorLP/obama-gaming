@@ -57,6 +57,7 @@ public class Damage : MonoBehaviour
         {
             Cooldown();
             anim.SetBool("Attack", false);
+            anim.SetBool("canWalk", true);
         }
     }
 
@@ -73,12 +74,13 @@ public class Damage : MonoBehaviour
 
     void Cooldown()
     {
-        IntTimer -= Time.deltaTime;
+        attackTimer -= Time.deltaTime;
 
         if (attackTimer <= 0 && attackCooling == true && attackMode == true)
         {
             attackCooling = false;
             attackTimer = IntTimer;
+            
         }
     }
 
@@ -99,10 +101,13 @@ public class Damage : MonoBehaviour
         }
     }
 
-    /*void OnTriggerExit2D(Collider2D trig)
+    void OnTriggerExit2D(Collider2D trig)
     {
-        inRange = false;
-    }*/
+        if (trig.gameObject.tag == "Player")
+        {
+            //inRange = false;
+        }
+    }
 
     public void TriggerCooling()
     {

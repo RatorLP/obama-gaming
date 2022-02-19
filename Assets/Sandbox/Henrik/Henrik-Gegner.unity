@@ -298,6 +298,7 @@ MonoBehaviour:
   attackRange: 0
   attackTimer: 0
   inRange: 0
+  attackCooling: 0
 --- !u!95 &75749842
 Animator:
   serializedVersion: 3
@@ -601,7 +602,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1688,6 +1689,7 @@ MonoBehaviour:
   attackRange: 2
   attackTimer: 3
   inRange: 0
+  attackCooling: 0
 --- !u!1 &1665065675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
