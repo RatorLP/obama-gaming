@@ -34,6 +34,9 @@ public class CollisionControler : MonoBehaviour
             if (hitPos.normal[1] > 0.5){
                 collD = true;
             }
+
+
+
          } 
     }
 

@@ -14,12 +14,19 @@ public class Damage : MonoBehaviour
 
     public float attackRange;
     public float attackTimer;
+    public float rayCastLength;
+    public Transform rayCast;
+    public LayerMask raycastMask;
 
+    public RaycastHit2D hit;
+    private GameObject target;
+    private Animator anim;
+    private float distance;
     private bool attackMode;
     public bool inRange = false;
     public bool attackCooling = false;
     private float IntTimer;
-    private Animator anim;
+    
 
     void Awake()
     {
@@ -50,10 +57,9 @@ public class Damage : MonoBehaviour
         if (inRange == false)
         {
             StopAttack();
-            anim.SetBool("canWalk", true);
         }
 
-        if (attackCooling == true)
+        if (attackCooling)
         {
             Cooldown();
             anim.SetBool("Attack", false);
@@ -61,10 +67,11 @@ public class Damage : MonoBehaviour
         }
     }
 
+
     void Attack()
     {
         attackTimer = IntTimer; //reset timer when player enters attack range
-        attackMode = true; //to check if enemy can still attack
+        //attackMode = true; //to check if enemy can still attack
 
         anim.SetBool("canWalk", false);
         anim.SetBool("Attack", true);
@@ -72,11 +79,12 @@ public class Damage : MonoBehaviour
 
     }
 
+
     void Cooldown()
     {
         attackTimer -= Time.deltaTime;
 
-        if (attackTimer <= 0 && attackCooling == true && attackMode == true)
+        if (attackTimer <= 0 && attackCooling)
         {
             attackCooling = false;
             attackTimer = IntTimer;
@@ -87,11 +95,11 @@ public class Damage : MonoBehaviour
 
     void StopAttack()
     {
-        attackCooling = false;
-        attackMode = false;
-
+        //attackMode = false;
         anim.SetBool("Attack", false);
+        anim.SetBool("canWalk", true);
     }
+
 
     void OnTriggerEnter2D(Collider2D trig)
     {
@@ -101,18 +109,27 @@ public class Damage : MonoBehaviour
         }
     }
 
+
     void OnTriggerExit2D(Collider2D trig)
     {
         if (trig.gameObject.tag == "Player")
         {
-            //inRange = false;
+            inRange = false;
         }
     }
+
+
+    /*void RaycastDebugger()
+    {
+       Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.green);
+    }
+    */
 
     public void TriggerCooling()
     {
         attackCooling = true;
     }
+
 
     public void DamageOverTime(int damageAmount, int damageTime)
     {

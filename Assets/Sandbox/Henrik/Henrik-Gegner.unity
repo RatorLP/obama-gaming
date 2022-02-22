@@ -297,6 +297,11 @@ MonoBehaviour:
   damage: 30
   attackRange: 0
   attackTimer: 0
+  rayCastLength: 0
+  rayCast: {fileID: 0}
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
   inRange: 0
   attackCooling: 0
 --- !u!95 &75749842
@@ -571,7 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487877046}
   - component: {fileID: 487877047}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: attackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,8 +1691,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  attackRange: 2
-  attackTimer: 3
+  attackRange: 0
+  attackTimer: 2
+  rayCastLength: 0
+  rayCast: {fileID: 0}
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
   inRange: 0
   attackCooling: 0
 --- !u!1 &1665065675 stripped
