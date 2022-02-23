@@ -44,6 +44,14 @@ public class Damage : MonoBehaviour
         }
         dataManager = GameObject.Find("DataManager");
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+
+        if(GameObject.Find("DataManager") == null)
+            { // returns if the data manager doesn't exist
+            Debug.Log("dataManager not found");
+            SceneManager.LoadScene(0);
+            Debug.Log("Load Scene 0");
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -130,6 +138,23 @@ public class Damage : MonoBehaviour
         attackCooling = true;
     }
 
+    void TakeDmg(int gotteddmg)
+    {
+        CurrHp -= gotteddmg;
+
+        if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            gameController.health -= damage;
+        }
+    }
 
     public void DamageOverTime(int damageAmount, int damageTime)
     {
@@ -148,31 +173,6 @@ public class Damage : MonoBehaviour
                 Debug.Log(CurrHp);
                 amountDamaged += damagePerLoop;
                 yield return new WaitForSeconds(1f);
-            }
-        }
-
-        void OnCollisionEnter2D(Collision2D other) // Method to check wether something is hit or not
-        {
-            if (GameObject.Find("DataManager") == null)
-            { // returns if the data manager doesn't exist
-                Debug.Log("dataManager not found");
-                SceneManager.LoadScene(0);
-                Debug.Log("Load Scene 0");
-                return;
-            }
-
-            foreach (ContactPoint2D hitPos in other.contacts)
-            {
-                if (other.gameObject.tag == "Player")
-                {
-                    gameController.health -= damage;
-                    CurrHp -= gameController.playerDamage;
-                }
-
-                if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
-                {
-                    Destroy(this.gameObject);
-                }
             }
         }
     }
