@@ -108,7 +108,7 @@ public class Damage : MonoBehaviour
         anim.SetBool("canWalk", true);
     }
 
-
+    /*
     void OnTriggerEnter2D(Collider2D trig)
     {
         if (trig.gameObject.tag == "Player")
@@ -125,6 +125,7 @@ public class Damage : MonoBehaviour
             inRange = false;
         }
     }
+    */
 
 
     /*void RaycastDebugger()

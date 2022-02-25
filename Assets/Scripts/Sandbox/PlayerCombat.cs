@@ -6,8 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
     //Variable decleration
     public Transform attackPoint; //The point at which the sword hits
-    public float attackRange = 0.5f; // the Range of the melee attack
+    public Transform attackRange; // the Range of the melee attack
     public LayerMask NPCLayers; //Determines what is hit by using Layers
+    public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
+    public float attackAngle; //angle of the roation the capsule has
 
     // Update is called once per frame
     void Update()
@@ -21,7 +23,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack() //looks whether there is an overlap in the circle, then safes whatever is overlapping in an array and then hits the enemy
     {
-        Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, NPCLayers);
+        Collider2D [] hitEnemies = Physics2D.OverlapCapsuleAll(attackPoint.position, attackRange.position, attackDirection, attackAngle, NPCLayers);
 
         foreach (Collider2D NPC in hitEnemies)
         {
@@ -31,6 +33,6 @@ public class PlayerCombat : MonoBehaviour
 
     void OnDrawGizmosSelected() //draws the range of the attack; only for testing purposes, will be deleted later
     {
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, 0.5F);
     }
 }
