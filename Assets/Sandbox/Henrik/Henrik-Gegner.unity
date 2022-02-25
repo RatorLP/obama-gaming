@@ -295,13 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  attackRange: 0
   attackTimer: 0
-  rayCastLength: 0
-  rayCast: {fileID: 0}
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
   inRange: 0
   attackCooling: 0
 --- !u!95 &75749842
@@ -333,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 143379617}
   - component: {fileID: 143379618}
+  - component: {fileID: 143379619}
   m_Layer: 7
   m_Name: attackTriggerArea
   m_TagString: Untagged
@@ -370,6 +365,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &143379619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143379616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff62d58d24ec804595fd287caeead76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1576183289}
 --- !u!1 &311289333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -576,6 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487877046}
   - component: {fileID: 487877047}
+  - component: {fileID: 487877048}
   m_Layer: 11
   m_Name: attackHitbox
   m_TagString: Untagged
@@ -607,12 +616,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &487877048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487877045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0bc34594dccf84d8c431a88a89a433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1576183289}
 --- !u!1 &560160034
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +799,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &669050955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669050956}
+  m_Layer: 0
+  m_Name: attackrange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669050956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669050955}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9999994, w: 0.001104217}
+  m_LocalPosition: {x: -0.455, y: 0.15, z: -5.107567}
+  m_LocalScale: {x: 1, y: 7.122291, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1116243484}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709755900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1461,7 @@ Transform:
   - {fileID: 859443284}
   - {fileID: 560160035}
   - {fileID: 1134795978}
+  - {fileID: 669050956}
   m_Father: {fileID: 2026453617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.873}
@@ -1569,7 +1622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134795977}
   m_LocalRotation: {x: -0, y: -0, z: 0.9999994, w: 0.001104217}
-  m_LocalPosition: {x: -0.033, y: -0.19, z: -3.5379438}
+  m_LocalPosition: {x: 0.015, y: -0.09, z: -3.5379438}
   m_LocalScale: {x: 1, y: 7.122291, z: 1}
   m_Children: []
   m_Father: {fileID: 1116243484}
@@ -1970,13 +2023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  attackRange: 0
   attackTimer: 2
-  rayCastLength: 0
-  rayCast: {fileID: 0}
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
   inRange: 0
   attackCooling: 0
 --- !u!1 &1665065675 stripped
@@ -2494,6 +2541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286b8dc269e5a3044aa0c4ec6b6580d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Combat: {fileID: 2026453622}
   runSpeed: 20
 --- !u!58 &2026453620
 CircleCollider2D:
@@ -2536,12 +2584,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1134795978}
-  attackRange: {fileID: 0}
+  attackRange: {fileID: 669050956}
   NPCLayers:
     serializedVersion: 2
     m_Bits: 128
   attackDirection: 0
   attackAngle: 0
+  attackTimer: 2
+  attackCooling: 0
+  attacking: 0
 --- !u!95 &2026453623
 Animator:
   serializedVersion: 3

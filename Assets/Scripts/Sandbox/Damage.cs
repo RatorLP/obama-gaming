@@ -12,13 +12,13 @@ public class Damage : MonoBehaviour
     float CurrHp; //displays your current amount HP in natural numbers
     public int damage;
 
-    public float attackRange;
+    //public float attackRange;
     public float attackTimer;
-    public float rayCastLength;
-    public Transform rayCast;
-    public LayerMask raycastMask;
+    //public float rayCastLength;
+    //public Transform rayCast;
+    //public LayerMask raycastMask;
 
-    public RaycastHit2D hit;
+    //public RaycastHit2D hit;
     private GameObject target;
     private Animator anim;
     private float distance;
