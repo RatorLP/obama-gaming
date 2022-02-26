@@ -10,9 +10,12 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask NPCLayers; //Determines what is hit by using Layers
     public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
     public float attackAngle; //angle of the roation the capsule has
-    public float attackTimer; //attackspeed
+    public float attackTimer; //delay between attacks
+    public float PlayerDmg; //Damage the player deals
     public bool attackCooling = false; // cooldown activation
     public bool attacking; // if player is currently attacking
+
+    public Damage Enemy;
 
     private float IntTimer; //actual timer
     private Animator anim; //animator setup
@@ -54,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            Debug.Log("hit");
+            Enemy.TakeDmg(PlayerDmg);
         }
     }
 
@@ -71,17 +74,13 @@ public class PlayerCombat : MonoBehaviour
         {
             attackCooling = false;
             attackTimer = IntTimer;
-
         }
-    }
-
-    public void TriggerCooling()
-    {
-        attackCooling = true;
     }
 
     public void FinishedAttack()
     {
+        attackCooling = true;
+        anim.SetBool("Attack", false);
         attacking = false;
     }
 }

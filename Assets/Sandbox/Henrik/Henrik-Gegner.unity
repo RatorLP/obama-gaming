@@ -2522,7 +2522,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -2541,8 +2541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286b8dc269e5a3044aa0c4ec6b6580d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPlayer: {fileID: 2026453615}
   Combat: {fileID: 2026453622}
-  runSpeed: 20
+  Speed: 20
 --- !u!58 &2026453620
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2590,7 +2591,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDirection: 0
   attackAngle: 0
-  attackTimer: 2
+  attackTimer: 0.5
   attackCooling: 0
   attacking: 0
 --- !u!95 &2026453623

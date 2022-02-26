@@ -139,7 +139,7 @@ public class Damage : MonoBehaviour
         attackCooling = true;
     }
 
-    void TakeDmg(int gotteddmg)
+    public void TakeDmg(float gotteddmg)
     {
         CurrHp -= gotteddmg;
 
