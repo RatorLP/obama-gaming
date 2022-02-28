@@ -9,7 +9,7 @@ public class TurretScript : MonoBehaviour
     GameObject dataManager; //Variable declaration
     DDOL gameController;
     public float Range; // Range of the enemy
-    float MaxHp = 10;
+    float MaxHp = 100;
     float CurrHp;
     public Transform Target; // the enemy's target
     bool Detected = false; // looks wether Player is detected or not
@@ -85,17 +85,14 @@ public class TurretScript : MonoBehaviour
             SceneManager.LoadScene(0);
             return;
         }
-        foreach (ContactPoint2D hitPos in other.contacts)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                CurrHp -= gameController.playerDamage;
-            }
-            if (CurrHp <= 0)// destroys the Enemy if it's helth reaches zero
-            {
-                Destroy(this.gameObject);
-            }
-        }
+    }
+    public void TakeDmg(float gotteddmg)
+    {
+        CurrHp -= gotteddmg;
 
+        if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

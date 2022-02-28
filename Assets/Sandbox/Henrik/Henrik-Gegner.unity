@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 709755903}
   - component: {fileID: 709755901}
   - component: {fileID: 709755904}
+  - component: {fileID: 709755902}
   m_Layer: 7
   m_Name: Ranged Eminem smol
   m_TagString: Untagged
@@ -866,6 +867,27 @@ MonoBehaviour:
   shootingPoint: {fileID: 827012247}
   FireRate: 2
   Force: 100
+--- !u!50 &709755902
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709755900}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!4 &709755903
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,6 +2090,7 @@ GameObject:
   - component: {fileID: 1877018178}
   - component: {fileID: 1877018180}
   - component: {fileID: 1877018181}
+  - component: {fileID: 1877018179}
   m_Layer: 7
   m_Name: Ranged Eminem BIIIG
   m_TagString: Untagged
@@ -2091,6 +2114,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1877018179
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877018177}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &1877018180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2593,10 +2637,9 @@ MonoBehaviour:
   attackDirection: 0
   attackAngle: 0
   attackTimer: 0.5
-  PlayerDmg: 0
+  PlayerDmg: 20
   attackCooling: 0
   attacking: 0
-  Enemy: {fileID: 1576183289}
 --- !u!95 &2026453623
 Animator:
   serializedVersion: 3

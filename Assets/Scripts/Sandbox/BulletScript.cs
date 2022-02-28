@@ -42,7 +42,7 @@ public class BulletScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                gameController.health -= 20;
+                gameController.health -= 2;
                 
             }
         }

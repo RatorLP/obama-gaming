@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Combat.attacking)
         {
-            runSpeed = 0F;
+            //runSpeed = 0F;
         }
         else
         {

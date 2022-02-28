@@ -11,11 +11,11 @@ public class PlayerCombat : MonoBehaviour
     public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
     public float attackAngle; //angle of the roation the capsule has
     public float attackTimer; //delay between attacks
-    public float PlayerDmg; //Damage the player deals
+    public float PlayerDmg = 20; //Damage the player deals
     public bool attackCooling = false; // cooldown activation
     public bool attacking = false; // if player is currently attacking
 
-    public Damage Enemy;
+    //public Damage Enemy;
 
     private float IntTimer; //actual timer
     private Animator anim; //animator setup
@@ -57,7 +57,11 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            Enemy.TakeDmg(PlayerDmg);
+            NPC.GetComponent<Damage>().TakeDmg(PlayerDmg);
+            Debug.Log("TWAT, YOU HIT");
+            NPC.GetComponent<TurretScript>().TakeDmg(PlayerDmg);
+            Debug.Log("TWAT, YOU HIT");
+
         }
     }
 
