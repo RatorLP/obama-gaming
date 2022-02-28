@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() //Convertes values to a vector (runs every physics-update)
     {
 
-        if (Input.GetMouseButtonDown(0) && Combat.attackCooling == false)
+        if (/*Input.GetMouseButtonDown(0) &&*/ Combat.attackCooling == false)
         {
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //mouse on gamescreen (main camera)
 

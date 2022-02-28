@@ -86,5 +86,6 @@ public class PlayerCombat : MonoBehaviour
     public void triggerCooling()
     {
         attackCooling = true;
+        attacking = false;
     }
 }
