@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
-    private float runSpeed = 10.0f;
+    public float runSpeed = 10.0f;
 
     public float Speed = 10.0F; 
 
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //Maps keypresses to variables with values between -1 and 1 (executed every frame)
     {
-        if (Combat.attacking == true)
+        if (Combat.attacking)
         {
             runSpeed = 0F;
         }

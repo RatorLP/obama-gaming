@@ -13,7 +13,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackTimer; //delay between attacks
     public float PlayerDmg; //Damage the player deals
     public bool attackCooling = false; // cooldown activation
-    public bool attacking; // if player is currently attacking
+    public bool attacking = false; // if player is currently attacking
 
     public Damage Enemy;
 
@@ -79,8 +79,12 @@ public class PlayerCombat : MonoBehaviour
 
     public void FinishedAttack()
     {
-        attackCooling = true;
         anim.SetBool("Attack", false);
         attacking = false;
+    }
+
+    public void triggerCooling()
+    {
+        attackCooling = true;
     }
 }
