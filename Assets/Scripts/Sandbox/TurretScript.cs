@@ -9,8 +9,6 @@ public class TurretScript : MonoBehaviour
     GameObject dataManager; //Variable declaration
     DDOL gameController;
     public float Range; // Range of the enemy
-    float MaxHp = 100;
-    float CurrHp;
     public Transform Target; // the enemy's target
     bool Detected = false; // looks wether Player is detected or not
 
@@ -25,7 +23,6 @@ public class TurretScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrHp = MaxHp;
         if (GameObject.Find("DataManager") == null)
         { //returns if the data manager doesn't exist
             Debug.Log("dataManager not found");
@@ -86,13 +83,5 @@ public class TurretScript : MonoBehaviour
             return;
         }
     }
-    public void TakeDmg(float gotteddmg)
-    {
-        CurrHp -= gotteddmg;
 
-        if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }

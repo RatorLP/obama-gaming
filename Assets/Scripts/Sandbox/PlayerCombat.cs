@@ -57,11 +57,8 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            NPC.GetComponent<Damage>().TakeDmg(PlayerDmg);
+            NPC.GetComponent<hurtingenemys>().TakeDmg(PlayerDmg);
             Debug.Log("TWAT, YOU HIT");
-            NPC.GetComponent<TurretScript>().TakeDmg(PlayerDmg);
-            Debug.Log("TWAT, YOU HIT");
-
         }
     }
 

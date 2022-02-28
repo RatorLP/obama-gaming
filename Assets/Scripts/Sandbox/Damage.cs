@@ -139,16 +139,6 @@ public class Damage : MonoBehaviour
         attackCooling = true;
     }
 
-    public void TakeDmg(float gotteddmg)
-    {
-        CurrHp -= gotteddmg;
-
-        if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")

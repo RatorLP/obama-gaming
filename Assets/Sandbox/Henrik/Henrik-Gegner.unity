@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 75749839}
   - component: {fileID: 75749841}
   - component: {fileID: 75749842}
+  - component: {fileID: 75749843}
   m_Layer: 7
   m_Name: Eminemy 2
   m_TagString: Untagged
@@ -317,6 +318,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &75749843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4516f9558f2cd844abe6c01e7e9a16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 40
 --- !u!1 &143379616
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +342,7 @@ GameObject:
   - component: {fileID: 143379617}
   - component: {fileID: 143379618}
   - component: {fileID: 143379619}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: attackTriggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612806035}
   - component: {fileID: 612806036}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: SquareGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,6 +855,7 @@ GameObject:
   - component: {fileID: 709755901}
   - component: {fileID: 709755904}
   - component: {fileID: 709755902}
+  - component: {fileID: 709755905}
   m_Layer: 7
   m_Name: Ranged Eminem smol
   m_TagString: Untagged
@@ -930,6 +945,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &709755905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709755900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4516f9558f2cd844abe6c01e7e9a16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 20
 --- !u!1 &823723263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1411,7 @@ GameObject:
   - component: {fileID: 1109674689}
   - component: {fileID: 1109674688}
   - component: {fileID: 1109674687}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: box to play around
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1845,6 +1873,7 @@ GameObject:
   - component: {fileID: 1576183289}
   - component: {fileID: 1576183288}
   - component: {fileID: 1576183287}
+  - component: {fileID: 1576183290}
   m_Layer: 7
   m_Name: Eminemy
   m_TagString: Untagged
@@ -2048,6 +2077,19 @@ MonoBehaviour:
   attackTimer: 2
   inRange: 0
   attackCooling: 0
+--- !u!114 &1576183290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576183280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4516f9558f2cd844abe6c01e7e9a16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 50
 --- !u!1 &1665065675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
@@ -2091,6 +2133,7 @@ GameObject:
   - component: {fileID: 1877018180}
   - component: {fileID: 1877018181}
   - component: {fileID: 1877018179}
+  - component: {fileID: 1877018182}
   m_Layer: 7
   m_Name: Ranged Eminem BIIIG
   m_TagString: Untagged
@@ -2180,6 +2223,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1877018182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877018177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4516f9558f2cd844abe6c01e7e9a16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 20
 --- !u!1 &1877487157
 GameObject:
   m_ObjectHideFlags: 0
