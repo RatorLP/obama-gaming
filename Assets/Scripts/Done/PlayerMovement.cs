@@ -60,14 +60,12 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("canWalk", true);
         }
 
-        float horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        float vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
-        Vector3 movement = new Vector3(horizontal, vertical, 0.0F);
+        Vector3 movement = new Vector3(((-1)*vertical), horizontal, 0.0F);
 
         movement.Normalize();
-
-        
 
         if (movement != Vector3.zero && Combat.attacking == false)
         {

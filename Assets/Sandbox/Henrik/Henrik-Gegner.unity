@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 2026453615}
   Combat: {fileID: 2026453622}
-  runSpeed: 0
+  runSpeed: 10
   Speed: 10
 --- !u!58 &2026453620
 CircleCollider2D:
@@ -2919,9 +2919,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDirection: 0
   attackAngle: 0
-  attackTimer: 0
   PlayerDmg: 20
-  attackCooling: 0
   attacking: 0
 --- !u!95 &2026453623
 Animator:

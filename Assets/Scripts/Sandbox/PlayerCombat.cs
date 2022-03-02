@@ -10,9 +10,9 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask NPCLayers; //Determines what is hit by using Layers
     public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
     public float attackAngle; //angle of the roation the capsule has
-    public float attackTimer; //delay between attacks
+    private float attackTimer; //delay between attacks
     public float PlayerDmg = 20; //Damage the player deals
-    public bool attackCooling = false; // cooldown activation
+    private bool attackCooling = false; // cooldown activation
     public bool attacking = false; // if player is currently attacking
 
     //public Damage Enemy;
