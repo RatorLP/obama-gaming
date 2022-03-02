@@ -226,13 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  attackRange: 5
   attackTimer: 2
-  rayCastLength: 0
-  rayCast: {fileID: 0}
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
   inRange: 0
   attackCooling: 0
 --- !u!95 &375938196
@@ -407,6 +401,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3295369346876549264, guid: 1b287cab9dfd32742af11ebeddd59d07, type: 3}
+      propertyPath: Speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295369346876549264, guid: 1b287cab9dfd32742af11ebeddd59d07, type: 3}
+      propertyPath: Combat
+      value: 
+      objectReference: {fileID: 716660630}
+    - target: {fileID: 3295369346876549264, guid: 1b287cab9dfd32742af11ebeddd59d07, type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 716660629}
+    - target: {fileID: 3295369346876549264, guid: 1b287cab9dfd32742af11ebeddd59d07, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -499,10 +505,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1730818691}
-  attackRange: 0.5
+  attackRange: {fileID: 0}
   NPCLayers:
     serializedVersion: 2
     m_Bits: 128
+  attackDirection: 0
+  attackAngle: 0
+  attackTimer: 0
+  PlayerDmg: 20
+  attackCooling: 0
+  attacking: 0
 --- !u!95 &716660631
 Animator:
   serializedVersion: 3

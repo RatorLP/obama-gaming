@@ -924,13 +924,13 @@ C# parse time         : 150ms
 candidates check time : 21ms
 console write time    : 0ms
 
-[api-updater (non-obsolete-error-filter)] 02.03.2022 14:01:33 : Starting C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 02.03.2022 14:13:13 : Starting D:/Unity_ShiSh/2020.3.26f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
-jit/startup time      : 481,929ms
-moved types parse time: 38ms
+jit/startup time      : 1039,8823ms
+moved types parse time: 39ms
 candidates parse time : 1ms
-C# parse time         : 204ms
-candidates check time : 28ms
+C# parse time         : 546ms
+candidates check time : 26ms
 console write time    : 0ms
 
