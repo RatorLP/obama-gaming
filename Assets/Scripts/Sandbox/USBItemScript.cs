@@ -9,7 +9,6 @@ public class USBItemScript : MonoBehaviour
     GameObject dataManager; //Variable declaration
     DDOL gameController;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +39,8 @@ public class USBItemScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") 
             {
-                //this line is supposed to be for the increased player movement speed - still WIP
+                gameController.playerMovementSpeed += 10;
+                Debug.Log("Sped" + gameController.playerMovementSpeed);
                 Destroy(this.gameObject);
             }
         }

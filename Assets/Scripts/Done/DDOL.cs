@@ -7,6 +7,7 @@ public class DDOL : MonoBehaviour
 {
     public bool dirtyRazor = false;//looks wether the Item "Dirty Razor" has been picked up
     public float playerDamage = 30;
+    public float playerMovementSpeed = 15;
     public int health = 100;
     public int maxHealth = 100;
     public int levelsUntilBossfight = 100;
