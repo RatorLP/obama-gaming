@@ -12,11 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim; //animator setup
 
     public PlayerCombat Combat; // to use varables in PlayerCombat
-
-    float horizontal;
-    float vertical;
     float moveLimiter = 0.7f;
     public float runSpeed = 10.0f;
+
+    float vertical;
+    float horizontal;
 
     private bool rotation = true;
 
@@ -45,19 +45,19 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("canWalk", true);
         }
 
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        float horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+        float vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
-        Vector2 movement = new Vector2(horizontal, vertical);
+        Vector3 movement = new Vector3(horizontal, vertical, 0.0F);
 
         movement.Normalize();
 
         transform.Translate(movement * runSpeed * Time.deltaTime, Space.World);
 
-        if (movement != Vector2.zero && Combat.attacking == false)
+        if (movement != Vector3.zero && Combat.attacking == false)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, movement), 1F);
-             //= Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movement);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
         }
 
 

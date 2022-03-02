@@ -89,4 +89,5 @@ public class PlayerCombat : MonoBehaviour
         attackCooling = true;
         attacking = false;
     }
+
 }
