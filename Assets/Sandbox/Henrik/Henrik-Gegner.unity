@@ -2628,7 +2628,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2026453619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   myPlayer: {fileID: 2026453615}
   Combat: {fileID: 2026453622}
   runSpeed: 10
-  Speed: 20
+  Speed: 10
 --- !u!58 &2026453620
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2692,7 +2692,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDirection: 0
   attackAngle: 0
-  attackTimer: 0.5
+  attackTimer: 0
   PlayerDmg: 20
   attackCooling: 0
   attacking: 0

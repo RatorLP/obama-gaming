@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     float moveLimiter = 0.7f;
     public float runSpeed = 10.0f;
 
+    private bool rotation = true;
+
     public float Speed = 10.0F; 
 
     void Awake()
@@ -35,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Combat.attacking)
         {
-            //runSpeed = 0F;
+            runSpeed = 2F;
         }
         else
         {
@@ -45,13 +47,26 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
-       
+
+        Vector2 movement = new Vector2(horizontal, vertical);
+
+        movement.Normalize();
+
+        transform.Translate(movement * runSpeed * Time.deltaTime, Space.World);
+
+        if (movement != Vector2.zero && Combat.attacking == false)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, movement), 1F);
+             //= Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
+        }
+
+
     }
 
     void FixedUpdate() //Convertes values to a vector (runs every physics-update)
     {
 
-        if (/*Input.GetMouseButtonDown(0) &&*/ Combat.attackCooling == false)
+        if(Input.GetMouseButton(0) && rotation == true)
         {
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //mouse on gamescreen (main camera)
 
@@ -61,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, 0f, rotationZ); //rotating the player
         }
+        
+      
 
 
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
@@ -72,5 +89,15 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontal * runSpeed, vertical * runSpeed, 0);
         
+    }
+
+    public void EnableRotation()
+    {
+        rotation = true;
+    }
+
+    public void DisableRotation()
+    {
+        rotation = false;
     }
 }
