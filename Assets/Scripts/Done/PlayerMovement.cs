@@ -19,14 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerCombat Combat; // to use varables in PlayerCombat
     float moveLimiter = 0.7f;
-    public float runSpeed = 10.0f;
+    public float tempSpeed = 10.0f;
 
     float vertical;
     float horizontal;
 
     private bool rotation = true;
 
-    public float Speed; 
+    public float moveSpeed; 
 
     void Awake()
     {
@@ -49,14 +49,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //Maps keypresses to variables with values between -1 and 1 (executed every frame)
     {
-        Speed = gameController.playerMovementSpeed;
+        moveSpeed = gameController.playerMovementSpeed;
         if (Combat.attacking)
         {
-            runSpeed = 2F;
+            tempSpeed = 2F;
         }
         else
         {
-            runSpeed = Speed;
+            tempSpeed = moveSpeed;
             anim.SetBool("canWalk", true);
         }
 
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
                 vertical *= moveLimiter;
         }
 
-        rb.velocity = new Vector3(horizontal * runSpeed, vertical * runSpeed, 0);
+        rb.velocity = new Vector3(horizontal * tempSpeed, vertical * tempSpeed, 0);
         
     }
 

@@ -52,6 +52,40 @@ public class DDOL : MonoBehaviour
         }
     }
 
+    /*
+     *MethodenName: ItemController
+     *public void ItemController(String int)
+     *{
+     *   switch case String()
+     *   {
+     *      Case Item1
+     *      {
+     *          zu verändernde Variable; zB MoveSpeed += 10 * int; // Die cases müssen für Jedes Item erstellt werden
+     *          in ItemsSinceCheckpoint String speichern // ItemsSinceCheckpoint wird oben (dei den Variable) deklariert
+     *      }
+     *      
+     *   }
+     *}
+     *public void respawn()
+     *{
+     *  for (i = 0, i < ItemsSinceCheckpoint length, i++)
+     *  {
+     *      ItemController (ItemsSinceCheckpoint [i], -1);
+     *  }
+     *  
+     *}
+     *public void Checkpoint ()
+     *{
+     *  if (mathf.modulo(currentArrayIndex, 3) == 0)
+     *  {
+     *      ItemsSinceCheckpoint = {};
+     *  }
+     *  
+     *}
+     *
+     *
+     */
+
     public void PauseGame(bool pauseRequested)
     {
         if (pauseRequested)
@@ -101,6 +135,10 @@ public class DDOL : MonoBehaviour
 
     public void NextScene()
     {
+        /*
+         * Checkpoint();
+         * 
+         */
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(true);
@@ -110,6 +148,7 @@ public class DDOL : MonoBehaviour
         //currentArrayIndex++;
         //currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
         StartCoroutine(LoadLevelAsync()); //start async loading
+
     }
 
     private IEnumerator LoadLevelAsync()

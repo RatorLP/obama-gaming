@@ -9,7 +9,7 @@ public class USBItemScript : MonoBehaviour
     GameObject dataManager; //Variable declaration
     DDOL gameController;
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         if (GameObject.Find("DataManager") == null)
@@ -21,7 +21,7 @@ public class USBItemScript : MonoBehaviour
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
 
@@ -39,9 +39,9 @@ public class USBItemScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") 
             {
-                gameController.playerMovementSpeed += 10;
+                gameController.playerMovementSpeed += 10; //increases movement speed of the player
                 Debug.Log("Sped" + gameController.playerMovementSpeed);
-                Destroy(this.gameObject);
+                Destroy(this.gameObject); //removes object, so it does not interfere with gameplay
             }
         }
     }
