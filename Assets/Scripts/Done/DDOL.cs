@@ -17,10 +17,9 @@ public class DDOL : MonoBehaviour
     public int nextScene;
     public int currentScene;
     public bool pause;
-    public int[] skillA = new int[4];
-    public int[] skillB = new int[4];
-    public int[] skillC = new int[4];
-    public int[] skillD = new int[4];
+
+    public bool[] enabledSkills = new bool[24];
+    public int xpLevel = 100;
 
 
     public GameObject loadingScreen;
