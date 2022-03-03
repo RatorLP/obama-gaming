@@ -53,14 +53,14 @@ public class HP : MonoBehaviour
             return;
         }
 
-        targetProgress = (CurrHp / MaxHp); //target progress der leisete, fürs visuelle anpassen zum Wert von CurrHP
+        targetProgress = (CurrHp / MaxHp); //target progress der leisete, fï¿½rs visuelle anpassen zum Wert von CurrHP
 
-        if (slider.value < targetProgress)  //ändert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
+        if (slider.value < targetProgress)  //ï¿½ndert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
             slider.value += fillspeed * Time.deltaTime;
         }
 
-        if (slider.value > targetProgress)  //ändert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
+        if (slider.value > targetProgress)  //ï¿½ndert die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
             slider.value -= fillspeed * Time.deltaTime;
         }

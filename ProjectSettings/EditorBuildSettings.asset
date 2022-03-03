@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Sandbox/Henrik/Item Testing.unity
     guid: 668c3f72bd770c84380202a642f6d7ca
+  - enabled: 0
+    path: Assets/Sandbox/Olivia/SkillTree.unity
+    guid: 0cad36c495459124bb60f02f566c327c
   m_configObjects: {}

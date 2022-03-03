@@ -19,13 +19,13 @@ public class SkilltreeF : MonoBehaviour
     {
         if (gC.xpLevel >= 1)
         {
-            gC.movementSpeed += 2;
+            gC.playerMovementSpeed += 2;
             gC.xpLevel -= 1;
             gC.enabledSkills[2] = true;
         }
     }
 
-    public void Skill
+    public void Skill7()
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[2])
         {
@@ -35,7 +35,7 @@ public class SkilltreeF : MonoBehaviour
         }
     }
     
-    public void Skill
+    public void Skill8()
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[2])
         {
@@ -55,7 +55,7 @@ public class SkilltreeF : MonoBehaviour
         }
     }
 
-    public void Skill
+    public void Skill16()
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[7])
         {
@@ -75,7 +75,7 @@ public class SkilltreeF : MonoBehaviour
         }
     }
 
-    public void Skill
+    public void Skill18()
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[8])
         {
@@ -129,7 +129,7 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillFirstStrike()
     {
-        if (gc.xpLevel >= 1 && gC.enabledSkills[1])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[1])
         {
             gC.firstStrike = true;
             gC.xpLevel -= 1;
@@ -139,7 +139,7 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillCombo()
     {
-        if (gc.xpLevel >= 1 && gC.enabledSkills[1])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[1])
         {
             gC.combo = true;
             gC.xpLevel -= 1;
@@ -149,9 +149,9 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillCrit()
     {
-        if (gc.xpLevel >= 1 && gC.enabledSkills[5])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[5])
         {
-            gC.crit = 0,2;
+            gC.crit = 0.2;
             gC.xpLevel -= 1;
             gC.enabledSkills[13] = true;
         }
@@ -159,7 +159,7 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillElectroShock()
     {
-        if (gc.xpLevel >= 1 && gC.enabledSkills[5] && gc.enabledSkills[6])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[5] && gC.enabledSkills[6])
         {
             gC.shock = true;
             gC.xpLevel -= 1;
@@ -169,7 +169,7 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillAttackSpeed()
     {
-        if (gc.xpLevel >= 1 && gc.enabledSkills[6])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[6])
         {
             gC.attackDuration -= 0.2;
             gC.xpLevel -= 1;
@@ -183,7 +183,7 @@ public class SkilltreeF : MonoBehaviour
 
         if (gC.xpLevel >= 1)
         { // checks if skill is available
-            gC.enabledSkill[0] = true;
+            gC.enabledSkills[0] = true;
             gC.xpLevel -= 1;
             gC.healthGainFactor += 0.5;
         }
@@ -193,21 +193,21 @@ public class SkilltreeF : MonoBehaviour
     public void SkillHealthRegen()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[0])
-        {
-            gC.enabledSkill[3] = true;
+        //if (gC.xpLevel >= 1 && gC.enabledSkills[0])
+        //{
+            gC.enabledSkills[3] = true;
             gC.xpLevel -= 1;
-            gC.regeneration += 0.2;
-        }
+            gC.regen += 2f;
+       // }
 
     }
 
     public void SkillArmor()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[0])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[0])
         {
-            gC.enabledSkill[4] = true;
+            gC.enabledSkills[4] = true;
             gC.xpLevel -= 1;
             gC.armor += 0.2;
         }
@@ -217,9 +217,9 @@ public class SkilltreeF : MonoBehaviour
     public void SkillShield()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[3])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[3])
         {
-            gC.enabledSkill[10] = true;
+            gC.enabledSkills[10] = true;
             gC.xpLevel -= 1;
             gC.shield = true;
         }
@@ -229,9 +229,9 @@ public class SkilltreeF : MonoBehaviour
     public void SkillLiveSafer()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[3] && gC.enabledSkill[4])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[3] && gC.enabledSkills[4])
         {
-            gC.enabledSkill[11] = true;
+            gC.enabledSkills[11] = true;
             gC.xpLevel -= 1;
             gC.liveSafer = true;
         }
@@ -242,9 +242,9 @@ public class SkilltreeF : MonoBehaviour
     public void SkillThorns()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[4])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[4])
         {
-            gC.enabledSkill[12] = true;
+            gC.enabledSkills[12] = true;
             gC.xpLevel -= 1;
             gC.thorns += 0.2;
         }
@@ -254,9 +254,9 @@ public class SkilltreeF : MonoBehaviour
     public void SkillLiveSteal()
     {
 
-        if (gC.xpLevel >= 1 && gC.enabledSkill[11] && gC.enabledSkill[14])
+        if (gC.xpLevel >= 1 && gC.enabledSkills[11] && gC.enabledSkills[14])
         {
-            gC.enabledSkill[21] = true;
+            gC.enabledSkills[21] = true;
             gC.xpLevel -= 1;
             gC.liveSteal += 0.1;
         }
