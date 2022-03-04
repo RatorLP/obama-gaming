@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class USBItemScript : MonoBehaviour
+public class ShroomsItem : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
 
-    //Start is called before the first frame update
+
+    // Start is called before the first frame update
     void Start()
     {
         if (GameObject.Find("DataManager") == null)
@@ -21,7 +22,7 @@ public class USBItemScript : MonoBehaviour
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
     }
 
-    //Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
 
@@ -37,11 +38,13 @@ public class USBItemScript : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") 
+            if (other.gameObject.tag == "Player") //The amount of damage the player deals after picking up the Item
             {
-                gameController.playerMovementSpeed += 10; //increases movement speed of the player
-                Debug.Log("Time to Sped" + gameController.playerMovementSpeed);
-                Destroy(this.gameObject); //removes object, so it does not interfere with gameplay
+                gameController.maxHealth -= 10;
+                gameController.playerDamage += 15;
+                Debug.Log("Picked Up Shrooms, you feel kinda funny");
+                Debug.Log(gameController.maxHealth) ;
+                Destroy(this.gameObject);
             }
         }
     }

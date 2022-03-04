@@ -8,8 +8,8 @@ public class DDOL : MonoBehaviour
     public bool dirtyRazor = false;//looks wether the Item "Dirty Razor" has been picked up
     public float playerDamage = 30;
     public float playerMovementSpeed = 15;
-    public int health = 100;
-    public int maxHealth = 100;
+    public float health = 100;
+    public float maxHealth = 100;
     public int levelsUntilBossfight = 100;
     public int[] sceneOrder;
     private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
@@ -17,10 +17,27 @@ public class DDOL : MonoBehaviour
     public int nextScene;
     public int currentScene;
     public bool pause;
-    public int[] skillA = new int[4];
-    public int[] skillB = new int[4];
-    public int[] skillC = new int[4];
-    public int[] skillD = new int[4];
+
+    public bool[] enabledSkills = new bool[24];
+    public int xpLevel = 100;
+    public double enemySpeed = 1.0;
+    public bool dash = false;
+    public double enemyAttackSpeed = 1.0;
+    public bool enemyFreeze = false;
+    public bool firstStrike = false;
+    public bool combo = false;
+    public double crit = 1;
+    public bool shock = false;
+    public double attackDuration = 1.0;
+    public double healthGainFactor = 1.0;
+    //public float regeneration = 10f; // PROBLEME!!! keine Ahnung wieso -> deshalb neue Variable regen, funktioniert super
+    public double armor = 0.0;
+    public bool shield = false;
+    public bool liveSafer = false;
+    public double thorns = 0.0;
+    public double liveSteal = 0.0;
+    public float regen = 0f; 
+
 
 
     public GameObject loadingScreen;
@@ -50,7 +67,44 @@ public class DDOL : MonoBehaviour
         {
             NextScene();
         }
+
+        health += (float)(regen * Time.deltaTime); // updates the players health by the regeneration per frame
+        Debug.Log(regen);
     }
+
+    /*
+     *MethodenName: ItemController
+     *public void ItemController(String int)
+     *{
+     *   switch case String()
+     *   {
+     *      Case Item1
+     *      {
+     *          zu ver�ndernde Variable; zB MoveSpeed += 10 * int; // Die cases m�ssen f�r Jedes Item erstellt werden
+     *          in ItemsSinceCheckpoint String speichern // ItemsSinceCheckpoint wird oben (dei den Variable) deklariert
+     *      }
+     *      
+     *   }
+     *}
+     *public void respawn()
+     *{
+     *  for (i = 0, i < ItemsSinceCheckpoint length, i++)
+     *  {
+     *      ItemController (ItemsSinceCheckpoint [i], -1);
+     *  }
+     *  
+     *}
+     *public void Checkpoint ()
+     *{
+     *  if (mathf.modulo(currentArrayIndex, 3) == 0)
+     *  {
+     *      ItemsSinceCheckpoint = {};
+     *  }
+     *  
+     *}
+     *
+     *
+     */
 
     public void PauseGame(bool pauseRequested)
     {
@@ -65,25 +119,7 @@ public class DDOL : MonoBehaviour
         }
     }
 
-    public void Skill(string newSkill)
-    {
-        if (newSkill[0] == 'A')
-        {
-            skillA[newSkill[1]] = 1;
-        }
-        if (newSkill[0] == 'B')
-        {
-            skillB[newSkill[1]] = 1;
-        }
-        if (newSkill[0] == 'C')
-        {
-            skillC[newSkill[1]] = 1;
-        }
-        if (newSkill[0] == 'D')
-        {
-            skillD[newSkill[1]] = 1;
-        }
-    }
+    
     
     /*
      * old version without implemented loading screen
@@ -101,6 +137,10 @@ public class DDOL : MonoBehaviour
 
     public void NextScene()
     {
+        /*
+         * Checkpoint();
+         * 
+         */
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(true);
@@ -110,6 +150,7 @@ public class DDOL : MonoBehaviour
         //currentArrayIndex++;
         //currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
         StartCoroutine(LoadLevelAsync()); //start async loading
+
     }
 
     private IEnumerator LoadLevelAsync()
