@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/Fabian/Fabian 2D.unity
     guid: 31d83632109756842b956784a2e56b46
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sandbox/Olivia/SkillTree.unity
     guid: 0cad36c495459124bb60f02f566c327c
   m_configObjects: {}

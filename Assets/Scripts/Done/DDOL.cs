@@ -19,7 +19,7 @@ public class DDOL : MonoBehaviour
     public bool pause;
 
     public bool[] enabledSkills = new bool[24];
-    public int xpLevel = 100;
+    public int xpLevel = 5;
     public double enemySpeed = 1.0;
     public bool dash = false;
     public double enemyAttackSpeed = 1.0;
@@ -37,6 +37,8 @@ public class DDOL : MonoBehaviour
     public double thorns = 0.0;
     public double liveSteal = 0.0;
     public float regen = 0f; 
+
+    public GameObject skilltree;
 
 
 
@@ -69,7 +71,7 @@ public class DDOL : MonoBehaviour
         }
 
         health += (float)(regen * Time.deltaTime); // updates the players health by the regeneration per frame
-        Debug.Log(regen);
+        
     }
 
     /*
@@ -141,6 +143,7 @@ public class DDOL : MonoBehaviour
          * Checkpoint();
          * 
          */
+        //skilltree.SetActive(true);
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(true);
