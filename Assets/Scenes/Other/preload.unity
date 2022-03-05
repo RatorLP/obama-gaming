@@ -179,7 +179,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34515165}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -1048,7 +1048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226638545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1106028171}
@@ -1624,6 +1624,7 @@ MonoBehaviour:
   thorns: 0
   liveSteal: 0
   regen: 0
+  skilltree: {fileID: 226638545}
   loadingScreen: {fileID: 2033642211}
 --- !u!222 &627853009
 CanvasRenderer:
@@ -3301,7 +3302,8 @@ MonoBehaviour:
   abxy: {fileID: 851966774}
   bcxy: {fileID: 379303777}
   cz12: {fileID: 47529727}
-  uiCam: {fileID: 34515167}
+  skilltree: {fileID: 226638545}
+  skilltreeEnabled: 0
 --- !u!4 &1279915901
 Transform:
   m_ObjectHideFlags: 0
