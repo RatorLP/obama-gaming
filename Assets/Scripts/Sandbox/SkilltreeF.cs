@@ -97,7 +97,7 @@ public class SkilltreeF : MonoBehaviour
 
     public void SkillFreeze()
     {
-        if (gC.xpLevel >= 1 && gC.enabledSkills[9] && !gC.enabledSkills[20)
+        if (gC.xpLevel >= 1 && gC.enabledSkills[9] && !gC.enabledSkills[20])
         {
             gC.enemyFreeze = true;
             gC.xpLevel -= 1;
