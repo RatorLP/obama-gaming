@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Other/preload.unity
+    guid: 51e221c9b7ff7d542b0f3663d33db4b5
+  - enabled: 1
+    path: Assets/Sandbox/rico/menu.unity
+    guid: 07834d7c841548b40941cea9d60078f6
+  - enabled: 0
+    path: Assets/Sandbox/Fabian/Fabian 2D.unity
+    guid: 31d83632109756842b956784a2e56b46
+  - enabled: 1
+    path: Assets/Sandbox/Henrik/Henrik-Gegner.unity
+    guid: 38c53421900d5544d9f2f6a9c401f4de
+  - enabled: 0
+    path: Assets/Sandbox/yoshi/yoshi Hp bar und UI.unity
+    guid: f03e8f7d2bfc351479d9ae2f174be546
+  - enabled: 0
+    path: Assets/Sandbox/rico/rico-layouting.unity
+    guid: 01fb98a5dca20564a932a1469f84f87c
+  - enabled: 0
+    path: Assets/Sandbox/Henrik/Item Testing.unity
+    guid: 668c3f72bd770c84380202a642f6d7ca
+  - enabled: 0
+    path: Assets/Sandbox/Olivia/SkillTree.unity
+    guid: 0cad36c495459124bb60f02f566c327c
   m_configObjects: {}
