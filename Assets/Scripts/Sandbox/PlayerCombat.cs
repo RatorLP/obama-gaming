@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
     public float attackAngle; //angle of the roation the capsule has
     private float attackTimer; //delay between attacks
-    public float PlayerDmg = 20; //Damage the player deals
+    //public float PlayerDmg = 20; //Damage the player deals  (new version uses DDOL scripts playerDamege variable)
     private bool attackCooling = false; // cooldown activation
     public bool attacking = false; // if player is currently attacking
 
@@ -20,6 +20,15 @@ public class PlayerCombat : MonoBehaviour
     private float IntTimer; //actual timer
     private Animator anim; //animator setup
 
+    GameObject dataManager;
+    DDOL gameController;
+
+    void Start() // variable initialisation
+    {
+        dataManager = GameObject.Find("DataManager");
+        gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+
+    }
 
     void Awake() //called before first frame
     {
@@ -57,7 +66,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            NPC.GetComponent<hurtingenemys>().TakeDmg(PlayerDmg);
+            NPC.GetComponent<hurtingenemys>().TakeDmg(gameController.playerDamage);
             Debug.Log("TWAT, YOU HIT");
         }
     }

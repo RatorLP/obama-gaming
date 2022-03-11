@@ -31,6 +31,8 @@ public class SkilltreeF : MonoBehaviour
     public Image abxy;
     public Image bcxy;
     public Image cz12;
+
+    public Color32 skilledColor = new Color32(0, 255, 0, 100);
     
     public GameObject skilltree;
     public bool skilltreeEnabled;
@@ -71,7 +73,7 @@ public class SkilltreeF : MonoBehaviour
             gC.playerMovementSpeed += 2;
             gC.xpLevel -= 1;
             gC.enabledSkills[2] = true;
-            c.color = new Color32(0,255,0,100);
+            c.color = skilledColor;
         }
     }
 
@@ -82,7 +84,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[7] = true;
-            cx.color = new Color32(0,255,0,100);
+            cx.color = skilledColor;
         }
     }
     
@@ -93,7 +95,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[8] = true;
-            cy.color = new Color32(0,255,0,100);
+            cy.color = skilledColor;
         }
     }
 
@@ -104,7 +106,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemySpeed -= 10;
             gC.xpLevel -= 1;
             gC.enabledSkills[9] = true;
-            cz.color = new Color32(0,255,0,100);
+            cz.color = skilledColor;
         }
     }
 
@@ -115,7 +117,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[16] = true;
-            cx1.color = new Color32(0,255,0,100);
+            cx1.color = skilledColor;
         }
     }
 
@@ -126,7 +128,7 @@ public class SkilltreeF : MonoBehaviour
             gC.dash = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[17] = true;
-            cxy.color = new Color32(0,255,0,100);
+            cxy.color = skilledColor;
         }
     }
 
@@ -137,7 +139,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[18] = true;
-            cy1.color = new Color32(0,255,0,100);
+            cy1.color = skilledColor;
         }
     }
 
@@ -148,7 +150,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemyAttackSpeed *= 0.9f;
             gC.xpLevel -= 1;
             gC.enabledSkills[19] = true;
-            cz1.color = new Color32(0,255,0,100);
+            cz1.color = skilledColor;
         }
     }
 
@@ -159,7 +161,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemyFreeze = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[20] = true;
-            cz2.color = new Color32(0,255,0,100);
+            cz2.color = skilledColor;
         }
     }
 
@@ -170,7 +172,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[23] = true;
-            cz12.color = new Color32(0,255,0,100);
+            cz12.color = skilledColor;
         }
     }
 
@@ -182,7 +184,7 @@ public class SkilltreeF : MonoBehaviour
             gC.playerDamage += 20;
             gC.xpLevel -= 1;
             gC.enabledSkills[1] = true;
-            b.color = new Color32(0,255,0,100);
+            b.color = skilledColor;
         }
 
     }
@@ -194,7 +196,7 @@ public class SkilltreeF : MonoBehaviour
             gC.firstStrike = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[5] = true;
-            bx.color = new Color32(0,255,0,100);
+            bx.color = skilledColor;
         }
     }
 
@@ -205,7 +207,7 @@ public class SkilltreeF : MonoBehaviour
             gC.combo = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[6] = true;
-            by.color = new Color32(0,255,0,100);
+            by.color = skilledColor;
         }
     }
 
@@ -213,10 +215,10 @@ public class SkilltreeF : MonoBehaviour
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[5] && !gC.enabledSkills[13])
         {
-            gC.crit = 0.2;
+            gC.crit = 0.2f;
             gC.xpLevel -= 1;
             gC.enabledSkills[13] = true;
-            bx1.color = new Color32(0,255,0,100);
+            bx1.color = skilledColor;
         }
     }
 
@@ -227,7 +229,7 @@ public class SkilltreeF : MonoBehaviour
             gC.shock = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[14] = true;
-            bxy.color = new Color32(0,255,0,100);
+            bxy.color = skilledColor;
         }
     }
 
@@ -235,10 +237,10 @@ public class SkilltreeF : MonoBehaviour
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[6] && !gC.enabledSkills[15])
         {
-            gC.attackDuration -= 0.2;
+            gC.attackDuration -= 0.2f;
             gC.xpLevel -= 1;
             gC.enabledSkills[15] = true;
-            by1.color = new Color32(0,255,0,100);
+            by1.color = skilledColor;
         }
     }
 
@@ -250,8 +252,10 @@ public class SkilltreeF : MonoBehaviour
         { // checks if skill is available
             gC.enabledSkills[0] = true;
             gC.xpLevel -= 1;
-            gC.healthGainFactor += 0.5;
-            a.color = new Color32(0,255,0,100);
+            gC.healthGainFactor += 0.5f;
+            gC.maxHealth += 20;
+            gC.health += 20;
+            a.color = skilledColor;
         }
 
     }
@@ -264,7 +268,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[3] = true;
             gC.xpLevel -= 1;
             gC.regen += 2f;
-            ax.color = new Color32(0,255,0,100);
+            ax.color = skilledColor;
         }
 
     }
@@ -276,8 +280,8 @@ public class SkilltreeF : MonoBehaviour
         {
             gC.enabledSkills[4] = true;
             gC.xpLevel -= 1;
-            gC.armor += 0.2;
-            ay.color = new Color32(0,255,0,100);
+            gC.armor += 0.2f;
+            ay.color = skilledColor;
         }
 
     }
@@ -290,7 +294,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[10] = true;
             gC.xpLevel -= 1;
             gC.shield = true;
-            ax1.color = new Color32(0,255,0,100);
+            ax1.color = skilledColor;
         }
 
     }
@@ -303,7 +307,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[11] = true;
             gC.xpLevel -= 1;
             gC.liveSafer = true;
-            axy.color = new Color32(0,255,0,100);
+            axy.color = skilledColor;
         }
 
     }
@@ -316,8 +320,8 @@ public class SkilltreeF : MonoBehaviour
         {
             gC.enabledSkills[12] = true;
             gC.xpLevel -= 1;
-            gC.thorns += 0.2;
-            ay1.color = new Color32(0,255,0,100);
+            gC.thorns += 0.2f;
+            ay1.color = skilledColor;
         }
 
     }
@@ -329,8 +333,8 @@ public class SkilltreeF : MonoBehaviour
         {
             gC.enabledSkills[21] = true;
             gC.xpLevel -= 1;
-            gC.liveSteal += 0.1;
-            abxy.color = new Color32(0,255,0,100);
+            gC.liveSteal += 0.1f;
+            abxy.color = skilledColor;
         }
 
     }
@@ -343,7 +347,7 @@ public void SkillFireball()
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[22] = true;
-            bcxy.color = new Color32(0,255,0,100);
+            bcxy.color = skilledColor;
             Debug.Log("Fireball");
         }
     }

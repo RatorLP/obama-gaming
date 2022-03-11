@@ -20,22 +20,22 @@ public class DDOL : MonoBehaviour
 
     public bool[] enabledSkills = new bool[24];
     public int xpLevel = 5;
-    public double enemySpeed = 1.0;
+    public float enemySpeed = 1.0f;
     public bool dash = false;
-    public double enemyAttackSpeed = 1.0;
+    public float enemyAttackSpeed = 1.0f;
     public bool enemyFreeze = false;
     public bool firstStrike = false;
     public bool combo = false;
-    public double crit = 1;
+    public float crit = 1;
     public bool shock = false;
-    public double attackDuration = 1.0;
-    public double healthGainFactor = 1.0;
+    public float attackDuration = 1.0f;
+    public float healthGainFactor = 1.0f;
     //public float regeneration = 10f; // PROBLEME!!! keine Ahnung wieso -> deshalb neue Variable regen, funktioniert super
-    public double armor = 0.0;
+    public float armor = 0.0f;
     public bool shield = false;
     public bool liveSafer = false;
-    public double thorns = 0.0;
-    public double liveSteal = 0.0;
+    public float thorns = 0.0f;
+    public float liveSteal = 0.0f;
     public float regen = 0f; 
 
     public GameObject skilltree;
