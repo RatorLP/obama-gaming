@@ -23,6 +23,14 @@ public class PlayerCombat : MonoBehaviour
     GameObject dataManager;
     DDOL gameController;
 
+    // variables to calculate the final damage
+    public float finalDamage;
+    public float damageMultiplicator;
+    public float firstStrikeCooldown = 5.0f;
+    public bool firstStrikeAvailable;
+    public float lastFirstStrikeTime = 0.0f;
+    
+
     void Start() // variable initialisation
     {
         dataManager = GameObject.Find("DataManager");
@@ -50,6 +58,11 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+
+        if (Time.time - lastFirstStrikeTime > firstStrikeCooldown && firstStrikeAvailable == false)
+            {
+                firstStrikeAvailable = true;
+            }
     }
 
 
@@ -66,9 +79,26 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            NPC.GetComponent<hurtingenemys>().TakeDmg(gameController.playerDamage);
-            Debug.Log("TWAT, YOU HIT");
+            calculateDamage();
+            NPC.GetComponent<hurtingenemys>().TakeDmg(finalDamage);
+            Debug.Log("TWAT, YOU HIT! You did: " +  finalDamage);
         }
+    }
+
+    void calculateDamage() {
+        damageMultiplicator = 1;
+
+        if(Random.value <= gameController.crit) {
+            damageMultiplicator += 1;
+        }
+        if(firstStrikeAvailable && gameController.firstStrike) {
+            lastFirstStrikeTime = Time.time;
+            firstStrikeAvailable = false;
+            damageMultiplicator += 0.5f;
+        } 
+
+        finalDamage = gameController.playerDamage * damageMultiplicator;
+
     }
 
     void OnDrawGizmosSelected() //draws the range of the attack; only for testing purposes, will be deleted later

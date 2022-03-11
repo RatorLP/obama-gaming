@@ -26,7 +26,7 @@ public class DDOL : MonoBehaviour
     public bool enemyFreeze = false;
     public bool firstStrike = false;
     public bool combo = false;
-    public float crit = 1;
+    public float crit = 0;
     public bool shock = false;
     public float attackDuration = 1.0f;
     public float healthGainFactor = 1.0f;
