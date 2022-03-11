@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 1080065609656113570, guid: af03914384171324fb55d2bf032277a5, type: 3}
+  target: {fileID: 0}
 --- !u!61 &4846032790003016586
 BoxCollider2D:
   m_ObjectHideFlags: 0
