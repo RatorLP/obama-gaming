@@ -24,11 +24,13 @@ public class PlayerCombat : MonoBehaviour
     DDOL gameController;
 
     // variables to calculate the final damage
-    public float finalDamage;
-    public float damageMultiplicator;
-    public float firstStrikeCooldown = 5.0f;
-    public bool firstStrikeAvailable;
-    public float lastFirstStrikeTime = 0.0f;
+    private float finalDamage;
+    private float damageMultiplicator = 1f;
+    private float firstStrikeCooldown = 5.0f;
+    private bool firstStrikeAvailable = true;
+    private float lastAttackTime = 0f;
+    private float comboCooldown = 1.5f;
+    private int comboCount = 0;
     
 
     void Start() // variable initialisation
@@ -59,10 +61,7 @@ public class PlayerCombat : MonoBehaviour
             Attack();
         }
 
-        if (Time.time - lastFirstStrikeTime > firstStrikeCooldown && firstStrikeAvailable == false)
-            {
-                firstStrikeAvailable = true;
-            }
+        
     }
 
 
@@ -82,20 +81,34 @@ public class PlayerCombat : MonoBehaviour
             calculateDamage();
             NPC.GetComponent<hurtingenemys>().TakeDmg(finalDamage);
             Debug.Log("TWAT, YOU HIT! You did: " +  finalDamage);
+            gameController.health += gameController.lifeSteal * finalDamage;
         }
+        
     }
 
     void calculateDamage() {
-        damageMultiplicator = 1;
+        damageMultiplicator = 1f;
+        if (comboCount < 5)
+            comboCount += 1;
+        if (Time.time - lastAttackTime > comboCooldown)
+            comboCount = 0;
+        if (Time.time - lastAttackTime >= firstStrikeCooldown)
+            firstStrikeAvailable = true;
 
-        if(Random.value <= gameController.crit) {
-            damageMultiplicator += 1;
+        if (Random.value <= gameController.crit) {
+            damageMultiplicator += 1f;
         }
         if(firstStrikeAvailable && gameController.firstStrike) {
-            lastFirstStrikeTime = Time.time;
-            firstStrikeAvailable = false;
+            
             damageMultiplicator += 0.5f;
-        } 
+        }
+        if(Time.time - lastAttackTime <= comboCooldown)
+        {
+            damageMultiplicator += 0.5f * comboCount;
+        }
+
+        firstStrikeAvailable = false;
+        lastAttackTime = Time.time;
 
         finalDamage = gameController.playerDamage * damageMultiplicator;
 

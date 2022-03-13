@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -591,7 +591,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -870,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -1523,7 +1523,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -1925,7 +1925,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -2457,7 +2457,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -3183,7 +3183,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -3512,7 +3512,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -4111,7 +4111,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -4270,7 +4270,7 @@ PrefabInstance:
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -170.00002
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
@@ -4627,6 +4627,11 @@ MonoBehaviour:
   abxy: {fileID: 1860417740}
   bcxy: {fileID: 1356711032}
   cz12: {fileID: 1178829894}
+  skilledColor:
+    serializedVersion: 2
+    rgba: 1677786880
+  skilltree: {fileID: 0}
+  skilltreeEnabled: 0
 --- !u!4 &2054944145
 Transform:
   m_ObjectHideFlags: 0

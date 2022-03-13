@@ -107,6 +107,7 @@ public class SkilltreeF : MonoBehaviour
             gC.xpLevel -= 1;
             gC.enabledSkills[9] = true;
             cz.color = skilledColor;
+            
         }
     }
 
@@ -299,14 +300,14 @@ public class SkilltreeF : MonoBehaviour
 
     }
 
-    public void SkillLiveSafer()
+    public void SkillLifeSaver()
     {
 
         if (gC.xpLevel >= 1 && gC.enabledSkills[3] && gC.enabledSkills[4] && !gC.enabledSkills[11])
         {
             gC.enabledSkills[11] = true;
             gC.xpLevel -= 1;
-            gC.liveSafer = true;
+            gC.lifeSaver = true;
             axy.color = skilledColor;
         }
 
@@ -326,14 +327,14 @@ public class SkilltreeF : MonoBehaviour
 
     }
 
-    public void SkillLiveSteal()
+    public void SkillLifeSteal()
     {
 
         if (gC.xpLevel >= 1 && gC.enabledSkills[11] && gC.enabledSkills[14] && !gC.enabledSkills[21])
         {
             gC.enabledSkills[21] = true;
             gC.xpLevel -= 1;
-            gC.liveSteal += 0.1f;
+            gC.lifeSteal += 0.1f;
             abxy.color = skilledColor;
         }
 

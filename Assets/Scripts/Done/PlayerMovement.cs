@@ -26,7 +26,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool rotation = true;
 
-    public float moveSpeed; 
+    public float moveSpeed;
+    private bool dashing;
+    private float dashTime;
 
     void Awake()
     {
@@ -49,16 +51,33 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //Maps keypresses to variables with values between -1 and 1 (executed every frame)
     {
+        dashTime += Time.deltaTime;
+
         moveSpeed = gameController.playerMovementSpeed;
+        tempSpeed = moveSpeed;
         if (Combat.attacking)
         {
             tempSpeed = 2F;
         }
         else
         {
-            tempSpeed = moveSpeed;
+            //tempSpeed = moveSpeed;
             anim.SetBool("canWalk", true);
         }
+        if (gameController.dash && Input.GetKeyDown("space"))
+        {
+            dashing = true;
+            dashTime = 0;
+        }
+        if(dashing)
+        {
+            tempSpeed = 50f;
+            if (dashTime > 0.2f)
+            {
+                dashing = false;
+            }
+        }
+            
 
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down

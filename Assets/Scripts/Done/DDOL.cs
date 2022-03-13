@@ -24,18 +24,18 @@ public class DDOL : MonoBehaviour
     public bool dash = false;
     public float enemyAttackSpeed = 1.0f;
     public bool enemyFreeze = false;
-    public bool firstStrike = false;
+    public bool firstStrike = true;
     public bool combo = false;
-    public float crit = 0;
+    public float crit = 0f;
     public bool shock = false;
     public float attackDuration = 1.0f;
     public float healthGainFactor = 1.0f;
     //public float regeneration = 10f; // PROBLEME!!! keine Ahnung wieso -> deshalb neue Variable regen, funktioniert super
     public float armor = 0.0f;
     public bool shield = false;
-    public bool liveSafer = false;
+    public bool lifeSaver = false;
     public float thorns = 0.0f;
-    public float liveSteal = 0.0f;
+    public float lifeSteal = 0.0f;
     public float regen = 0f; 
 
     public GameObject skilltree;
