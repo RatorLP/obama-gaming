@@ -32,27 +32,27 @@ public class ItemRandomSpawner : MonoBehaviour
         if (roll == 1)
         {
             Vector3 randomPos = Random.insideUnitCircle * radius;
-            Instantiate(ItemPrefab1, randomPos, Quaternion.identity);
+            Instantiate(ItemPrefab1, this.transform.position + randomPos, Quaternion.identity);
         }
         if (roll == 2)
         {
             Vector3 randomPos = Random.insideUnitCircle * radius;
-            Instantiate(ItemPrefab2, randomPos, Quaternion.identity);
+            Instantiate(ItemPrefab2, this.transform.position + randomPos, Quaternion.identity);
         }
         if (roll == 3)
         {
             Vector3 randomPos = Random.insideUnitCircle * radius;
-            Instantiate(ItemPrefab3, randomPos, Quaternion.identity);
+            Instantiate(ItemPrefab3, this.transform.position + randomPos, Quaternion.identity);
         }
         if (roll == 4)
         {
             Vector3 randomPos = Random.insideUnitCircle * radius;
-            Instantiate(ItemPrefab4, randomPos, Quaternion.identity);
+            Instantiate(ItemPrefab4, this.transform.position + randomPos, Quaternion.identity);
         }
         if (roll == 5)
         {
             Vector3 randomPos = Random.insideUnitCircle * radius;
-            Instantiate(ItemPrefab5, randomPos, Quaternion.identity);
+            Instantiate(ItemPrefab5, this.transform.position + randomPos, Quaternion.identity);
         }
     }
     private void OnDrawGizmos()

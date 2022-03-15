@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5447396063380745497}
   - component: {fileID: 5447396063380745478}
   - component: {fileID: 5447396063380745479}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: USB 3,5.0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5447396063775761954}
   - component: {fileID: 5447396063775761957}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ public class TurretScript : MonoBehaviour
     public float Range; // Range of the enemy
     public Transform Target; // the enemy's target
     bool Detected = false; // looks wether Player is detected or not
-
+    GameObject player;
     public GameObject Gun; // Creates the Gun; the Gun does not have Code itself
     public GameObject Bullet; // Creates the Object for the Bullet
     public Transform shootingPoint; // the Point from which the enemy shoots the Bullets
@@ -28,8 +28,8 @@ public class TurretScript : MonoBehaviour
             Debug.Log("dataManager not found");
             return;
         }
-        dataManager = GameObject.Find("DataManager");
-        gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+        player = GameObject.Find("PlayerAlmostFinished");
+        Target = player.GetComponent<Transform>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
 
     }
 

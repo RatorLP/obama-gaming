@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4294416076692694085}
   - component: {fileID: 4294416076692694084}
   - component: {fileID: 4294416076692694091}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: attackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4294416077034684754}
   - component: {fileID: 4294416077034684753}
   - component: {fileID: 4294416077034684752}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: attackTriggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4294416075603863563}
   - component: {fileID: 4294416075603863556}
   - component: {fileID: 4294416075603863561}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Eminemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846032791132108305}
   - component: {fileID: 4846032791132108306}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: SquareGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
