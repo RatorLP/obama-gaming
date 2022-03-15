@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7907535103879221389}
   - component: {fileID: 909646524826147301}
   m_Layer: 31
-  m_Name: rule tile shadow
+  m_Name: rule tile railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,10 +98,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 49d097999a8335b46bae68af111acfee, type: 2}
+    m_Data: {fileID: 11400000, guid: 835703bb2dcd99a4684a38405701868c, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 21300016, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
+    m_Data: {fileID: 21300002, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -196,7 +196,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &2754905696322358496
+--- !u!114 &8327804568989270806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
