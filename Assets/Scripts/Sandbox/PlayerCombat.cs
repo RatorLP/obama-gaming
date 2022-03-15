@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
     public float attackAngle; //angle of the roation the capsule has
     private float attackTimer; //delay between attacks
-    public float PlayerDmg = 20; //Damage the player deals
+    //public float PlayerDmg = 20; //Damage the player deals  (new version uses DDOL scripts playerDamege variable)
     private bool attackCooling = false; // cooldown activation
     public bool attacking = false; // if player is currently attacking
 
@@ -20,6 +20,25 @@ public class PlayerCombat : MonoBehaviour
     private float IntTimer; //actual timer
     private Animator anim; //animator setup
 
+    GameObject dataManager;
+    DDOL gameController;
+
+    // variables to calculate the final damage
+    private float finalDamage;
+    private float damageMultiplicator = 1f;
+    private float firstStrikeCooldown = 5.0f;
+    private bool firstStrikeAvailable = true;
+    private float lastAttackTime = 0f;
+    private float comboCooldown = 1.5f;
+    private int comboCount = 0;
+    
+
+    void Start() // variable initialisation
+    {
+        dataManager = GameObject.Find("DataManager");
+        gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
+
+    }
 
     void Awake() //called before first frame
     {
@@ -41,6 +60,8 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+
+        
     }
 
 
@@ -57,9 +78,40 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            NPC.GetComponent<hurtingenemys>().TakeDmg(PlayerDmg);
-            Debug.Log("TWAT, YOU HIT");
+            calculateDamage();
+            NPC.GetComponent<hurtingenemys>().TakeDmg(finalDamage);
+            Debug.Log("TWAT, YOU HIT! You did: " +  finalDamage);
+            gameController.health += gameController.lifeSteal * finalDamage;
         }
+        
+    }
+
+    void calculateDamage() {
+        damageMultiplicator = 1f;
+        if (comboCount < 5)
+            comboCount += 1;
+        if (Time.time - lastAttackTime > comboCooldown)
+            comboCount = 0;
+        if (Time.time - lastAttackTime >= firstStrikeCooldown)
+            firstStrikeAvailable = true;
+
+        if (Random.value <= gameController.crit) {
+            damageMultiplicator += 1f;
+        }
+        if(firstStrikeAvailable && gameController.firstStrike) {
+            
+            damageMultiplicator += 0.5f;
+        }
+        if(Time.time - lastAttackTime <= comboCooldown)
+        {
+            damageMultiplicator += 0.5f * comboCount;
+        }
+
+        firstStrikeAvailable = false;
+        lastAttackTime = Time.time;
+
+        finalDamage = gameController.playerDamage * damageMultiplicator;
+
     }
 
     void OnDrawGizmosSelected() //draws the range of the attack; only for testing purposes, will be deleted later

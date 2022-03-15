@@ -39,7 +39,7 @@ public class attackHitbox : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gameController.health -= Enemy.damage;
+            gameController.health -= Enemy.damage * (1-gameController.armor);
         }
     }
 

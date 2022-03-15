@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Pathfinding {
 	/// <summary>
@@ -17,6 +18,8 @@ namespace Pathfinding {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
 		IAstarAI ai;
+		GameObject player;
+		Transform destinationTransform;
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -25,6 +28,7 @@ namespace Pathfinding {
 			// frame as the destination is used for debugging and may be used for other things by other
 			// scripts as well. So it makes sense that it is up to date every frame.
 			if (ai != null) ai.onSearchPath += Update;
+			Debug.Log("Ist das ding an?");
 		}
 
 		void OnDisable () {
@@ -34,6 +38,11 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+		}
+		void Start()
+		{
+			player = GameObject.Find("PlayerAlmostFinished");
+			target = player.GetComponent<Transform>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
 		}
 	}
 }
