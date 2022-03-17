@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5854867818242345535}
   - component: {fileID: 5854867818242345534}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5854867818245372840}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: shootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5854867818281810914}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: GunRotatingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -158,9 +158,9 @@ GameObject:
   - component: {fileID: 5854867818664987455}
   - component: {fileID: 5854867818664987841}
   - component: {fileID: 5854867818664987454}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Ranged Eminem smol 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5854867819306792780}
   - component: {fileID: 5854867819306792779}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: turretsmallGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

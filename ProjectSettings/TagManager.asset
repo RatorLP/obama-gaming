@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,14 +19,14 @@ TagManager:
   - 
   - 
   - 
-  - NPC
+  - 
   - Item
-  - Player
+  - 
   - Wall
   - Bullet
   - 
-  - 
-  - 
+  - Player
+  - NPC
   - Layer 1
   - Layer 2
   - Layer 3

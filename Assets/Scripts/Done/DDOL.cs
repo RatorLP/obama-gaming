@@ -10,13 +10,15 @@ public class DDOL : MonoBehaviour
     public float playerMovementSpeed = 15;
     public float health = 100;
     public float maxHealth = 100;
-    public int levelsUntilBossfight = 100;
+    private int levelsUntilBossfight = 7;
     public int[] sceneOrder;
-    private int bossLevelSceneIndex = 0; // contains the Index of the scene for the bossfight
-    private int currentArrayIndex = 0;
+    private int bossLevelSceneIndex = 2; // contains the Index of the scene for the bossfight
+    public int currentArrayIndex = 0;
     public int nextScene;
     public int currentScene;
     public bool pause;
+    GameObject levelSwitch;
+    LevelSwitcher doorScript;
 
     public bool[] enabledSkills = new bool[24];
     public int xpLevel = 5;
@@ -57,7 +59,7 @@ public class DDOL : MonoBehaviour
         sceneOrder[0] = 1; //Set the Main Menu as the first scene.
         for (int i = 1; i <= (levelsUntilBossfight); i++) //generate random room sequence
         {
-            sceneOrder[i] = Random.Range(2, SceneManager.sceneCountInBuildSettings);
+            sceneOrder[i] = Random.Range(3, SceneManager.sceneCountInBuildSettings);
         }
         sceneOrder[levelsUntilBossfight + 1] = bossLevelSceneIndex; //Adds the boss level as the last level
 
@@ -65,7 +67,13 @@ public class DDOL : MonoBehaviour
     }
     public void Update()// Update is called once per frame
     {
-        if (Input.GetKey("n"))
+        if(GameObject.FindWithTag("Enemy") == null && currentArrayIndex > 0)
+        {
+           doorScript.OpenDoor();
+            Debug.Log("Door Open?");
+        }
+        //Destroy(this.GameObject.FindGameObjectsWithTag("Enemy"))
+        if (Input.GetKeyDown("n"))
         {
             NextScene();
         }
@@ -150,10 +158,16 @@ public class DDOL : MonoBehaviour
         }
 
         nextScene = sceneOrder[currentArrayIndex + 1]; //pulls next scene from randomized array index
-        //currentArrayIndex++;
+        currentArrayIndex++;
         //currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
         StartCoroutine(LoadLevelAsync()); //start async loading
 
+    }
+
+    public void LoadReferences(GameObject obj)
+    {
+        Debug.Log("references Loaded");
+        doorScript = obj.GetComponent<LevelSwitcher>();
     }
 
     private IEnumerator LoadLevelAsync()
@@ -167,7 +181,7 @@ public class DDOL : MonoBehaviour
 
         if (asyncLoad.isDone)
         {
-            currentArrayIndex++;
+            //currentArrayIndex++;
             currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
             if (loadingScreen != null)
             {

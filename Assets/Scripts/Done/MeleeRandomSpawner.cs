@@ -11,10 +11,7 @@ public class MeleeRandomSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Henrik-Gegner")) //only spawns the enemy at the start
-        {
             RandomlySpawnEnemy();
-        }
     }
 
     // Update is called once per frame

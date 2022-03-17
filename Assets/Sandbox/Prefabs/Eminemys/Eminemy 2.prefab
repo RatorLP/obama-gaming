@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5933203974799446105}
   - component: {fileID: 2817644364080805632}
   - component: {fileID: 366243753003313571}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: attackTriggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385176445662565601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.08, y: 2.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8926661591320902528}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 5784399457411727858}
   - component: {fileID: 8847538442467465540}
   - component: {fileID: 3297482653183800795}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: attackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5466270828934538455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.08, y: 2.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8926661591320902528}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8926661590215860171}
   - component: {fileID: 8926661590215860169}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: CapsuleGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,9 +222,9 @@ GameObject:
   - component: {fileID: 3746169216591678580}
   - component: {fileID: 3746169216591678583}
   - component: {fileID: 3746169216591678582}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Eminemy 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8926661591320902532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -0.99, z: 0}
+  m_LocalPosition: {x: 6.7, y: 1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8926661590215860171}
@@ -290,7 +290,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192d662af42bb6a4c9f8eb3f6f2a050f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 10
   attackTimer: 0
   inRange: 0
   attackCooling: 0
@@ -393,7 +393,7 @@ Animator:
   m_GameObject: {fileID: 8926661591320902532}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e87b69e4720d6145b176c8613af5e62, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -414,4 +414,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4516f9558f2cd844abe6c01e7e9a16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 40
+  MaxHp: 100

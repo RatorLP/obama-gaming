@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4419626521906591916}
   - component: {fileID: 4419626521906591914}
   - component: {fileID: 4419626521906591919}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Ranged Eminem BIIIG
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400808827609033613}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: shootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400808828165287744}
   - component: {fileID: 400808828165287745}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4419626520900034110}
   - component: {fileID: 4419626520900034097}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: turretGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419626520966225553}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: GunRotatingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}

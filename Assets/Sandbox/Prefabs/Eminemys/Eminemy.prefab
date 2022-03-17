@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4294416076692694085}
   - component: {fileID: 4294416076692694084}
   - component: {fileID: 4294416076692694091}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: attackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4294416077034684754}
   - component: {fileID: 4294416077034684753}
   - component: {fileID: 4294416077034684752}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: attackTriggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,9 +140,9 @@ GameObject:
   - component: {fileID: 4294416075603863563}
   - component: {fileID: 4294416075603863556}
   - component: {fileID: 4294416075603863561}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Eminemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 10
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192d662af42bb6a4c9f8eb3f6f2a050f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 5
   attackTimer: 2
   inRange: 0
   attackCooling: 0
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846032791132108305}
   - component: {fileID: 4846032791132108306}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: SquareGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

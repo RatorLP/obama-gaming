@@ -68,7 +68,7 @@ public class PlayerCombat : MonoBehaviour
     void Attack() //looks whether there is an overlap in the circle, then safes whatever is overlapping in an array and then hits the enemy
     {
         attackTimer = IntTimer; //reset timer when new attack starts
-
+        Debug.Log("Hit?");
         attacking = true;
 
         anim.SetBool("canWalk", false);

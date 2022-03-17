@@ -37,7 +37,7 @@ public class BIIIGBulletScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                gameController.health -= 4;
+                gameController.health -= 5;
             }
         }
         Destroy(this.gameObject); // destroys the Bullet if it collides with something
