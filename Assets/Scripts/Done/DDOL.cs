@@ -8,6 +8,8 @@ public class DDOL : MonoBehaviour
     public bool dirtyRazor = false;//looks wether the Item "Dirty Razor" has been picked up
     public float playerDamage = 30;
     public float playerMovementSpeed = 15;
+    public float CurrExp = 0; //displays the whole amount of Exp you have
+    public float GainedExp; //experience you gained just recently in a room and gets added to CurrExp as soon as possible. Enemys add a value to this when they are killed.
     public float health = 100;
     public float maxHealth = 100;
     private int levelsUntilBossfight = 7;
