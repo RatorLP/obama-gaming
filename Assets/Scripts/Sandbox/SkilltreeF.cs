@@ -7,33 +7,36 @@ public class SkilltreeF : MonoBehaviour
 {
     GameObject dataManager;
     DDOL gC;
-    public Image a;
-    public Image b;
-    public Image c;
-    public Image ax;
-    public Image ay;
-    public Image bx;
-    public Image by;
-    public Image cx;
-    public Image cy;
-    public Image cz;
-    public Image ax1;
-    public Image axy;
-    public Image ay1;
-    public Image bx1;
-    public Image bxy;
-    public Image by1;
-    public Image cx1;
-    public Image cxy;
-    public Image cy1;
-    public Image cz1;
-    public Image cz2;
-    public Image abxy;
-    public Image bcxy;
-    public Image cz12;
+    public GameObject a;
+    public GameObject b;
+    public GameObject c;
+    public GameObject ax;
+    public GameObject ay;
+    public GameObject bx;
+    public GameObject by;
+    public GameObject cx;
+    public GameObject cy;
+    public GameObject cz;
+    public GameObject ax1;
+    public GameObject axy;
+    public GameObject ay1;
+    public GameObject bx1;
+    public GameObject bxy;
+    public GameObject by1;
+    public GameObject cx1;
+    public GameObject cxy;
+    public GameObject cy1;
+    public GameObject cz1;
+    public GameObject cz2;
+    public GameObject abxy;
+    public GameObject bcxy;
+    public GameObject cz12;
 
-    public Color32 skilledColor = new Color32(0, 255, 0, 100);
-    
+
+    public Color32 skilledColor = new Color32(200, 255, 200, 255);
+    public Color32 availableColor = new Color32(255, 255, 255, 255);
+    public Color32 unavailableColor = new Color32(150, 150, 150, 255);
+
     public GameObject skilltree;
     public bool skilltreeEnabled;
 
@@ -62,7 +65,8 @@ public class SkilltreeF : MonoBehaviour
                 gC.PauseGame(false);
             }
         }
-
+        if (gC.pause)
+            UpdateColors();
     }
 
     public void SkillMovementSpeed()
@@ -73,7 +77,9 @@ public class SkilltreeF : MonoBehaviour
             gC.playerMovementSpeed += 2;
             gC.xpLevel -= 1;
             gC.enabledSkills[2] = true;
-            c.color = skilledColor;
+            c.GetComponent<Button>().interactable = false;
+            c.GetComponent<Image>().color = skilledColor;
+
         }
     }
 
@@ -84,7 +90,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[7] = true;
-            cx.color = skilledColor;
+            cx.GetComponent<Image>().color = skilledColor;
         }
     }
     
@@ -95,7 +101,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[8] = true;
-            cy.color = skilledColor;
+            cy.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -106,7 +112,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemySpeed -= 10;
             gC.xpLevel -= 1;
             gC.enabledSkills[9] = true;
-            cz.color = skilledColor;
+            cz.GetComponent<Image>().color = skilledColor;
             
         }
     }
@@ -118,7 +124,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[16] = true;
-            cx1.color = skilledColor;
+            cx1.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -129,7 +135,7 @@ public class SkilltreeF : MonoBehaviour
             gC.dash = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[17] = true;
-            cxy.color = skilledColor;
+            cxy.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -140,7 +146,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[18] = true;
-            cy1.color = skilledColor;
+            cy1.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -151,7 +157,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemyAttackSpeed *= 0.9f;
             gC.xpLevel -= 1;
             gC.enabledSkills[19] = true;
-            cz1.color = skilledColor;
+            cz1.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -162,7 +168,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enemyFreeze = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[20] = true;
-            cz2.color = skilledColor;
+            cz2.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -173,7 +179,7 @@ public class SkilltreeF : MonoBehaviour
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[23] = true;
-            cz12.color = skilledColor;
+            cz12.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -185,7 +191,7 @@ public class SkilltreeF : MonoBehaviour
             gC.playerDamage += 20;
             gC.xpLevel -= 1;
             gC.enabledSkills[1] = true;
-            b.color = skilledColor;
+            b.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -197,7 +203,7 @@ public class SkilltreeF : MonoBehaviour
             gC.firstStrike = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[5] = true;
-            bx.color = skilledColor;
+            bx.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -208,7 +214,7 @@ public class SkilltreeF : MonoBehaviour
             gC.combo = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[6] = true;
-            by.color = skilledColor;
+            by.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -219,7 +225,7 @@ public class SkilltreeF : MonoBehaviour
             gC.crit = 0.2f;
             gC.xpLevel -= 1;
             gC.enabledSkills[13] = true;
-            bx1.color = skilledColor;
+            bx1.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -230,7 +236,7 @@ public class SkilltreeF : MonoBehaviour
             gC.shock = true;
             gC.xpLevel -= 1;
             gC.enabledSkills[14] = true;
-            bxy.color = skilledColor;
+            bxy.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -241,7 +247,7 @@ public class SkilltreeF : MonoBehaviour
             gC.attackDuration -= 0.2f;
             gC.xpLevel -= 1;
             gC.enabledSkills[15] = true;
-            by1.color = skilledColor;
+            by1.GetComponent<Image>().color = skilledColor;
         }
     }
 
@@ -256,7 +262,7 @@ public class SkilltreeF : MonoBehaviour
             gC.healthGainFactor += 0.5f;
             gC.maxHealth += 20;
             gC.health += 20;
-            a.color = skilledColor;
+            a.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -269,7 +275,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[3] = true;
             gC.xpLevel -= 1;
             gC.regen += 2f;
-            ax.color = skilledColor;
+            ax.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -282,7 +288,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[4] = true;
             gC.xpLevel -= 1;
             gC.armor += 0.2f;
-            ay.color = skilledColor;
+            ay.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -295,7 +301,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[10] = true;
             gC.xpLevel -= 1;
             gC.shield = true;
-            ax1.color = skilledColor;
+            ax1.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -308,7 +314,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[11] = true;
             gC.xpLevel -= 1;
             gC.lifeSaver = true;
-            axy.color = skilledColor;
+            axy.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -322,7 +328,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[12] = true;
             gC.xpLevel -= 1;
             gC.thorns += 0.2f;
-            ay1.color = skilledColor;
+            ay1.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -335,7 +341,7 @@ public class SkilltreeF : MonoBehaviour
             gC.enabledSkills[21] = true;
             gC.xpLevel -= 1;
             gC.lifeSteal += 0.1f;
-            abxy.color = skilledColor;
+            abxy.GetComponent<Image>().color = skilledColor;
         }
 
     }
@@ -348,8 +354,132 @@ public void SkillFireball()
             //change variable
             gC.xpLevel -= 1;
             gC.enabledSkills[22] = true;
-            bcxy.color = skilledColor;
+            bcxy.GetComponent<Image>().color = skilledColor;
             Debug.Log("Fireball");
+        }
+    }
+
+    public void UpdateColors()
+    {
+        if (gC.xpLevel >= 1 && !gC.enabledSkills[2]) //C MovementSpeed
+        {
+            c.GetComponent<Button>().interactable = true;
+            c.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[2] && !gC.enabledSkills[7]) //CX -
+        {
+            cx.GetComponent<Button>().interactable = true;
+            cx.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[2] && !gC.enabledSkills[8]) //CY -
+        {
+            cy.GetComponent<Button>().interactable = true;
+            cy.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[2] && !gC.enabledSkills[9]) //CZ SlowEnemyMovement
+        {
+            cz.GetComponent<Button>().interactable = true;
+            cz.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[7] && !gC.enabledSkills[16]) //CX1 -
+        {
+            cx1.GetComponent<Button>().interactable = true;
+            cx1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[7] && gC.enabledSkills[8] && !gC.enabledSkills[17]) //CXY Dash
+        {
+            cxy.GetComponent<Button>().interactable = true;
+            cxy.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[8] && !gC.enabledSkills[18]) //CY1 -
+        {
+            cy1.GetComponent<Button>().interactable = true;
+            cy1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[9] && !gC.enabledSkills[19]) //CZ1 SlowEnemyAttackSpeed
+        {
+            cz1.GetComponent<Button>().interactable = true;
+            cz1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[9] && !gC.enabledSkills[20]) //CZ2 Freeze
+        {
+            cz2.GetComponent<Button>().interactable = true;
+            cz2.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[19] && gC.enabledSkills[20] && !gC.enabledSkills[23]) //CZ12 Blind
+        {
+            cz12.GetComponent<Button>().interactable = true;
+            cz12.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && !gC.enabledSkills[1]) //B Damage
+        {
+            b.GetComponent<Button>().interactable = true;
+            b.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[1] && !gC.enabledSkills[5]) //BX FirstStrike
+        {
+            bx.GetComponent<Button>().interactable = true;
+            bx.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[1] && !gC.enabledSkills[6]) //BY Combo
+        {
+            by.GetComponent<Button>().interactable = true;
+            by.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[5] && !gC.enabledSkills[13]) //BX1 Crit
+        {
+            bx1.GetComponent<Button>().interactable = true;
+            bx1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[5] && gC.enabledSkills[6] && !gC.enabledSkills[14]) //BXY ElectroShock
+        {
+            bxy.GetComponent<Button>().interactable = true;
+            bxy.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[6] && !gC.enabledSkills[15]) //BY1 AttackSpeed
+        {
+            by1.GetComponent<Button>().interactable = true;
+            by1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && !gC.enabledSkills[0]) //A HP
+        {
+            a.GetComponent<Button>().interactable = true;
+            a.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[0] && !gC.enabledSkills[3]) //AX HealthRegen
+        {
+            ax.GetComponent<Button>().interactable = true;
+            ax.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[0] && !gC.enabledSkills[4]) //AY Armor
+        {
+            ay.GetComponent<Button>().interactable = true;
+            ay.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[3] && !gC.enabledSkills[10]) //AX1 Shield
+        {
+            ax1.GetComponent<Button>().interactable = true;
+            ax1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[3] && gC.enabledSkills[4] && !gC.enabledSkills[11]) //AXY LifeSaver
+        {
+            axy.GetComponent<Button>().interactable = true;
+            axy.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[4] && !gC.enabledSkills[12]) //AY1 Thorns
+        {
+            ay1.GetComponent<Button>().interactable = true;
+            ay1.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[11] && gC.enabledSkills[14] && !gC.enabledSkills[21]) //ABXY LifeSteal
+        {
+            abxy.GetComponent<Button>().interactable = true;
+            abxy.GetComponent<Image>().color = availableColor;
+        }
+        if (gC.xpLevel >= 1 && gC.enabledSkills[14] && gC.enabledSkills[17] && !gC.enabledSkills[22]) //BCXY FireBall
+        {
+            bcxy.GetComponent<Button>().interactable = true;
+            bcxy.GetComponent<Image>().color = availableColor;
         }
     }
 }
