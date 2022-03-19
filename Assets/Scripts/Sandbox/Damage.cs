@@ -67,6 +67,15 @@ public class Damage : MonoBehaviour
             anim.SetBool("Attack", false);
             anim.SetBool("canWalk", true);
         }
+
+        if (gameController.dashing)
+        {
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
     }
 
 
@@ -84,7 +93,7 @@ public class Damage : MonoBehaviour
 
     void Cooldown()
     {
-        attackTimer -= Time.deltaTime;
+        attackTimer -= (Time.deltaTime * gameController.enemyAttackSpeed);
 
         if (attackTimer <= 0 && attackCooling)
         {

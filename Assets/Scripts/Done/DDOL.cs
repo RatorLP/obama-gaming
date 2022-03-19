@@ -40,11 +40,11 @@ public class DDOL : MonoBehaviour
     public bool lifeSaver = false;
     public float thorns = 0.0f;
     public float lifeSteal = 0.0f;
-    public float regen = 0f; 
+    public float regen = 0f;
+
+    public bool dashing;
 
     public GameObject skilltree;
-
-
 
     public GameObject loadingScreen;
 
@@ -64,8 +64,6 @@ public class DDOL : MonoBehaviour
             sceneOrder[i] = Random.Range(3, SceneManager.sceneCountInBuildSettings);
         }
         sceneOrder[levelsUntilBossfight + 1] = bossLevelSceneIndex; //Adds the boss level as the last level
-
-
     }
     public void Update()// Update is called once per frame
     {
@@ -81,7 +79,7 @@ public class DDOL : MonoBehaviour
         }
 
         health += (float)(regen * Time.deltaTime); // updates the players health by the regeneration per frame
-        
+       
     }
 
     /*

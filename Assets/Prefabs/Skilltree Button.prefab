@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3557625485492338177}
   - component: {fileID: 7174969936168907280}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Left 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ RectTransform:
   m_GameObject: {fileID: 3854940791296516575}
   m_LocalRotation: {x: 0, y: 0, z: -0.60876137, w: 0.7933534}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 250, z: 1}
+  m_LocalScale: {x: 4, y: 250, z: 1}
   m_Children: []
   m_Father: {fileID: 9053413113820930424}
   m_RootOrder: 3
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 4126264777107447599}
   - component: {fileID: 2117792430288757630}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Right 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ RectTransform:
   m_GameObject: {fileID: 5698255373972763182}
   m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 250, z: 1}
+  m_LocalScale: {x: 4, y: 250, z: 1}
   m_Children: []
   m_Father: {fileID: 9053413113820930424}
   m_RootOrder: 2
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 5440611145357657801}
   - component: {fileID: 2411409268201013024}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Left 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ RectTransform:
   m_GameObject: {fileID: 8701002533298810159}
   m_LocalRotation: {x: 0, y: 0, z: -0.42261827, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 100, z: 1}
+  m_LocalScale: {x: 4, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 9053413113820930424}
   m_RootOrder: 1
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -584,7 +584,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
     m_PressedColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 9053413115165143933}
   - component: {fileID: 9053413115165143930}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Right 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,7 +641,7 @@ RectTransform:
   m_GameObject: {fileID: 9053413115165143932}
   m_LocalRotation: {x: 0, y: 0, z: 0.42261827, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 100, z: 1}
+  m_LocalScale: {x: 4, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 9053413113820930424}
   m_RootOrder: 0

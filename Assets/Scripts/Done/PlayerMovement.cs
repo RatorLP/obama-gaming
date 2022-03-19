@@ -67,7 +67,9 @@ public class PlayerMovement : MonoBehaviour
         if (gameController.dash && Input.GetKeyDown("space"))
         {
             dashing = true;
+            gameController.dashing = true;
             dashTime = 0;
+            //gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
         if(dashing)
         {
@@ -75,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
             if (dashTime > 0.2f)
             {
                 dashing = false;
+                gameController.dashing = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = true;
             }
         }
             
