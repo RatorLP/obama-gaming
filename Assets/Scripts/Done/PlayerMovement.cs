@@ -55,14 +55,22 @@ public class PlayerMovement : MonoBehaviour
 
         moveSpeed = gameController.playerMovementSpeed;
         tempSpeed = moveSpeed;
+        
+        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
         if (Combat.attacking)
         {
             tempSpeed = 2F;
         }
-        else
+        else if (horizontal != 0 || vertical != 0)
         {
             //tempSpeed = moveSpeed;
             anim.SetBool("canWalk", true);
+        }
+        else
+        {
+            anim.SetBool("canWalk", false);
         }
         if (gameController.dash && Input.GetKeyDown("space"))
         {
@@ -81,12 +89,16 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.GetComponent<CircleCollider2D>().enabled = true;
             }
         }
-            
 
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        if (Combat.attacking == false)
+        {
+              anim.SetFloat("horizontal", horizontal);
+              anim.SetFloat("vertical", vertical);
+        }
+        
+        
 
-        Vector3 movement = new Vector3(((-1)*vertical), horizontal, 0.0F);
+        /*Vector3 movement = new Vector3(((-1)*vertical), horizontal, 0.0F);
 
         movement.Normalize();
 
@@ -95,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movement);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
         }
-
+        */
 
     }
 
@@ -110,7 +122,9 @@ public class PlayerMovement : MonoBehaviour
 
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; //calculate rotation angle
 
-            transform.rotation = Quaternion.Euler(0f, 0f, rotationZ); //rotating the player
+            anim.SetFloat("horizontal", (difference.x/100));
+            anim.SetFloat("vertical", (difference.y/100));
+
         }
         
       

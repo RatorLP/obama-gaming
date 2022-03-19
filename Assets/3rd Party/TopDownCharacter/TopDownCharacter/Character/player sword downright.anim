@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player attack
+  m_Name: player sword downright
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,19 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -3527426440161428920, guid: 239d91c1017c12242b7f214394fb77a8,
+      value: {fileID: 2856535245279941732, guid: 082def75fb57efb48934caa0f51dfe96,
         type: 3}
     - time: 0.083333336
-      value: {fileID: -8643618252241972829, guid: 239d91c1017c12242b7f214394fb77a8,
+      value: {fileID: -4916131997095672002, guid: 082def75fb57efb48934caa0f51dfe96,
         type: 3}
     - time: 0.16666667
-      value: {fileID: 1161188154168503689, guid: 239d91c1017c12242b7f214394fb77a8,
+      value: {fileID: 8365286448134399286, guid: 082def75fb57efb48934caa0f51dfe96,
         type: 3}
     - time: 0.25
-      value: {fileID: 7657884030047385686, guid: 239d91c1017c12242b7f214394fb77a8,
+      value: {fileID: -1307701264136081626, guid: 082def75fb57efb48934caa0f51dfe96,
         type: 3}
     - time: 0.33333334
-      value: {fileID: -2234531413622764500, guid: 239d91c1017c12242b7f214394fb77a8,
+      value: {fileID: 7395019906387611424, guid: 082def75fb57efb48934caa0f51dfe96,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -53,11 +53,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -3527426440161428920, guid: 239d91c1017c12242b7f214394fb77a8, type: 3}
-    - {fileID: -8643618252241972829, guid: 239d91c1017c12242b7f214394fb77a8, type: 3}
-    - {fileID: 1161188154168503689, guid: 239d91c1017c12242b7f214394fb77a8, type: 3}
-    - {fileID: 7657884030047385686, guid: 239d91c1017c12242b7f214394fb77a8, type: 3}
-    - {fileID: -2234531413622764500, guid: 239d91c1017c12242b7f214394fb77a8, type: 3}
+    - {fileID: 2856535245279941732, guid: 082def75fb57efb48934caa0f51dfe96, type: 3}
+    - {fileID: -4916131997095672002, guid: 082def75fb57efb48934caa0f51dfe96, type: 3}
+    - {fileID: 8365286448134399286, guid: 082def75fb57efb48934caa0f51dfe96, type: 3}
+    - {fileID: -1307701264136081626, guid: 082def75fb57efb48934caa0f51dfe96, type: 3}
+    - {fileID: 7395019906387611424, guid: 082def75fb57efb48934caa0f51dfe96, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -82,32 +82,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0
-    functionName: DisableRotation
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.33333334
-    functionName: triggerCooling
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.33333334
-    functionName: FinishedAttack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.33333334
-    functionName: EnableRotation
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
