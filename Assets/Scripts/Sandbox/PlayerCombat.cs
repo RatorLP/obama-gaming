@@ -6,10 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
     //Variable decleration
     public Transform attackPoint; //The point at which the sword hits
-    public Transform attackRange; // the Range of the melee attack
+    public float attackRange = 0.5f; // the Range of the melee attack
     public LayerMask NPCLayers; //Determines what is hit by using Layers
-    public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
-    public float attackAngle; //angle of the roation the capsule has
+    //public CapsuleDirection2D attackDirection; // direction of sides wich can be extended
+   //public float attackAngle; //angle of the roation the capsule has
     private float attackTimer; //delay between attacks
     //public float PlayerDmg = 20; //Damage the player deals  (new version uses DDOL scripts playerDamege variable)
     private bool attackCooling = false; // cooldown activation
@@ -74,7 +74,7 @@ public class PlayerCombat : MonoBehaviour
         anim.SetBool("canWalk", false);
         anim.SetBool("Attack", true);
 
-        Collider2D [] hitEnemies = Physics2D.OverlapCapsuleAll(attackPoint.position, attackRange.position, attackDirection, attackAngle, NPCLayers);
+        Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, NPCLayers);
 
         foreach (Collider2D NPC in hitEnemies)
         {

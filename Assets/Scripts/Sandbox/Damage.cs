@@ -70,11 +70,17 @@ public class Damage : MonoBehaviour
 
         if (gameController.dashing)
         {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            if (gameObject.GetComponent<CircleCollider2D>() != null)
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            if (gameObject.GetComponent<CapsuleCollider2D>() != null)
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }
         else
         {
-            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            if (gameObject.GetComponent<CircleCollider2D>() != null)
+                gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            if (gameObject.GetComponent<CapsuleCollider2D>() != null)
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         }
     }
 
@@ -146,7 +152,23 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gameController.health -= damage;
+            if (gameController.shield) //if shield is active 
+            {
+                if (gameController.shieldDurability >= (damage) * gameController.shieldAbsorption)
+                {
+                    gameController.shieldDurability -= (damage) * gameController.shieldAbsorption;
+                    gameController.health -= damage * (1 - gameController.shieldAbsorption);
+                }
+                else
+                {
+                    gameController.health -= (damage - gameController.shieldDurability);
+                    gameController.shieldDurability = 0;
+                }
+            }
+            else
+            {
+                gameController.health -= damage;
+            }
         }
     }
 
