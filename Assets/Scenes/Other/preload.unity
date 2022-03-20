@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtyRazor: 0
-  playerDamage: 40
+  playerDamage: 1000
   playerMovementSpeed: 15
   CurrExp: 0
   GainedExp: 0
@@ -1982,6 +1982,7 @@ MonoBehaviour:
   thorns: 0
   lifeSteal: 0
   regen: 0
+  dashing: 0
   skilltree: {fileID: 226638545}
   loadingScreen: {fileID: 2033642211}
 --- !u!222 &627853009

@@ -397,6 +397,11 @@ PrefabInstance:
       propertyPath: attackAngle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1080065609656113573, guid: af03914384171324fb55d2bf032277a5,
+        type: 3}
+      propertyPath: attackDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1080065609656113596, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
       propertyPath: m_Name
@@ -410,12 +415,12 @@ PrefabInstance:
     - target: {fileID: 1080065610077028121, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080065610077028121, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.537944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080065610096485838, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
@@ -437,15 +442,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.49
       objectReference: {fileID: 0}
+    - target: {fileID: 1080065610542664600, guid: af03914384171324fb55d2bf032277a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1080065610542664607, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080065610542664607, guid: af03914384171324fb55d2bf032277a5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080065610542664607, guid: af03914384171324fb55d2bf032277a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af03914384171324fb55d2bf032277a5, type: 3}
