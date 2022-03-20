@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2055102311959635375}
   - component: {fileID: 2055102311959635374}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: PF Props Tree T1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055102312182832481}
   - component: {fileID: 2055102312182832480}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -116,6 +118,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -149,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6880079008103839969}
   - component: {fileID: 2444991506894079395}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +187,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -195,6 +200,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -228,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3490479345217099410}
   - component: {fileID: 4370152849212869299}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,6 +269,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -274,6 +282,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

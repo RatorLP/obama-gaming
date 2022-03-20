@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5055698509786747553}
   - component: {fileID: 5055698509786747554}
   - component: {fileID: 8220105155279299501}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -57,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -133,9 +136,9 @@ GameObject:
   - component: {fileID: 5055698509961064898}
   - component: {fileID: 5055698509961064899}
   - component: {fileID: 5055698509961064900}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: PF Props Rune Pillar X2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +173,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -181,6 +186,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -240,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5055698510374027887}
   - component: {fileID: 5055698510374027872}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +281,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -286,6 +294,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
