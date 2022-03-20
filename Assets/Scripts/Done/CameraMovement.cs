@@ -9,8 +9,13 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+
     void Update()
     {
+        if (target == null)
+        {
+            target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        }
         Vector3 goalPos = target.position;
         goalPos.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);

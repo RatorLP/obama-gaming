@@ -35,12 +35,18 @@ public class DDOL : MonoBehaviour
     public float attackDuration = 1.0f;
     public float healthGainFactor = 1.0f;
     //public float regeneration = 10f; // PROBLEME!!! keine Ahnung wieso -> deshalb neue Variable regen, funktioniert super
-    public float armor = 0.0f;
-    public bool shield = false;
+    
     public bool lifeSaver = false;
     public float thorns = 0.0f;
     public float lifeSteal = 0.0f;
     public float regen = 0f;
+
+    public float armor = 0.0f;
+    public bool shield = false;
+    public float shieldDurability;
+    public float maxShieldDurability;
+    public float shieldAbsorption;
+    public float shieldRegen;
 
     public bool dashing;
 
@@ -67,10 +73,9 @@ public class DDOL : MonoBehaviour
     }
     public void Update()// Update is called once per frame
     {
-        if(GameObject.FindWithTag("Enemy") == null && currentArrayIndex > 0)
+        if(GameObject.FindWithTag("Enemy") == null && currentArrayIndex > 0 && doorScript != null)
         {
            doorScript.OpenDoor();
-            Debug.Log("Door Open?");
         }
         //Destroy(this.GameObject.FindGameObjectsWithTag("Enemy"))
         if (Input.GetKeyDown("n"))
@@ -78,9 +83,11 @@ public class DDOL : MonoBehaviour
             NextScene();
         }
 
-        health += (float)(regen * Time.deltaTime); // updates the players health by the regeneration per frame
-       
+        health += (float)(regen * Time.deltaTime); //increases the players health every frame if regenereation is skilled
+
+        shieldDurability += shieldRegen * Time.deltaTime; //increases the shields durability every frame
     }
+
 
     /*
      *MethodenName: ItemController
@@ -152,6 +159,9 @@ public class DDOL : MonoBehaviour
          * 
          */
         //skilltree.SetActive(true);
+
+        shieldDurability = maxShieldDurability;
+
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(true);
