@@ -95,8 +95,19 @@ public class PlayerMovement : MonoBehaviour
               anim.SetFloat("horizontal", horizontal);
               anim.SetFloat("vertical", vertical);
         }
-        
-        
+
+        if (Input.GetMouseButton(0) && rotation == true)
+        {
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //mouse on gamescreen (main camera)
+
+            difference.Normalize();
+
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; //calculate rotation angle
+
+            anim.SetFloat("horizontal", (difference.x / 100));
+            anim.SetFloat("vertical", (difference.y / 100));
+
+        }
 
         /*Vector3 movement = new Vector3(((-1)*vertical), horizontal, 0.0F);
 
@@ -113,22 +124,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() //Convertes values to a vector (runs every physics-update)
     {
-
-        if(Input.GetMouseButton(0) && rotation == true)
-        {
-            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //mouse on gamescreen (main camera)
-
-            difference.Normalize();
-
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; //calculate rotation angle
-
-            anim.SetFloat("horizontal", (difference.x/100));
-            anim.SetFloat("vertical", (difference.y/100));
-
-        }
-        
-      
-
 
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
