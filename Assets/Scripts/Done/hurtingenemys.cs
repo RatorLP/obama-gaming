@@ -25,7 +25,6 @@ public class hurtingenemys : MonoBehaviour
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
     }
 
-
     public void TakeDmg(float gotteddmg)
     {
         CurrHp -= gotteddmg; 
