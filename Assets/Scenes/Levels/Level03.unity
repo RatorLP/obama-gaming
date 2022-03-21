@@ -348,54 +348,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 29310826}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &31670094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 31670096}
-  - component: {fileID: 31670095}
-  m_Layer: 0
-  m_Name: MeleeEnemySpawner (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &31670095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31670094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02672c6f931c4874cbaa37912aa4b1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyPrefab1: {fileID: 4846032790003016591, guid: 13394f8c5d4579d4da6f43daccb670d2,
-    type: 3}
-  EnemyPrefab2: {fileID: 8926661591320902532, guid: f2a42396f9a6118468d54fd18dcb8d5a,
-    type: 3}
-  radius: 2.3
---- !u!4 &31670096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31670094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.5, y: 16.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &65183054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2382,54 +2334,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 402491875}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &408964284
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408964286}
-  - component: {fileID: 408964285}
-  m_Layer: 0
-  m_Name: MeleeEnemySpawner (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &408964285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408964284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02672c6f931c4874cbaa37912aa4b1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyPrefab1: {fileID: 4846032790003016591, guid: 13394f8c5d4579d4da6f43daccb670d2,
-    type: 3}
-  EnemyPrefab2: {fileID: 8926661591320902532, guid: f2a42396f9a6118468d54fd18dcb8d5a,
-    type: 3}
-  radius: 1.5
---- !u!4 &408964286
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408964284}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.37, y: 11.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410615721
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,7 +4225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &845945354
 PrefabInstance:
@@ -83956,7 +83860,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1951570386
 PrefabInstance:

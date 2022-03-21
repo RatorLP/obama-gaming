@@ -208,7 +208,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 10
+  maxSpeed: 4
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpDrop: 8
-  MaxHp: 50
+  MaxHp: 40
 --- !u!1 &4846032791132108307
 GameObject:
   m_ObjectHideFlags: 0

@@ -290,7 +290,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  attackTimer: 0
+  attackTimer: 3
   inRange: 0
   attackCooling: 0
 --- !u!95 &3746169216591678583
@@ -415,4 +415,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpDrop: 70
-  MaxHp: 100
+  MaxHp: 60

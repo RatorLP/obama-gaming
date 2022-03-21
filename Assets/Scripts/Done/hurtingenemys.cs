@@ -38,4 +38,7 @@ public class hurtingenemys : MonoBehaviour
             gameController.GainedExp = ExpDrop; //adds the Xp to the player
         }
     }
+
+
+
 }

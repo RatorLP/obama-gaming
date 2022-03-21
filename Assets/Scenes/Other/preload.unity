@@ -203,24 +203,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &36322806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8270847255406012417, guid: 821663d59bc68ee488f98ecab4facd5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1643119959}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &36322810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36322806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef28316444d752c44aaba8bc40c34cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &41712454
 PrefabInstance:
   m_ObjectHideFlags: 0
