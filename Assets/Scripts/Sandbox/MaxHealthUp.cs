@@ -40,6 +40,7 @@ public class MaxHealthUp : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes player stats
             {
+                SoundManager.PlaySound("ItemPickupSound");
                 gameController.maxHealth += 30; //increases maximum Health
                 gameController.health += 40; //heals the player for a set amount
                 Debug.Log("Deine HP:" + gameController.health + "Deine MaxHP:" +  gameController.maxHealth);

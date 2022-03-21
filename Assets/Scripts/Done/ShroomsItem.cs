@@ -40,6 +40,7 @@ public class ShroomsItem : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes player statistics
             {
+                SoundManager.PlaySound("ItemPickupSound");
                 gameController.maxHealth -= 10; //reduces maximum health(Hp)
                 gameController.playerDamage += 15; //increases player damage
                 Debug.Log("Picked Up Shrooms, you feel kinda funny");

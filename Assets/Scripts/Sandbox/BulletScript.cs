@@ -37,6 +37,7 @@ public class BulletScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                SoundManager.PlaySound("PlayerHitSound");
                 gameController.health -= 2;
                 
             }

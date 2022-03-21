@@ -71,6 +71,7 @@ public class TurretScript : MonoBehaviour
     }
     void shoot() // the Bullet is shot out via constantly replicating the bullet per every Frame
     {
+        SoundManager.PlaySound("ShootSound");
         GameObject BulletIns = Instantiate(Bullet, shootingPoint.position, Quaternion.identity);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force); // calculates the speed of the Projectile
     }

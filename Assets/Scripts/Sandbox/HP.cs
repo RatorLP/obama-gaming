@@ -77,6 +77,7 @@ public class HP : MonoBehaviour
 
         if (CurrHp <= 0) //If Hp fals to zero, the player dies
         {
+            SoundManager.PlaySound("PlayerDeathSound"); //plays Death sound
             Debug.Log("You Lost lul Cope");
             gameController.health = 100;
             SceneManager.LoadScene(1);
@@ -84,8 +85,5 @@ public class HP : MonoBehaviour
         }
 
     }
-
-    
-
 
 }
