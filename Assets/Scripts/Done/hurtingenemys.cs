@@ -35,7 +35,7 @@ public class hurtingenemys : MonoBehaviour
         {
             SoundManager.PlaySound("EnemyDeathSound");
             Destroy(this.gameObject);
-            gameController.GainedExp = ExpDrop; //adds the Xp to the player
+            gameController.GainedExp += ExpDrop; //adds the Xp to the player
         }
     }
 
