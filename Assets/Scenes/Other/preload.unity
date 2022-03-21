@@ -2103,8 +2103,8 @@ MonoBehaviour:
   playerMovementSpeed: 10
   CurrExp: 0
   GainedExp: 0
-  health: 100
-  maxHealth: 100
+  health: 200
+  maxHealth: 200
   sceneOrder: 
   currentArrayIndex: 0
   nextScene: 0
@@ -4285,9 +4285,6 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294938368
   availableColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  unavailableColor:
     serializedVersion: 2
     rgba: 4294967295
   skilltree: {fileID: 226638545}

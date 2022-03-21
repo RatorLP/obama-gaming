@@ -11,7 +11,6 @@ public class PlayerCombat : MonoBehaviour
     private float attackTimer; // delay between attacks
     private bool attackCooling = false; // cooldown activation
     public bool attacking = false; // if player is currently attacking
-    public float thrust;
 
     private float IntTimer; // actual timer
     private Animator anim; // animator setup
@@ -74,21 +73,12 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D NPC in hitEnemies)
         {
-            Knockback(NPC);
             calculateDamage();
             NPC.GetComponent<hurtingenemys>().TakeDmg(finalDamage); // calls the "TakeDmg" method from the "hurtingenemys" script
             Debug.Log("YOU HIT! You did: " +  finalDamage);
             gameController.health += gameController.lifeSteal * finalDamage; // adds Lifesteal skill. Heals the player for damage delt
         }
         
-    }
-    
-    public void Knockback(Collider2D NPC)
-    {
-        Vector2 difference = NPC.gameObject.transform.position - gameObject.transform.position;
-        difference = difference.normalized * thrust; //normalized means, that the Vector has a maximum of a length of 1
-        Vector3 knockback = new Vector3(difference[0], difference[1], 0);
-        NPC.gameObject.transform.position += knockback;
     }
 
     void calculateDamage() // calculates the final damage. This is used by the "FirstStrike" skill

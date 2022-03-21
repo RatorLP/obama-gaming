@@ -11,8 +11,8 @@ public class DDOL : MonoBehaviour
     public float CurrExp = 0F; //displays the whole amount of Exp you have
     public float GainedExp; //experience you gained just recently in a room and gets added to CurrExp as soon as possible. Enemys add a value to this when they are killed.
 
-    public float health = 100; //Stores the current health of the player
-    public float maxHealth = 100; //The maximal amount of health the player can have
+    public float health = 200; //Stores the current health of the player
+    public float maxHealth = 200; //The maximal amount of health the player can have
     private int levelsUntilBossfight = 7; //amount of levels the player has to get through to get to the boss
     public int[] sceneOrder; //Array storing the build indices (scene numbers) in a randomized order With The main menu as the first scene and boss fight as the last scene
     private int bossLevelSceneIndex = 2; //contains the build index (scene number) for the boss scene
