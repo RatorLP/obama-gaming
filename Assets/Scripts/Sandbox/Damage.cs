@@ -5,45 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
-
-    GameObject dataManager; //Variable declaration
-    DDOL gameController;
     float MaxHp = 100; //displays the maxium amount of HP (health) you can have
-    float CurrHp; //displays your current amount HP in natural numbers
-    public int damage; //the damage, the enemy does
+    float CurrHp; //displays your current amount of HP in natural numbers
+    public int damage; //the amount of damage the enemy deals
 
     //public float attackRange;
-    public float attackTimer;
+
     //public float rayCastLength;
     //public Transform rayCast;
     //public LayerMask raycastMask;
 
     //public RaycastHit2D hit;
-    private GameObject target; //adds an adjustable Target object
-    private Animator anim; //adds base for animations
-    private float distance; //attack distance
-    private bool attackMode;
-    public bool inRange = false;
-    public bool attackCooling = false;
-    private float IntTimer;
     
+    public bool inRange = false; //set to true when the player enters the attack radius
+    public bool attackCooling = false; //is true during cooldown. while this is true no attack can be executed
 
-    void Awake()
+    private float IntTimer; //holds the cooldown time to reset attackTimer
+    public float attackTimer; //keeps the time between atacks to limit attack speed
+
+    private Animator anim; //adds base for animations
+
+    GameObject dataManager;
+    DDOL gameController;
+
+
+    void Awake()//Awake is called before start
     {
         IntTimer = attackTimer; //attack speed for the enemy
-        anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>(); //gets a reference to the animator
     }
 
     void Start()// Start is called before the first frame update
     {
         CurrHp = MaxHp;
-        if (GameObject.Find("DataManager") == null)
-        { //returns if the data manager doesn't exist
-            Debug.Log("dataManager not found");
-            Debug.Log("Load Scene 0");
-            SceneManager.LoadScene(0);
-            return;
-        }
+
         dataManager = GameObject.Find("DataManager");
         gameController = dataManager.GetComponent<DDOL>(); //gets a reference for the "DDOL" script which is attached to the "DataManager" object
     }
@@ -68,17 +63,17 @@ public class Damage : MonoBehaviour
             anim.SetBool("canWalk", true);
         }
 
-        if (gameController.dashing) //diables collision with player
+        if (gameController.dashing) //disables collision with player if the player is dashing
         {
-            if (gameObject.GetComponent<CircleCollider2D>() != null)
-                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            if (gameObject.GetComponent<BoxCollider2D>() != null)
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             if (gameObject.GetComponent<CapsuleCollider2D>() != null)
                 gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }
         else
         {
-            if (gameObject.GetComponent<CircleCollider2D>() != null)
-                gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            if (gameObject.GetComponent<BoxCollider2D>() != null)
+                gameObject.GetComponent<BoxCollider2D>().enabled = true;
             if (gameObject.GetComponent<CapsuleCollider2D>() != null)
                 gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         }
@@ -88,16 +83,13 @@ public class Damage : MonoBehaviour
     void Attack()
     {
         attackTimer = IntTimer; //reset timer when player enters attack range
-        //attackMode = true; //to check if enemy can still attack
 
-        anim.SetBool("canWalk", false);
+        anim.SetBool("canWalk", false); //plays the Attack animation
         anim.SetBool("Attack", true);
-
-
     }
 
 
-    void Cooldown()
+    void Cooldown() //cooldown between attacks
     {
         attackTimer -= (Time.deltaTime * gameController.enemyAttackSpeed);
 
@@ -105,7 +97,6 @@ public class Damage : MonoBehaviour
         {
             attackCooling = false;
             attackTimer = IntTimer;
-            
         }
     }
 
@@ -143,40 +134,38 @@ public class Damage : MonoBehaviour
     }
     */
 
-    public void TriggerCooling()
+    public void TriggerCooling() //gets called by the animation after the animation finishes
     {
         attackCooling = true;
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other) //deals damage to the player
     {
         if (other.gameObject.tag == "Player")
         {
             if (gameController.shield) //if shield is active 
             {
-                SoundManager.PlaySound("PlayerHitSound");
-                if (gameController.shieldDurability >= (damage) * gameController.shieldAbsorption)
+                if (gameController.shieldDurability >= damage * gameController.shieldAbsorption) //if shield is in good condition reduce player damage. If armor is skilled reduce player damage further
                 {
-                    gameController.shieldDurability -= (damage) * gameController.shieldAbsorption;
-                    gameController.health -= damage * (1 - gameController.shieldAbsorption);
+                    gameController.shieldDurability -= damage * gameController.shieldAbsorption;
+                    gameController.health -= damage * (1 - gameController.shieldAbsorption) * (1 - gameController.armor);
                 }
-                else
+                else //if shield is in bad condition let the shield absorb as much of the attack as possible, deal the rest as damage to the player. Limit damage further through the armor
                 {
-                    gameController.health -= (damage - gameController.shieldDurability);
+                    gameController.health -= (damage - gameController.shieldDurability) * (1 - gameController.armor);
                     gameController.shieldDurability = 0;
                 }
             }
-            else
+            else //if shield isn't skilled, deal damage only limited by armor
             {
-                SoundManager.PlaySound("PlayerHitSound");
-                gameController.health -= damage;
+                gameController.health -= damage * (1 - gameController.armor);
             }
         }
     }
 
-    public void DamageOverTime(int damageAmount, int damageTime) //adds damage over time, if the player picks uo the item "dirty razor"
+    public void DamageOverTime(int damageAmount, int damageTime) //adds damage over time to the enemy, if the player picks up the item "dirty razor"
     {
-        if (gameController.dirtyRazor = true)
+        if (gameController.dirtyRazor)
         {
             StartCoroutine(DamageOverTimeCoroutine(damageAmount, damageTime));
         }

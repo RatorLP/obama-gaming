@@ -7,7 +7,8 @@ public class SkilltreeF : MonoBehaviour
 {
     GameObject dataManager;
     DDOL gC;
-    public GameObject root;
+
+    public GameObject root; //referencec to all Skilltree buttons
     public GameObject a;
     public GameObject b;
     public GameObject c;
@@ -36,14 +37,9 @@ public class SkilltreeF : MonoBehaviour
 
     public Color32 skilledColor = new Color32(200, 255, 200, 255);
     public Color32 availableColor = new Color32(255, 255, 255, 255);
-    public Color32 unavailableColor = new Color32(150, 150, 150, 255);
 
     public GameObject skilltree;
     public bool skilltreeEnabled;
-
-
-    
-
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +53,11 @@ public class SkilltreeF : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown("e")) {
+        if (Input.GetKeyDown("e")) { //toggles the skilltree when e is pressed
             skilltreeEnabled = !skilltreeEnabled;
             skilltree.SetActive(skilltreeEnabled);
             if(skilltreeEnabled){
-                Time.timeScale = 0;
+                Time.timeScale = 0; //pauses the game while the skilltree is shown
             } else if(!gC.pause){
                 Time.timeScale = 1;
             }
@@ -72,20 +68,20 @@ public class SkilltreeF : MonoBehaviour
             skilltreeEnabled = false;
     }
 
-    public void SkillMovementSpeed()
+    public void SkillMovementSpeed() //skill functions get called by pressing the corresponding button
     {
         
-        if (gC.xpLevel >= 1 && !gC.enabledSkills[2])
+        if (gC.xpLevel >= 1 && !gC.enabledSkills[2]) //checks if skill is currently available and not yet skilled
         {
-            gC.playerMovementSpeed += 2;
+            gC.playerMovementSpeed += 2; //increase player stats
             gC.xpLevel -= 1;
-            gC.enabledSkills[2] = true;
-            c.GetComponent<Image>().color = skilledColor;
-            c.GetComponent<Button>().interactable = false;
+            gC.enabledSkills[2] = true; //tell the gamecontroller that the skill was skilled
+            c.GetComponent<Image>().color = skilledColor; //update the color of the button
+            c.GetComponent<Button>().interactable = false; //disable the button
 
         }
     }
-
+    //The same as above
     public void SkillDash()
     {
         if (gC.xpLevel >= 1 && gC.enabledSkills[2] && !gC.enabledSkills[17])
@@ -384,31 +380,19 @@ public void SkillFireball()
         }
     }
 
-    public void UpdateColors()
+    public void UpdateColors() //gets called while the skilltree is shown
     {
-        if (!gC.enabledSkills[2]) //C MovementSpeed
+        if (!gC.enabledSkills[2]) //C MovementSpeed    if skill is not skilled
         {
-            c.GetComponent<Button>().interactable = true;
-            c.GetComponent<Image>().color = availableColor;
+            c.GetComponent<Button>().interactable = true; //activate button
+            c.GetComponent<Image>().color = availableColor; //sets the color to available
         }
-        if (gC.enabledSkills[2] && !gC.enabledSkills[17]) //CX Dash
+        if (gC.enabledSkills[2] && !gC.enabledSkills[17]) //CX Dash     if skill is not skilled and parrent skill is skilled
         {
-            cx.GetComponent<Button>().interactable = true;
-            cx.GetComponent<Image>().color = availableColor;
+            cx.GetComponent<Button>().interactable = true; //activate button
+            cx.GetComponent<Image>().color = availableColor; //sets the color to available
         }
-        /*
-        if (gC.enabledSkills[2] && !gC.enabledSkills[7]) //CX -
-        {
-            cx.GetComponent<Button>().interactable = true;
-            cx.GetComponent<Image>().color = availableColor;
-        }
-        if (gC.enabledSkills[2] && !gC.enabledSkills[8]) //CY -
-        {
-            cy.GetComponent<Button>().interactable = true;
-            cy.GetComponent<Image>().color = availableColor;
-        }
-        */
-        if (gC.enabledSkills[2] && !gC.enabledSkills[9]) //CZ SlowEnemyMovement
+        if (gC.enabledSkills[2] && !gC.enabledSkills[9]) //CZ SlowEnemyMovement         the same process as above
         {
             cz.GetComponent<Button>().interactable = true;
             cz.GetComponent<Image>().color = availableColor;
