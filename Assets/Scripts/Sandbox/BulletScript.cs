@@ -7,15 +7,10 @@ public class BulletScript : MonoBehaviour
 {
     GameObject dataManager; //Variable declaration
     DDOL gameController;
-    //public static void IgnoreLayerCollision(int layer1 = 9, int layer2 = 7, bool ignore = true);
 
     // Start is called before the first frame update
     void Start()
     {
-
-        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
-
-
         if (GameObject.Find("DataManager") == null)
         { //returns if the data manager doesn't exist
             Debug.Log("dataManager not found");
@@ -38,7 +33,7 @@ public class BulletScript : MonoBehaviour
             SceneManager.LoadScene(0);
             return;
         }
-        foreach (ContactPoint2D hitPos in other.contacts)
+        foreach (ContactPoint2D hitPos in other.contacts) // anything with the tag "Player" gets hit for a set damage amount
         {
             if (other.gameObject.tag == "Player")
             {

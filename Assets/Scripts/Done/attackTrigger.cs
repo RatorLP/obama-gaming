@@ -12,7 +12,7 @@ public class attackTrigger : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D trig)
+    void OnTriggerEnter2D(Collider2D trig) //if the player is in range, the enemy attacks
     {
         if (trig.gameObject.tag == "Player")
         {
@@ -21,7 +21,7 @@ public class attackTrigger : MonoBehaviour
     }
 
 
-    void OnTriggerExit2D(Collider2D trig)
+    void OnTriggerExit2D(Collider2D trig) //if the player is no longer in range, the enemy will no longer attack
     {
         if (trig.gameObject.tag == "Player")
         {

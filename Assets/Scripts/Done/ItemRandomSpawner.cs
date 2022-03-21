@@ -11,13 +11,11 @@ public class ItemRandomSpawner : MonoBehaviour
     public GameObject ItemPrefab4;
     public GameObject ItemPrefab5;
     public float radius = 1; //used to make the spawn circle of the selected item
+
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Henrik-Gegner")) //only spawns the item at the start
-        {
-            RandomlySpawnItem();
-        }
+            RandomlySpawnItem(); //spawns one randomly chosen item
     }
 
     // Update is called once per frame
@@ -55,7 +53,7 @@ public class ItemRandomSpawner : MonoBehaviour
             Instantiate(ItemPrefab5, this.transform.position + randomPos, Quaternion.identity);
         }
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //draws spawn radius (only visable in testing mode)
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, radius);

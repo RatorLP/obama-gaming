@@ -38,15 +38,14 @@ public class BullFrogItem : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") //The amount of damage the player deals after picking up the Item
+            if (other.gameObject.tag == "Player") //changes player stats(statistics)
             {
-                gameController.maxHealth += 20;
-                gameController.playerMovementSpeed -= 10;
-                gameController.playerDamage += 5;
-                //gameControllerPlayerSize += 5; oderso wir müssen die Variable noch hinzufügen, ändert einfach nur Size vom Player
+                gameController.maxHealth += 20; //increases maximum health (Hp)
+                gameController.playerMovementSpeed -= 5; //reduces movement speed
+                gameController.playerDamage += 5; //increases attack damage
                 Debug.Log("you feel Angery and BIG");
-                Debug.Log(gameController.maxHealth + " " + gameController.playerMovementSpeed + " " + " " + gameController.playerDamage);
-                Destroy(this.gameObject);
+                Debug.Log(gameController.maxHealth + " " + gameController.playerMovementSpeed + " " + " " + gameController.playerDamage); //displays all newly gained statistics
+                Destroy(this.gameObject); //removes object, so it does not interfere
             }
         }
     }
