@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 1080065609656113596}
   Combat: {fileID: 1080065609656113573}
-  tempSpeed: 3
+  tempSpeed: 5
   moveSpeed: 0
 --- !u!50 &1080065609656113569
 Rigidbody2D:

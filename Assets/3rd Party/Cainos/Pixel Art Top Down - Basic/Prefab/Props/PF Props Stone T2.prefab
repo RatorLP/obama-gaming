@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7947911505737750448}
   - component: {fileID: 7947911505737750450}
   - component: {fileID: 7885135243218010046}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: PF Props Stone T2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947911505844789837}
   - component: {fileID: 7947911505844789838}
-  m_Layer: 20
+  m_Layer: 15
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
