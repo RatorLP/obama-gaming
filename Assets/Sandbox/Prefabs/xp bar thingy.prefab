@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 9033440721158844782}
   - component: {fileID: 9033440721158844776}
   - component: {fileID: 9033440721158844783}
+  - component: {fileID: 1609581741793265729}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -138,12 +139,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f6ad1178b01334087eb9e2f122afd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrExp: 0
   CurrLvl: 0
   ToNextLvl: 0
-  GainedExp: 0
   ToNextLvlStart: 0
   ToNextLvlGrow: 0
+--- !u!95 &1609581741793265729
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033440721158844781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37e76c13cbf71874785ad4b377092d9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9033440721530249804
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.125, b: 0.44451565, a: 1}
+  m_Color: {r: 0.45841876, g: 0.6792453, b: 0.05446779, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -231,6 +249,7 @@ GameObject:
   - component: {fileID: 9033440721575657089}
   - component: {fileID: 9033440721575657088}
   - component: {fileID: 9033440721575657095}
+  - component: {fileID: 5270843175863160115}
   m_Layer: 5
   m_Name: xp bar thingy
   m_TagString: Untagged
@@ -268,7 +287,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 705395718423116438, guid: f70218070e62e6643a956308b0d41f86, type: 3}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -276,7 +295,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -44025399
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &9033440721575657088
@@ -319,6 +338,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5270843175863160115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033440721575657094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28316444d752c44aaba8bc40c34cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9033440721978596149
 GameObject:
   m_ObjectHideFlags: 0

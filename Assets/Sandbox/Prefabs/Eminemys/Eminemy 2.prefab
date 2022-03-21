@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8926661590215860169}
   m_Layer: 19
   m_Name: CapsuleGFX
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  attackTimer: 0
+  attackTimer: 3
   inRange: 0
   attackCooling: 0
 --- !u!95 &3746169216591678583
@@ -415,4 +415,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpDrop: 70
-  MaxHp: 100
+  MaxHp: 60

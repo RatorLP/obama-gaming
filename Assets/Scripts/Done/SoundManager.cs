@@ -15,7 +15,6 @@ public class SoundManager : MonoBehaviour
         enemyHit = Resources.Load<AudioClip>("EnemyHitSound");
         itemPickup = Resources.Load<AudioClip>("ItemPickupSound");
         playerDeath = Resources.Load<AudioClip>("PlayerDeathSound");
-        shoot = Resources.Load<AudioClip>("ShootSound");
         enemyDeath = Resources.Load<AudioClip>("EnemyDeathSound");
         audioSrc = GetComponent<AudioSource>();
 

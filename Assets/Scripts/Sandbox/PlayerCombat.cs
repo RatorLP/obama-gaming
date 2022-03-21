@@ -112,7 +112,7 @@ public class PlayerCombat : MonoBehaviour
 
     void OnDrawGizmosSelected() //draws the range of the attack; only for testing purposes, will be deleted later
     {
-        Gizmos.DrawWireSphere(attackPoint.position, 0.5F);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     void Cooldown()

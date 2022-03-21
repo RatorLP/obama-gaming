@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 4701503751655986713}
   - component: {fileID: 4701503751655986718}
   - component: {fileID: 4701503751655986719}
+  - component: {fileID: 72027566977279626}
   m_Layer: 5
   m_Name: hp bar thingy
   m_TagString: Untagged
@@ -383,7 +384,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -44025399
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4701503751655986718
@@ -426,3 +427,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &72027566977279626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148593348602161744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28316444d752c44aaba8bc40c34cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
