@@ -1936,7 +1936,6 @@ GameObject:
   - component: {fileID: 627853011}
   - component: {fileID: 627853008}
   - component: {fileID: 627853007}
-  - component: {fileID: 627853010}
   - component: {fileID: 627853009}
   - component: {fileID: 627853012}
   m_Layer: 0
@@ -1972,7 +1971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirtyRazor: 0
   playerDamage: 20
-  playerMovementSpeed: 15
+  playerMovementSpeed: 10
   CurrExp: 0
   GainedExp: 0
   health: 100
@@ -2015,21 +2014,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627853006}
   m_CullTransparentMesh: 1
---- !u!114 &627853010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627853006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f6ad1178b01334087eb9e2f122afd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ToNextLvl: 0
-  ToNextLvlStart: 0
-  ToNextLvlGrow: 0
 --- !u!224 &627853011
 RectTransform:
   m_ObjectHideFlags: 0

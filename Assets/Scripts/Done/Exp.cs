@@ -12,6 +12,7 @@ public class Exp : MonoBehaviour
 
     private Slider slider;
 
+    public int CurrLvl = 1; //displays your current level in natural numbers
     public float ToNextLvl; //amount of experience you need to reach the next level, in complete. when you need for example 20 experience for lvl 2 and another 30 experience for 3 it would say 50, because, just like CurrExp, it looks at your whole Exp
     public float ToNextLvlStart; //the starting variable to change ToNextLvl in Beziehung zu CurrLvl
     public float ToNextLvlGrow; //the growing variable to change ToNextLvl in Beziehung zu CurrLvl
@@ -29,8 +30,8 @@ public class Exp : MonoBehaviour
     {
         fillspeed = 0.5F;
         ToNextLvlGrow = 1.2F;
-        ToNextLvlStart = 10;
-        ToNextLvl = (Mathf.Pow(gameController.CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;
+        ToNextLvlStart = 10F;
+        ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;
 
         if (slider == null)
         {
@@ -58,9 +59,9 @@ public class Exp : MonoBehaviour
             gameController.GainedExp = 0;
         }
 
-        ToNextLvl = (Mathf.Pow(gameController.CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;   //updatet ToNextLvl
+        ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;   //updatet ToNextLvl
 
-        targetProgress = ((ToNextLvl - ((Mathf.Pow((gameController.CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart) - (ToNextLvl - gameController.CurrExp)) / (ToNextLvl - ((Mathf.Pow((gameController.CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart))); //erzeugt die prozentzahl z.b 0,58 von wie viel die exp bar gefüllt sein soll
+        targetProgress = ((ToNextLvl - ((Mathf.Pow((CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart) - (ToNextLvl - gameController.CurrExp)) / (ToNextLvl - ((Mathf.Pow((CurrLvl-1), ToNextLvlGrow)) * ToNextLvlStart))); //erzeugt die prozentzahl z.b 0,58 von wie viel die exp bar gefüllt sein soll
        
         if (slider.value < targetProgress)  //füllt die leiste bis sie den target progress erreichhat,langsam mit jedem update durchlauf
         {
@@ -70,9 +71,9 @@ public class Exp : MonoBehaviour
 
         if (gameController.CurrExp >= ToNextLvl)       // aktiviert sich alles wenn ein neues level erreicht wird
         {
-            if (slider.value == 1)  //aktiviert isch erst nachdem die Exp bar auch wirklich voll ist für smoothe visuals
+            if (slider.value == 1)  //aktiviert sich erst nachdem die Exp bar auch wirklich voll ist für smoothe visuals
             {
-                gameController.CurrLvl++;      // erhöht das level
+                CurrLvl++;      // erhöht das level
                 slider.value = 0;   //resettet die bar um das neue level anzuzeigen
             } 
             else    //füllt die Exp bar bei lvlup erst komplett bevor sie resettet wird um das neue leve anzuzeigen
