@@ -15,9 +15,21 @@ EditorBuildSettings:
     path: Assets/Sandbox/Henrik/BossEncounter.unity
     guid: d98743e15f3c753419f9b3b05c4497c1
   - enabled: 1
+    path: Assets/Sandbox/yoshi/Level01.unity
+    guid: 69774ccb80e3dd94c85313a939fa38fe
+  - enabled: 1
+    path: Assets/Sandbox/yoshi/Level02.unity
+    guid: 560d7e5797b90c04192a300d5a92ef33
+  - enabled: 1
+    path: Assets/Sandbox/yoshi/Level03.unity
+    guid: 52d0cada28798424080e765d7c11932b
+  - enabled: 1
+    path: Assets/Sandbox/yoshi/Level04.unity
+    guid: 65db0f68f66b24242a4cb88b24953c7f
+  - enabled: 0
     path: Assets/Sandbox/Henrik/Henrik-Gegner.unity
     guid: 38c53421900d5544d9f2f6a9c401f4de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sandbox/yoshi/yoshi Hp bar und UI.unity
     guid: f03e8f7d2bfc351479d9ae2f174be546
   - enabled: 0
