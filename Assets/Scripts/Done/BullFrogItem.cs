@@ -40,9 +40,10 @@ public class BullFrogItem : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes player stats(statistics)
             {
+                SoundManager.PlaySound("ItemPickupSound");
                 gameController.maxHealth += 20; //increases maximum health (Hp)
-                gameController.playerMovementSpeed -= 5; //reduces movement speed
-                gameController.playerDamage += 5; //increases attack damage
+                gameController.playerMovementSpeed -= 2; //reduces movement speed
+                gameController.playerDamage += 10; //increases attack damage
                 Debug.Log("you feel Angery and BIG");
                 Debug.Log(gameController.maxHealth + " " + gameController.playerMovementSpeed + " " + " " + gameController.playerDamage); //displays all newly gained statistics
                 Destroy(this.gameObject); //removes object, so it does not interfere

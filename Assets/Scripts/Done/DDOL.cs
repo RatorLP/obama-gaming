@@ -7,8 +7,8 @@ public class DDOL : MonoBehaviour
 {
     public bool dirtyRazor = false; //looks wether the Item "Dirty Razor" has been picked up
     public float playerDamage = 30; //the amount of Damage the player deals with every hit
-    public float playerMovementSpeed = 15; //The Movement speed of the player
-    public float CurrExp = 0; //displays the whole amount of Exp you have
+    public float playerMovementSpeed = 5; //The Movement speed of the player
+    public float CurrExp = 0F; //displays the whole amount of Exp you have
     public float GainedExp; //experience you gained just recently in a room and gets added to CurrExp as soon as possible. Enemys add a value to this when they are killed.
 
     public float health = 100; //Stores the current health of the player
@@ -93,10 +93,10 @@ public class DDOL : MonoBehaviour
         health += (float)(regen * Time.deltaTime); //increases the players health every frame if regenereation is skilled
         shieldDurability += shieldRegen * Time.deltaTime; //increases the shields durability every frame
 
-        /*
+        
         if (Input.GetKeyDown("n")) //for debug purposes. Switches to the next scene when n is pressed
             NextScene();
-        */
+        
     }
 
 

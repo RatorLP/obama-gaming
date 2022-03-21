@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2927455932450297346}
-  - component: {fileID: 6223746544896227164}
   - component: {fileID: 6295016638095607784}
   m_Layer: 15
   m_Name: Layer Trigger
@@ -32,20 +31,6 @@ Transform:
   m_Father: {fileID: 6075975974975622417}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6223746544896227164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3256064665225810532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6d459c328bd694898a39e8ee677858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: Layer 1
-  sortingLayer: Layer 1
 --- !u!68 &6295016638095607784
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +123,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: dda6bbdb704d84847b38f9eced72bf59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -412,7 +397,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6075975976084253373}
-  - component: {fileID: 4442653431165992162}
   - component: {fileID: 4020305838961901639}
   m_Layer: 15
   m_Name: Layer Trigger
@@ -435,20 +419,6 @@ Transform:
   m_Father: {fileID: 6075975974975622417}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4442653431165992162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6075975976084253374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6d459c328bd694898a39e8ee677858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: Layer 2
-  sortingLayer: Layer 2
 --- !u!68 &4020305838961901639
 EdgeCollider2D:
   m_ObjectHideFlags: 0

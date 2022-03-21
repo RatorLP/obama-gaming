@@ -39,7 +39,8 @@ public class USBItemScript : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes player statistics
             {
-                gameController.playerMovementSpeed += 10; //increases movement speed of the player
+                SoundManager.PlaySound("ItemPickupSound");
+                gameController.playerMovementSpeed += 3; //increases movement speed of the player
                 Debug.Log("Time to Sped" + gameController.playerMovementSpeed);
                 Destroy(this.gameObject); //removes object, so it does not interfere with gameplay
             }

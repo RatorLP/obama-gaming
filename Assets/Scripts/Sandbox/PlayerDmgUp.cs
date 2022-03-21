@@ -40,7 +40,8 @@ public class PlayerDmgUp : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes the player stats
             {
-                gameController.playerDamage += 10; //calls the gameController variable in DDOL and increases player damage
+                SoundManager.PlaySound("ItemPickupSound");
+                gameController.playerDamage += 15; //calls the gameController variable in DDOL and increases player damage
                 Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
                 Debug.Log("gameController.dirtyRazor == true;");
                 Destroy(this.gameObject);
