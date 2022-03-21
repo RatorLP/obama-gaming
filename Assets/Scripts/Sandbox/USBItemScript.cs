@@ -37,7 +37,7 @@ public class USBItemScript : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") 
+            if (other.gameObject.tag == "Player") //changes player statistics
             {
                 gameController.playerMovementSpeed += 10; //increases movement speed of the player
                 Debug.Log("Time to Sped" + gameController.playerMovementSpeed);

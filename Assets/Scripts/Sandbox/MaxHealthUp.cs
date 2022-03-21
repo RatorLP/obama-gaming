@@ -38,10 +38,10 @@ public class MaxHealthUp : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player") //changes player stats
             {
-                gameController.maxHealth += 30;
-                gameController.health += 40;
+                gameController.maxHealth += 30; //increases maximum Health
+                gameController.health += 40; //heals the player for a set amount
                 Debug.Log("Deine HP:" + gameController.health + "Deine MaxHP:" +  gameController.maxHealth);
                 Destroy(this.gameObject);
             }

@@ -11,10 +11,7 @@ public class RangedRandomSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Henrik-Gegner")) //only spawns the enemy at the start
-        {
-            RandomlySpawnEnemy();
-        }
+            RandomlySpawnEnemy(); //randomly spawn one ranged enemy
     }
 
     // Update is called once per frame
@@ -46,7 +43,7 @@ public class RangedRandomSpawner : MonoBehaviour
             Instantiate(RangedEnemyPrefab2, this.transform.position + randomPos, Quaternion.identity);
         }
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //draws spawn range (only for testing purposes)
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(this.transform.position, radius);

@@ -35,11 +35,11 @@ public class attackHitbox : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) //if the player is in the attack hitbox, the player gets hit for a set amount
     {
         if (other.gameObject.tag == "Player")
         {
-            gameController.health -= Enemy.damage * (1-gameController.armor);
+            gameController.health -= Enemy.damage * (1-gameController.armor); //used by the skill "Armor". Reduces enemy damage
         }
     }
 

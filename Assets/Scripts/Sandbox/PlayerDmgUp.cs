@@ -38,9 +38,9 @@ public class PlayerDmgUp : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") //The amount of damage the player deals after picking up the Item
+            if (other.gameObject.tag == "Player") //changes the player stats
             {
-                gameController.playerDamage += 10;
+                gameController.playerDamage += 10; //calls the gameController variable in DDOL and increases player damage
                 Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
                 Debug.Log("gameController.dirtyRazor == true;");
                 Destroy(this.gameObject);

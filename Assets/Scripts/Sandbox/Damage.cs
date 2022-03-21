@@ -8,9 +8,9 @@ public class Damage : MonoBehaviour
 
     GameObject dataManager; //Variable declaration
     DDOL gameController;
-    float MaxHp = 100; //displays the maxium amount of HP you can have
+    float MaxHp = 100; //displays the maxium amount of HP (health) you can have
     float CurrHp; //displays your current amount HP in natural numbers
-    public int damage;
+    public int damage; //the damage, the enemy does
 
     //public float attackRange;
     public float attackTimer;
@@ -19,9 +19,9 @@ public class Damage : MonoBehaviour
     //public LayerMask raycastMask;
 
     //public RaycastHit2D hit;
-    private GameObject target;
-    private Animator anim;
-    private float distance;
+    private GameObject target; //adds an adjustable Target object
+    private Animator anim; //adds base for animations
+    private float distance; //attack distance
     private bool attackMode;
     public bool inRange = false;
     public bool attackCooling = false;
@@ -30,7 +30,7 @@ public class Damage : MonoBehaviour
 
     void Awake()
     {
-        IntTimer = attackTimer;
+        IntTimer = attackTimer; //attack speed for the enemy
         anim = GetComponent<Animator>();
     }
 
@@ -51,24 +51,24 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true && attackCooling == false)
+        if (inRange == true && attackCooling == false) //as long as the player is in and the attack is aviable, the enemy attacks
         {
             Attack();
         }
 
-        if (inRange == false)
+        if (inRange == false) //stop attacking, if the player is not in range anymore
         {
             StopAttack();
         }
 
-        if (attackCooling)
+        if (attackCooling) //attack speed
         {
             Cooldown();
             anim.SetBool("Attack", false);
             anim.SetBool("canWalk", true);
         }
 
-        if (gameController.dashing)
+        if (gameController.dashing) //diables collision with player
         {
             if (gameObject.GetComponent<CircleCollider2D>() != null)
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -172,7 +172,7 @@ public class Damage : MonoBehaviour
         }
     }
 
-    public void DamageOverTime(int damageAmount, int damageTime)
+    public void DamageOverTime(int damageAmount, int damageTime) //adds damage over time, if the player picks uo the item "dirty razor"
     {
         if (gameController.dirtyRazor = true)
         {

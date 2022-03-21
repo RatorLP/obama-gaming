@@ -11,7 +11,7 @@ public class MeleeRandomSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            RandomlySpawnEnemy();
+            RandomlySpawnEnemy(); //randomly spawns one enemy
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class MeleeRandomSpawner : MonoBehaviour
             Instantiate(EnemyPrefab2, this.transform.position + randomPos, Quaternion.identity);
         }
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //draws spawn range (only used for testing)
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, radius);

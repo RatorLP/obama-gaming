@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
-        if (Combat.attacking)
+        if (Combat.attacking) //slows down the movement speed of the player, to make the attack smoother
         {
             tempSpeed = 2F;
         }
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("canWalk", false);
         }
-        if (gameController.dash && Input.GetKeyDown("space"))
+        if (gameController.dash && Input.GetKeyDown("space")) //ads a dash to the player. This is a Skill implementation
         {
             dashing = true;
             gameController.dashing = true;
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
               anim.SetFloat("vertical", vertical);
         }
 
-        if (Input.GetMouseButton(0) && rotation == true)
+        if (Input.GetMouseButton(0) && rotation == true) //rotates the player in the melee direction
         {
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //mouse on gamescreen (main camera)
 

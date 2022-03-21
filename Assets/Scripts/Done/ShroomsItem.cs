@@ -25,7 +25,7 @@ public class ShroomsItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // currently not used in script
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -38,13 +38,13 @@ public class ShroomsItem : MonoBehaviour
         }
         foreach (ContactPoint2D hitPos in other.contacts)
         {
-            if (other.gameObject.tag == "Player") //The amount of damage the player deals after picking up the Item
+            if (other.gameObject.tag == "Player") //changes player statistics
             {
-                gameController.maxHealth -= 10;
-                gameController.playerDamage += 15;
+                gameController.maxHealth -= 10; //reduces maximum health(Hp)
+                gameController.playerDamage += 15; //increases player damage
                 Debug.Log("Picked Up Shrooms, you feel kinda funny");
                 Debug.Log(gameController.maxHealth) ;
-                Destroy(this.gameObject);
+                Destroy(this.gameObject); //removes object, as to not interfere with the game after pickup
             }
         }
     }

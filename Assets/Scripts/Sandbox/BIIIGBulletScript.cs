@@ -33,13 +33,16 @@ public class BIIIGBulletScript : MonoBehaviour
             SceneManager.LoadScene(0);
             return;
         }
-        foreach (ContactPoint2D hitPos in other.contacts)
+        foreach (ContactPoint2D hitPos in other.contacts) //anything with the tag "Player" gets hit for a set damage amount
         {
             if (other.gameObject.tag == "Player")
             {
                 gameController.health -= 5;
             }
         }
-        Destroy(this.gameObject); // destroys the Bullet if it collides with something
+        if ((other.gameObject.tag == "Wall") || (other.gameObject.tag == "Player"))
+        {
+            Destroy(this.gameObject); // destroys the Bullet if it collides with player or wall
+        }
     }
 }
