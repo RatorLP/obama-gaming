@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip playerHit, enemyHit, itemPickup, playerDeath, shoot, enemyDeath;
+    public static AudioClip playerHit, enemyHit, itemPickup, playerDeath, shoot, enemyDeath; //Sound clip names
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
+        //declaration of which name is which sound
         playerHit = Resources.Load<AudioClip>("PlayerHitSound");
         enemyHit = Resources.Load<AudioClip>("EnemyHitSound");
         itemPickup = Resources.Load<AudioClip>("ItemPickupSound");
@@ -26,7 +27,7 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public static void PlaySound(string clip)
+    public static void PlaySound(string clip) //this method takes a string as the name of the sound clip and then plays it
     {
         switch (clip)
         {

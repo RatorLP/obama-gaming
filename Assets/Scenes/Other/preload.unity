@@ -203,6 +203,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &36322806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270847255406012417, guid: 821663d59bc68ee488f98ecab4facd5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1643119959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &36322810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36322806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef28316444d752c44aaba8bc40c34cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &41712454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1957,7 +1975,6 @@ MonoBehaviour:
   playerMovementSpeed: 15
   CurrExp: 0
   GainedExp: 0
-  CurrLvl: 1
   health: 100
   maxHealth: 100
   sceneOrder: 
@@ -1966,29 +1983,29 @@ MonoBehaviour:
   currentScene: 0
   pause: 0
   enabledSkills: 000000000000000000000000000000000000000000000000
-  xpLevel: 50
   enemySpeed: 1
-  dash: 0
   enemyAttackSpeed: 1
-  enemyFreeze: 0
-  firstStrike: 0
-  combo: 0
   crit: 0
-  shock: 0
   attackDuration: 1
   healthGainFactor: 1
-  lifeSaver: 0
   thorns: 0
   lifeSteal: 0
   regen: 0
-  armor: 0
+  enemyFreeze: 0
+  firstStrike: 0
+  combo: 0
+  shock: 0
+  lifeSaver: 0
+  dash: 0
   shield: 0
+  armor: 0
   shieldDurability: 0
   maxShieldDurability: 0
   shieldAbsorption: 0
   shieldRegen: 0
   dashing: 0
-  skilltree: {fileID: 226638545}
+  CurrLvl: 1
+  xpLevel: 50
   loadingScreen: {fileID: 2033642211}
 --- !u!222 &627853009
 CanvasRenderer:
@@ -4626,6 +4643,75 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 434189173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1643119959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8270847255406012417, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270847255406012419, guid: 821663d59bc68ee488f98ecab4facd5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 821663d59bc68ee488f98ecab4facd5d, type: 3}
 --- !u!1001 &1652470290
 PrefabInstance:
   m_ObjectHideFlags: 0
