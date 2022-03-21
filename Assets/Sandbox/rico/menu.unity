@@ -718,6 +718,8 @@ MonoBehaviour:
   dirtyRazor: 0
   playerDamage: 40
   playerMovementSpeed: 15
+  CurrExp: 0
+  GainedExp: 0
   health: 100
   maxHealth: 100
   sceneOrder: 
@@ -726,24 +728,29 @@ MonoBehaviour:
   currentScene: 0
   pause: 0
   enabledSkills: 000000000000000000000000000000000000000000000000
-  xpLevel: 5
   enemySpeed: 1
-  dash: 0
   enemyAttackSpeed: 1
-  enemyFreeze: 0
-  firstStrike: 1
-  combo: 0
   crit: 0
-  shock: 0
   attackDuration: 1
   healthGainFactor: 1
-  armor: 0
-  shield: 0
-  lifeSaver: 0
   thorns: 0
   lifeSteal: 0
   regen: 0
-  skilltree: {fileID: 0}
+  enemyFreeze: 0
+  firstStrike: 1
+  combo: 0
+  shock: 0
+  lifeSaver: 0
+  dash: 0
+  shield: 0
+  armor: 0
+  shieldDurability: 0
+  maxShieldDurability: 0
+  shieldAbsorption: 0
+  shieldRegen: 0
+  dashing: 0
+  CurrLvl: 1
+  xpLevel: 5
   loadingScreen: {fileID: 0}
 --- !u!1 &151062821
 GameObject:
@@ -3994,7 +4001,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1869315837
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1598778156
