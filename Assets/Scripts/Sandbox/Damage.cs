@@ -154,6 +154,7 @@ public class Damage : MonoBehaviour
         {
             if (gameController.shield) //if shield is active 
             {
+                SoundManager.PlaySound("PlayerHitSound");
                 if (gameController.shieldDurability >= (damage) * gameController.shieldAbsorption)
                 {
                     gameController.shieldDurability -= (damage) * gameController.shieldAbsorption;
@@ -167,6 +168,7 @@ public class Damage : MonoBehaviour
             }
             else
             {
+                SoundManager.PlaySound("PlayerHitSound");
                 gameController.health -= damage;
             }
         }

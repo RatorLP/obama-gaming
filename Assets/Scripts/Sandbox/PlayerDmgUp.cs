@@ -40,6 +40,7 @@ public class PlayerDmgUp : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes the player stats
             {
+                SoundManager.PlaySound("ItemPickupSound");
                 gameController.playerDamage += 10; //calls the gameController variable in DDOL and increases player damage
                 Debug.Log("Deine Curr Dmg:" + gameController.playerDamage);
                 Debug.Log("gameController.dirtyRazor == true;");

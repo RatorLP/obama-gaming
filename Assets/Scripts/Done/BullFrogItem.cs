@@ -40,6 +40,7 @@ public class BullFrogItem : MonoBehaviour
         {
             if (other.gameObject.tag == "Player") //changes player stats(statistics)
             {
+                SoundManager.PlaySound("ItemPickupSound");
                 gameController.maxHealth += 20; //increases maximum health (Hp)
                 gameController.playerMovementSpeed -= 5; //reduces movement speed
                 gameController.playerDamage += 5; //increases attack damage

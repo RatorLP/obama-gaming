@@ -1953,10 +1953,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirtyRazor: 0
-  playerDamage: 1000
+  playerDamage: 20
   playerMovementSpeed: 15
   CurrExp: 0
   GainedExp: 0
+  CurrLvl: 1
   health: 100
   maxHealth: 100
   sceneOrder: 
@@ -1976,12 +1977,16 @@ MonoBehaviour:
   shock: 0
   attackDuration: 1
   healthGainFactor: 1
-  armor: 0
-  shield: 0
   lifeSaver: 0
   thorns: 0
   lifeSteal: 0
   regen: 0
+  armor: 0
+  shield: 0
+  shieldDurability: 0
+  maxShieldDurability: 0
+  shieldAbsorption: 0
+  shieldRegen: 0
   dashing: 0
   skilltree: {fileID: 226638545}
   loadingScreen: {fileID: 2033642211}
@@ -2005,7 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f6ad1178b01334087eb9e2f122afd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrLvl: 0
   ToNextLvl: 0
   ToNextLvlStart: 0
   ToNextLvlGrow: 0

@@ -27,10 +27,13 @@ public class hurtingenemys : MonoBehaviour
 
     public void TakeDmg(float gotteddmg)
     {
-        CurrHp -= gotteddmg; 
+        SoundManager.PlaySound("EnemyHitSound");
+        CurrHp -= gotteddmg;
+        
 
         if (CurrHp <= 0)// destroys the Enemy if it's health reaches zero
         {
+            SoundManager.PlaySound("EnemyDeathSound");
             Destroy(this.gameObject);
             gameController.GainedExp = ExpDrop; //adds the Xp to the player
         }
