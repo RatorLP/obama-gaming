@@ -61,13 +61,15 @@ public class SkilltreeF : MonoBehaviour
             skilltreeEnabled = !skilltreeEnabled;
             skilltree.SetActive(skilltreeEnabled);
             if(skilltreeEnabled){
-                gC.PauseGame(true);
-            } else {
-                gC.PauseGame(false);
+                Time.timeScale = 0;
+            } else if(!gC.pause){
+                Time.timeScale = 1;
             }
         }
-        if (gC.pause)
+        if (Time.timeScale == 0)
             UpdateColors();
+        if (skilltreeEnabled && gC.pause) //closes the skilltree when the game is paused
+            skilltreeEnabled = false;
     }
 
     public void SkillMovementSpeed()
