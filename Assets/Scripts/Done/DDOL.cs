@@ -10,6 +10,7 @@ public class DDOL : MonoBehaviour
     public float playerMovementSpeed = 15;
     public float CurrExp = 0; //displays the whole amount of Exp you have
     public float GainedExp; //experience you gained just recently in a room and gets added to CurrExp as soon as possible. Enemys add a value to this when they are killed.
+    public int CurrLvl = 1; //displays your current level in natural numbers
     public float health = 100;
     public float maxHealth = 100;
     private int levelsUntilBossfight = 7;
@@ -33,15 +34,15 @@ public class DDOL : MonoBehaviour
     public float crit = 0f;
     public bool shock = false;
     public float attackDuration = 1.0f;
-    public float healthGainFactor = 1.0f;
+    public float healthGainFactor = 1.0f; //The factor used to calculate the amount of health you gain through items
     //public float regeneration = 10f; // PROBLEME!!! keine Ahnung wieso -> deshalb neue Variable regen, funktioniert super
     
-    public bool lifeSaver = false;
-    public float thorns = 0.0f;
-    public float lifeSteal = 0.0f;
-    public float regen = 0f;
+    public bool lifeSaver = false; //Life Saver gives you a health boost when your health is close to 0
+    public float thorns = 0.0f; //the percentage of damage the enemy gets while trying to attack the player
+    public float lifeSteal = 0.0f; //the percentage of health the player gets from the enemy during combat
+    public float regen = 0f; //the amount of regeneration the player gets
 
-    public float armor = 0.0f;
+    public float armor = 0.0f; //Variables for armor and shield
     public bool shield = false;
     public float shieldDurability;
     public float maxShieldDurability;
@@ -77,7 +78,7 @@ public class DDOL : MonoBehaviour
         {
            doorScript.OpenDoor();
         }
-        //Destroy(this.GameObject.FindGameObjectsWithTag("Enemy"))
+
         if (Input.GetKeyDown("n"))
         {
             NextScene();
