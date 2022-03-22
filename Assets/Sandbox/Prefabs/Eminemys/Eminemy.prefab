@@ -208,7 +208,7 @@ MonoBehaviour:
   radius: 2
   height: 2
   canMove: 1
-  maxSpeed: 4
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  attackTimer: 2
   inRange: 0
   attackCooling: 0
+  attackTimer: 2
 --- !u!114 &4294416075603863563
 MonoBehaviour:
   m_ObjectHideFlags: 0
