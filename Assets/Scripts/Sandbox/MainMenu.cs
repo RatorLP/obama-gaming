@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-
 
 /* 
  * Obamagaming dungeon crawler project
- * Main Menu and options control script 
+ * Main Menu control script 
  * 
  * Rico Rotar
- * latest revision: 21-MAR-2022-21-32-00
+ * latest revision: 27-JAN-2022-12-32-00
  */
 
 
@@ -46,12 +44,5 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("used quit button");
         Application.Quit();
-    }
-
-    public AudioMixer audioMixer;
-
-    public void SetVolume(float volume)
-    {
-        audioMixer.SetFloat("volume", volume);
     }
 }

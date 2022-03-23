@@ -27,7 +27,6 @@ public class Damage : MonoBehaviour
 
     GameObject dataManager;
     DDOL gameController;
-    //SoundManager Soundmanager;
 
 
     void Awake()//Awake is called before start
@@ -144,7 +143,6 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SoundManager.PlaySound("PlayerHitSound");
             if (gameController.shield) //if shield is active 
             {
                 if (gameController.shieldDurability >= damage * gameController.shieldAbsorption) //if shield is in good condition reduce player damage. If armor is skilled reduce player damage further
