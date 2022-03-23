@@ -94,9 +94,9 @@ public class DDOL : MonoBehaviour
         shieldDurability += shieldRegen * Time.deltaTime; //increases the shields durability every frame
 
         
-        if (Input.GetKeyDown("n")) //for debug purposes. Switches to the next scene when n is pressed
-            NextScene();
-        
+        /*if (Input.GetKeyDown("n")) //for debug purposes. Switches to the next scene when n is pressed
+         *   NextScene();
+        */
     }
 
 
@@ -159,7 +159,7 @@ public class DDOL : MonoBehaviour
     *}
     */
 
-    // - - - - - - - - - - - - - - CODE BELOW THIS LINE IS STILL WORK IN PROGRESS - - - - - - - - - - - - - - -
+    // - - - - - - - - - - - - - - CODE BELOW THIS LINE IS POTENTIALLY GAMEBREAKING, DO NOT TOUCH THIS - - - - - - - - - - - - - - -
 
     public void NextScene()
     {
@@ -181,20 +181,20 @@ public class DDOL : MonoBehaviour
 
     private IEnumerator LoadLevelAsync()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextScene); //async operation = executed seperately from the rest of the game
 
-        while(!asyncLoad.isDone)
+        while(!asyncLoad.isDone) //checks if next level is loaded
         {
             yield return null;
         }
 
-        if (asyncLoad.isDone)
+        if (asyncLoad.isDone) //disables loadingscreen when the level is done loading
         {
             //currentArrayIndex++;
             currentScene = SceneManager.GetActiveScene().buildIndex; //gets current scene build index 
             if (loadingScreen != null)
             {
-                loadingScreen.SetActive(false);
+                loadingScreen.SetActive(false); //deactivates loading screen
             }
         }
     }
