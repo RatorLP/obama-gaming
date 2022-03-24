@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     GameObject dataManager;
     DDOL gameController;
 
+    public bool dashCooling = false;
+    private float dashTimer;
+    
     public GameObject myPlayer;
 
     private Animator anim; //animator setup
@@ -78,15 +81,33 @@ public class PlayerMovement : MonoBehaviour
             gameController.dashing = true;
             dashTime = 0;
             //gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
+            
+
         }
         if(dashing)
         {
             tempSpeed = 50f;
-            if (dashTime > 0.2f)
+            if (dashTime > 0.1f)
             {
                 dashing = false;
                 gameController.dashing = false;
                 gameObject.GetComponent<CircleCollider2D>().enabled = true;
+                dashCooling = true; // aktiviert cooldown für dash
+            }
+        }
+
+        if(dashCooling) //cooldown between dashes
+        {
+            gameController.dash = false;
+
+            dashTimer += Time.deltaTime;
+
+            if (dashTimer > 2F)
+            {
+                gameController.dash = true;
+                dashCooling = false;
+                dashTimer = 0F;
             }
         }
 
@@ -155,4 +176,5 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
 }

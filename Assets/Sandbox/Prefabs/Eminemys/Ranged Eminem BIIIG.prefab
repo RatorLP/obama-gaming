@@ -54,7 +54,7 @@ MonoBehaviour:
   Gun: {fileID: 4419626520966225566}
   Bullet: {fileID: 304877938303469279, guid: f3724d682e76de747ae03b0ef07aa31f, type: 3}
   shootingPoint: {fileID: 400808827609033613}
-  FireRate: 2
+  FireRate: 0.5
   Force: 50
 --- !u!61 &4419626521906591916
 BoxCollider2D:

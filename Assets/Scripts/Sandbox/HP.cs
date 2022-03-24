@@ -79,8 +79,8 @@ public class HP : MonoBehaviour
         {
             SoundManager.PlaySound("PlayerDeathSound"); //plays Death sound
             Debug.Log("You Lost lul Cope");
-            gameController.health = 100;
-            SceneManager.LoadScene(1);
+            gameController.health = gameController.maxHealth;
+            SceneManager.LoadScene(gameController.currentScene);
            
         }
 

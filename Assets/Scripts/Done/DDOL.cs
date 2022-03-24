@@ -13,7 +13,7 @@ public class DDOL : MonoBehaviour
 
     public float health = 200; //Stores the current health of the player
     public float maxHealth = 200; //The maximal amount of health the player can have
-    private int levelsUntilBossfight = 7; //amount of levels the player has to get through to get to the boss
+    private int levelsUntilBossfight = 10; //amount of levels the player has to get through to get to the boss
     public int[] sceneOrder; //Array storing the build indices (scene numbers) in a randomized order With The main menu as the first scene and boss fight as the last scene
     private int bossLevelSceneIndex = 2; //contains the build index (scene number) for the boss scene
     public int currentArrayIndex = 0; //stores the index of the array. This way it counts how many scenes you went through and ensures the correct order of scenes
@@ -33,7 +33,7 @@ public class DDOL : MonoBehaviour
 
     //bools indicating that the corresponding skills were skilled:
     public bool enemyFreeze = false;
-    public bool firstStrike = true;
+    public bool firstStrike = false;
     public bool combo = false;
     public bool shock = false;
     public bool lifeSaver = false; //Life Saver gives you a health boost when your health is close to 0. 
@@ -51,7 +51,7 @@ public class DDOL : MonoBehaviour
     public bool dashing; //Is true as long as the player is dashing. Disables collisions with enemys in that period
 
     public int CurrLvl = 1; //displays your current level in natural numbers
-    public int xpLevel = 5; //Is not supposed to be in use anymore but a script is accessing it
+    public int xpLevel = 0; //Is not supposed to be in use anymore but a script is accessing it
 
     //References:
     private LevelSwitcher doorScript; //Reference to the door script which opens the door to the next level when the scene is cleared

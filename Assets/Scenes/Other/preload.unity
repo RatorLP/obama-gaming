@@ -2133,7 +2133,7 @@ MonoBehaviour:
   shieldRegen: 0
   dashing: 0
   CurrLvl: 1
-  xpLevel: 50
+  xpLevel: 0
   loadingScreen: {fileID: 2033642211}
 --- !u!222 &627853009
 CanvasRenderer:

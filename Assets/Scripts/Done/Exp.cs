@@ -28,9 +28,9 @@ public class Exp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fillspeed = 0.5F;
-        ToNextLvlGrow = 1.2F;
-        ToNextLvlStart = 10F;
+        fillspeed = 0.7F;
+        ToNextLvlGrow = 2.6F;
+        ToNextLvlStart = 25F;
         ToNextLvl = (Mathf.Pow(CurrLvl, ToNextLvlGrow)) * ToNextLvlStart;
 
         if (slider == null)
@@ -73,7 +73,8 @@ public class Exp : MonoBehaviour
         {
             if (slider.value == 1)  //aktiviert sich erst nachdem die Exp bar auch wirklich voll ist für smoothe visuals
             {
-                CurrLvl++;      // erhöht das level
+                CurrLvl++;// erhöht das level
+                gameController.xpLevel++; //für skilltree
                 slider.value = 0;   //resettet die bar um das neue level anzuzeigen
             } 
             else    //füllt die Exp bar bei lvlup erst komplett bevor sie resettet wird um das neue leve anzuzeigen
