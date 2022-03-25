@@ -2245,7 +2245,7 @@ PrefabInstance:
     - target: {fileID: 4156943520148431254, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
       propertyPath: m_text
-      value: Slow Enemys
+      value: Slow Enemies
       objectReference: {fileID: 0}
     - target: {fileID: 9053413113820930424, guid: 7e462f2ec18152b4ca23d25c2cec0271,
         type: 3}
